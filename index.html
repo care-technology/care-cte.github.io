@@ -573,6 +573,7 @@
           <span class="badge" style="margin-bottom:24px"><i class="fas fa-heartbeat"></i>&nbsp; من نحن</span>
           <h2 class="section-title">كير — الرعاية الصحية<br /><span class="text-green">أنت بطل الحكاية</span></h2>
           <p>كير هي منصة ذكية تابعة لـ <strong>CARE Technology Egypt (CARE-CTE)</strong>، تهدف شركة كير إلى ربط المرضى بالمنشأة الطبية لتقديم خدمات التمريض المنزلي والرعاية المتكاملة لتوفير نظام ذكي لتخزين البيانات بطريقة آمنة، سريعة، ومنظمة بالاعتماد على أحدث الحلول الرقمية</p>
+          <p>تم تأسيس الشركة <strong>سنة 2024 بتاريخ 1\11\2024 </strong>بمحافظة الفيوم كـ علامة تجارية مسجلة بأسم كير أنشطة البرمجة الحاسوبية المشهرة برقم 6201..رقم التسجيل الضريبي للنشاط 767644794 مؤسس شركة كير لتكنولوجيا الرعاية الرقمية الباحث محمد حسن مواليد 15\9\2004 الفيوم طالب في كلية computing security بـ جامعة ساكسونيا الدولية (SEU)</p>
           <p>نؤمن أن كل فرد هو بطل قصته الصحية، ولذلك صممنا نظام كير الذكي ليكون الحل الأسهل والأسرع للحصول على الرعاية الطبية الفائقة أينما كنت بتغطية كاملة في مصر.</p>
           <div class="about-highlights">
             <div class="highlight-item"><div class="icon">🔐</div><div><h4>ممرضون معتمدون</h4><p>كل ممرض خضع للتحقق من هويته ومؤهلاته بدقة</p></div></div>
@@ -1250,7 +1251,6 @@
     line-height: 1.6;
   }
 
-  /* 🟦 استايل مستطيل الرعاية الطبية الفخم الممتد - مطابق لـ edited-image_2.png */
   .care-cta-banner {
     background: linear-gradient(135deg, #5e4ae3 0%, #4633c6 100%);
     border-radius: 24px;
@@ -1317,7 +1317,6 @@
     transform: translateY(-3px);
   }
 
-  /* استايل صفحة عرض المقال المنفرد بالكامل */
   .care-single-article-view {
     text-align: right;
     display: none;
@@ -1367,15 +1366,13 @@
         <h2 class="section-title" style="margin-top:12px; text-align: center;">موسوعة كير الثقافية للرد على <span class="text-green">المشكلات الصحية الطارئة</span></h2>
       </div>
 
-      <!-- 🔍 شريط البحث الذكي المدمج -->
+      <!-- 🔍 شريط البحث  -->
       <div class="care-search-container">
         <i class="fas fa-search care-search-icon"></i>
         <input type="text" id="careSearchInput" class="care-search-input" placeholder="ابحث عن مقال طبي معين... (مثال: إغماء، حروق، جلطة)">
       </div>
 
-      <!-- شبكة المقالات التفاعلية -->
       <div class="care-blog-grid" id="careBlogGrid">
-        <!-- كارت 1 -->
         <div class="care-blog-card" onclick="openFullArticle(1)">
           <div class="care-blog-img-box">
             <span class="care-blog-badge">إسعافات بالقاهرة</span>
@@ -1415,7 +1412,6 @@
       </div>
     </div>
 
-    <!-- 📖 واجهة عرض المقال الكامل التلقائية (مخفية وتظهر عند النقر) -->
     <div id="careSingleArticleView" class="care-single-article-view">
       <button class="care-btn-explore" style="margin-bottom: 20px; padding: 6px 16px; font-size: 13px;" onclick="backToBlogList()"><i class="fas fa-arrow-right"></i> العودة للمقالات</button>
       
@@ -1423,16 +1419,13 @@
       <img src="" alt="" class="care-single-img" id="articleFullImg">
       <div class="care-single-content" id="articleFullContent">محتوى المقال التفصيلي...</div>
 
-      <!-- 🟦 مستطيل الدعم الفخم المدمج بالأسفل بزرارين تفاعليين -->
       <div class="care-cta-banner">
         <h3>هل تحتاج إلى رعاية طبية في المنزل؟</h3>
         <p>فريق كير متاح على مدار 24 ساعة في مصر لتلبية جميع احتياجاتك الطبية والتمريضية بأسعار ثابتة.</p>
         <div class="care-cta-buttons">
-          <!-- زر الواتساب المباشر المربوط بـ API -->
           <a href="https://wa.me/201124280827" target="_blank" class="care-btn-whatsapp">
             <i class="fab fa-whatsapp"></i> احجز الآن عبر واتساب
           </a>
-          <!-- زر استكشف خدماتنا للعودة للرئيسية لقسم الخدمات -->
           <button class="care-btn-explore" onclick="navigateToServices()">
             استكشف خدماتنا
           </button>
@@ -1443,7 +1436,6 @@
   </div>
 </div>
 
-<!-- [2] نافذة سياسة الخصوصية الرسمية -->
 <div class="care-modal-overlay" id="carePrivacyModal">
   <div class="care-modal-wrapper">
     <button class="care-modal-close" onclick="closeCareModal('carePrivacyModal')"><i class="fas fa-times"></i></button>
@@ -1462,7 +1454,6 @@
   </div>
 </div>
 
-<!-- [3] نافذة الشروط والأحكام -->
 <div class="care-modal-overlay" id="careTermsModal">
   <div class="care-modal-wrapper">
     <button class="care-modal-close" onclick="closeCareModal('careTermsModal')"><i class="fas fa-times"></i></button>
@@ -1484,9 +1475,7 @@
   </div>
 </div>
 
-<!-- 🧠 داتا المقالات ومحرك الإدارة والبحث والربط الديناميكي بالكامل -->
 <script>
-  // قاعدة بيانات المقالات الطبية الموسعة لعرضها ديناميكياً
   const careArticlesDatabase = {
     1: {
       title: "التعامل الفوري والأسس الطبية الصحيحة مع حالات الإغماء المفاجئ",
@@ -1511,7 +1500,6 @@
       modal.style.display = 'flex';
       setTimeout(() => { modal.classList.add('active'); }, 10);
       document.body.style.overflow = 'hidden';
-      // العودة للرئيسية للمقالات دائماً عند فتح المودال من البداية
       if(modalId === 'careBlogModal') { backToBlogList(); }
     }
   }
@@ -1525,7 +1513,6 @@
     }
   }
 
-  // دالة فتح المقال كاملاً ديناميكياً
   function openFullArticle(id) {
     const data = careArticlesDatabase[id];
     if(data) {
@@ -1541,22 +1528,18 @@
     }
   }
 
-  // دالة العودة لقائمة المقالات الرئيسية
   function backToBlogList() {
     document.getElementById('careSingleArticleView').style.display = 'none';
     document.getElementById('careBlogMainView').style.display = 'block';
   }
 
-  // دالة الانتقال لسكشن الخدمات في الموقع الرئيسي
   function navigateToServices() {
     closeCareModal('careBlogModal');
-    // توجيه المتصفح فورا لسكشن الخدمات الحالي بموقعك
     setTimeout(() => {
       window.location.hash = 'services';
     }, 450);
   }
 
-  // 🔍 محرك الفلترة والبحث اللحظي (Live Search Engine)
   document.addEventListener("DOMContentLoaded", function() {
     const searchInput = document.getElementById('careSearchInput');
     if(searchInput) {
@@ -1576,8 +1559,6 @@
         });
       });
     }
-
-    // محرك الربط التلقائي الاحتياطي لروابط الهيدر والفوتر بصفحتك
     const allLinks = document.querySelectorAll("a, button");
     allLinks.forEach(link => {
       const text = link.textContent.trim();

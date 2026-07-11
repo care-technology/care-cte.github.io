@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>القادة والمؤسسون — كير CARE لتكنولوجيا الرعاية الرقمية</title>
+  <meta name="description" content="تعرف على الهيكل الإداري والمؤسسين لشركة كير لتكنولوجيا الرعاية الصحية الرقمية في مصر ومهندسي منظومة الهوية الطبية السحابية." />
+  <meta name="keywords" content="مؤسسي شركة كير, فريق عمل CARE, إدارة كير لتكنولوجيا الرعاية, CARE-CTE founders, الحماية السيبرانية الطبية" />
+  <link rel="icon" type="image/png" href="https://i.postimg.cc/VkqLhqMw/70732-(1).png" />
+  
+  <!-- جوجل سيو / Schema Markup للتعرف على قادة ومؤسسي الشركة -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalOrganization",
+    "name": "كير لتكنولوجيا الرعاية الرقمية و خدمات التمريض المنزلي (CARE-CTE)",
+    "url": "https://care-cte.me",
+    "logo": "https://i.postimg.cc/VkqLhqMw/70732-(1).png",
+    "founder": [
+      {
+        "@type": "Person",
+        "name": "المؤسس التنفيذي للشركة",
+        "jobTitle": "Chief Executive Officer & Founder"
+      },
+      {
+        "@type": "Person",
+        "name": "رانيا حسن",
+        "jobTitle": "Co-founder & General Manager"
+      }
+    ]
+  }
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  
+  <style>
+    :root {
+      --bg: #12102a;
+      --bg2: #1a1535;
+      --card: #1e1a3d;
+      --purple: #6b5ce7;
+      --green: #7ed957;
+      --teal: #00c9b1;
+      --white: #ffffff;
+      --light: #c8c4e0;
+      --border: rgba(107, 92, 231, 0.25);
+      --radius: 20px;
+      --font-main: "Cairo", sans-serif;
+      --font-body: "Tajawal", sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--white);
+      font-family: var(--font-body);
+      line-height: 1.7;
+      direction: rtl;
+    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 40px 24px; }
+    
+    header {
+      text-align: center;
+      padding: 60px 0 40px;
+    }
+    header h1 {
+      font-family: var(--font-main);
+      font-size: 36px;
+      font-weight: 900;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+    header h1 span { color: var(--purple); }
+    header p { color: var(--light); font-size: 16px; max-width: 700px; margin: 0 auto; }
+
+    /* شبكة عرض الفريق */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 30px;
+      margin-top: 20px;
+    }
+    
+    .team-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 35px 25px;
+      text-align: center;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .team-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 4px;
+      background: linear-gradient(90deg, var(--purple), var(--teal));
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .team-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(107, 92, 231, 0.5);
+      box-shadow: 0 15px 35px rgba(107, 92, 231, 0.15);
+    }
+    .team-card:hover::before { opacity: 1; }
+    
+    /* إطار صورة العضو */
+    .member-avatar-box {
+      width: 130px;
+      height: 130px;
+      background: var(--bg2);
+      border-radius: 50%;
+      margin: 0 auto 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 3px solid var(--purple);
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+    .member-avatar-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .team-card h3 {
+      font-family: var(--font-main);
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: var(--white);
+    }
+    
+    .member-role {
+      display: inline-block;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--green);
+      margin-bottom: 15px;
+      font-family: var(--font-main);
+    }
+    
+    .member-bio {
+      font-size: 14px;
+      color: var(--light);
+      text-align: justify;
+      text-align-last: center;
+      margin-bottom: 20px;
+      border-top: 1px solid rgba(200, 196, 224, 0.1);
+      padding-top: 15px;
+    }
+
+    .member-social {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+    .member-social a {
+      color: var(--light);
+      font-size: 18px;
+      transition: color 0.2s;
+    }
+    .member-social a:hover {
+      color: var(--teal);
+    }
+
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--green);
+      text-decoration: none;
+      font-family: var(--font-main);
+      font-weight: 700;
+      margin-bottom: 30px;
+      transition: gap 0.2s;
+    }
+    .back-btn:hover { gap: 12px; }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <a href="index.html" class="back-btn"><i class="fas fa-arrow-right"></i> العودة للرئيسية</a>
+    
+    <header>
+      <h1>العقول المحركة لـ منظومة <span>كير</span></h1>
+      <p>نخبة من خبراء هندسة برمجيات الحماية السيبرانية، الإدارة الطبية، والمستشارين الملتزمين ببناء غدٍ رقمي آمن وصحي للرعاية الرقمية في مصر.</p>
+    </header>
+
+    <div class="team-grid">
+      
+      <!-- 1. محمد حسن (المؤسس والتنفيذي) -->
+      <div class="team-card">
+        <div class="member-avatar-box">
+          <img src="https://i.postimg.cc/Tw0Q89RS/Screenshot-20260502-003116-You-Tube.jpg" alt="Mohamed Hassan" />
+        </div>
+        <h3>Mohamed Hassan</h3>
+        <span class="member-role">المؤسس والرئيس التنفيذي للمنظومة (Founder & CEO)</span>
+        <p class="member-bio">المبتكر والمحرك الأساسي لمنظومة كير لتكنولوجيا الرعاية الرقمية. يتولى قيادة الرؤية الاستراتيجية للشركة، وتوجيه الابتكار التقني والهندسي لتطوير البنية التحتية وحلول الحماية السيبرانية للمنظومة.</p>
+        <div class="member-social">
+          <a href="https://web.facebook.com/researchermohamedhassan" target="_blank"><i class="fab fa-facebook"></i></a>
+          <a href="caretechnologie.info@gmail.com"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+
+      <!-- 2. رانيا حسن (المدير العام) -->
+      <div class="team-card">
+        <div class="member-avatar-box">
+          <img src="https://i.postimg.cc/CxMY8T1V/Whats-App-Image-2024-01-03-at-2-59-37-AM-(2).jpg" alt="Rania Hassan" />
+        </div>
+        <h3>Rania Hassan</h3>
+        <span class="member-role">الرئيس المشارك والمدير العام (Co-founder & General Manager)</span>
+        <p class="member-bio">المسؤولة عن إدارة العمليات المؤسسية اليومية والتخطيط الإداري الشامل، وضمان مواءمة استراتيجيات الشركة اللوجستية وتوسيع شبكة أعمال المنظومة لتلبية متطلبات القطاع الصحي.</p>
+        <div class="member-social">
+          <a href="https://web.facebook.com/ranya.hsn.696599" target="_blank"><i class="fab fa-facebook"></i></a>
+          <a href="caretechnologie.info@gmail.com"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+
+      <!-- 3. مصطفى عماد (المدير التقني) -->
+      <div class="team-card">
+        <div class="member-avatar-box">
+          <img src="https://i.postimg.cc/Kj6cNSSm/Whats-App-Image-2026-05-30-at-7-19-53-PM.jpg" alt="Mostafa Emad" />
+        </div>
+        <h3>Mostafa Emad</h3>
+        <span class="member-role">الشريك المؤسس والمدير التقني (Co-Founder & CTO)</span>
+        <p class="member-bio">قائد الفريق الهندسي والبرمجي بالشركة. يشرف على تصميم البنية البرمجية، وربط قواعد البيانات السحابية وتكامل الأنظمة التكنولوجية لضمان كفاءة واستقرار أداء تطبيق كير.</p>
+        <div class="member-social">
+          <a href="https://web.facebook.com/mostafa.emad.480090" target="_blank"><i class="fab fa-facebook"></i></a>
+          <a href="caretechnologie.info@gmail.com"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+
+      <!-- 4. رحمة محسن (مدير العمليات) -->
+      <div class="team-card">
+        <div class="member-avatar-box">
+          <img src="https://i.postimg.cc/8cfG0KNH/Whats-App-Image-2026-05-13-at-8-29-29-PM.jpg" alt="Rahma Mohsen" />
+        </div>
+        <h3>Rahma Mohsen</h3>
+        <span class="member-role">مدير العمليات التشغيلية (COO)</span>
+        <p class="member-bio">تتولى إدارة وضبط الجودة لجميع الخدمات التشغيلية والتمريضية المقدمة من خلال المنظومة، ومتابعة مؤشرات الأداء لضمان تقديم أعلى مستويات السرعة والراحة والامتياز للمرضى.</p>
+        <div class="member-social">
+          <a href="https://web.facebook.com/rahma.mohsen.921677" target="_blank"><i class="fab fa-facebook"></i></a>
+          <a href="caretechnologie.info@gmail.com"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+
+      <!-- 5. ياسين نهاد (العلاقات العامة) -->
+      <div class="team-card">
+        <div class="member-avatar-box">
+          <img src="https://i.postimg.cc/zDQwpt0Y/yasyn.jpg" alt="Yassin Nehad" />
+        </div>
+        <h3>Yassin Nehad</h3>
+        <span class="member-role">مسؤول العلاقات العامة والاتصال (PR & Communications Lead)</span>
+        <p class="member-bio">يقود استراتيجية التواصل المؤسسي وبناء الهوية الرسمية للمنظومة، والمسؤول عن إدارة الشراكات الخارجية وفتح قنوات الاتصال الفعالة مع المجتمع والمنشآت الطبية المختلفة.</p>
+        <div class="member-social">
+          <a href="https://web.facebook.com/YassinNehad1" target="_blank"><i class="fab fa-facebook"></i></a>
+          <a href="caretechnologie.info@gmail.com"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+
+      <!-- 6. محمد حسني (التصميم البصري) -->
+      <div class="team-card">
+        <div class="member-avatar-box">
+          <img src="https://i.postimg.cc/jqvsvSJm/480537237-646665607837641-2808307387485329173-n.jpg" alt="Mohamed Hosni" />
+        </div>
+        <h3>Mohamed Hosni</h3>
+        <span class="member-role">المصمم الجرافيكي الإبداعي (Graphic Design Lead)</span>
+        <p class="member-bio">العقل الإبداعي وراء الهوية البصرية للمنظومة. يتولى تصميم واجهات الاستخدام (UI/UX) والمواد المرئية والدعائية، لضمان تجربة مستخدم سلسة، جذابة، وعصرية للهوية الرقمية.</p>
+        <div class="member-social">
+          <a href="https://web.facebook.com/mohammed.hosni.439024" target="_blank"><i class="fab fa-facebook"></i></a>
+          <a href="caretechnologie.info@gmail.com"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+
+      <!-- 7. دكتور عبد المجيد زكريا (المستشار القانوني) -->
+      <div class="team-card">
+        <div class="member-avatar-box">
+          <img src="https://i.postimg.cc/nckwZbHJ/ʿbdalmjyd.jpg" alt="Dr. Abdelmageed Zakaria" />
+        </div>
+        <h3>Dr. Abdelmageed Zakaria</h3>
+        <span class="member-role">المستشار القانوني للتشريعات الطبية (Legal Counsel)</span>
+        <p class="member-bio">يتولى الإشراف والرقابة القانونية لضمان امتثال المنظومة التكنولوجية لكافة التشريعات الصحية وقوانين حماية البيانات الطبية الحساسة، وصياغة وتوثيق الاتفاقيات الرسمية القانونية.</p>
+        <div class="member-social">
+          <a href="https://web.facebook.com/abdelmageed.tahoon" target="_blank"><i class="fab fa-facebook"></i></a>
+          <a href="caretechnologie.info@gmail.com"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

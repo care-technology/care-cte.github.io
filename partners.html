@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>شركاء النجاح — كير CARE لتكنولوجيا الرعاية الرقمية</title>
+  <meta name="description" content="تعرف على شركاء شركة كير (CARE-CTE) لتكنولوجيا الرعاية الرقمية وخدمات التمريض المنزلي في مصر. شبكتنا الموثوقة من المستشفيات والعيادات والمنشآت الطبية." />
+  <meta name="keywords" content="شركاء شركة كير, شركاء كير لتكنولوجيا الرعاية, CARE partners, تمريض منزلي مصر, منشآت طبية كير" />
+  <link rel="icon" type="image/png" href="https://i.postimg.cc/VkqLhqMw/70732-(1).png" />
+  
+  <!-- جوجل سيو / Schema Markup لربط الشركاء بالشركة في محرك البحث -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalOrganization",
+    "name": "كير لتكنولوجيا الرعاية الرقمية و خدمات التمريض المنزلي (CARE)",
+    "url": "https://care-cte.me",
+    "logo": "https://i.postimg.cc/VkqLhqMw/70732-(1).png",
+    "brand": {
+      "@type": "Brand",
+      "name": "CARE-CTE"
+    },
+    "sponsor": [
+      {
+        "@type": "MedicalOrganization",
+        "name": "مستشفى التخصصي بالفيوم (مثال)",
+        "description": "شريك طبي استراتيجي لمنظومة كير السحابية الرقمية"
+      },
+      {
+        "@type": "MedicalOrganization",
+        "name": "مركز النخبة للتحاليل الطبية (مثال)",
+        "description": "شريك التحاليل والأشعة المعتمد داخل المنظومة"
+      }
+    ]
+  }
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  
+  <style>
+    :root {
+      --bg: #12102a;
+      --bg2: #1a1535;
+      --card: #1e1a3d;
+      --purple: #6b5ce7;
+      --green: #7ed957;
+      --teal: #00c9b1;
+      --white: #ffffff;
+      --light: #c8c4e0;
+      --border: rgba(107, 92, 231, 0.25);
+      --radius: 16px;
+      --font-main: "Cairo", sans-serif;
+      --font-body: "Tajawal", sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--white);
+      font-family: var(--font-body);
+      line-height: 1.7;
+      direction: rtl;
+    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 40px 24px; }
+    
+    header {
+      text-align: center;
+      padding: 60px 0 40px;
+    }
+    header h1 {
+      font-family: var(--font-main);
+      font-size: 36px;
+      font-weight: 900;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+    header h1 span { color: var(--green); }
+    header p { color: var(--light); font-size: 16px; max-width: 600px; margin: 0 auto; }
+
+    /* شريط البحث عن الشركاء */
+    .search-container {
+      max-width: 600px;
+      margin: 0 auto 50px;
+      position: relative;
+    }
+    .search-input {
+      width: 100%;
+      padding: 16px 50px 16px 20px;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      color: var(--white);
+      font-family: var(--font-body);
+      font-size: 16px;
+      outline: none;
+      transition: all 0.3s;
+    }
+    .search-input:focus {
+      border-color: var(--purple);
+      box-shadow: 0 0 15px rgba(107, 92, 231, 0.2);
+    }
+    .search-icon {
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      transform: translateY(-50%);
+      color: var(--light);
+      font-size: 18px;
+    }
+
+    /* شبكة عرض الشركاء */
+    .partners-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 24px;
+    }
+    .partner-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 30px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    .partner-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--teal);
+      box-shadow: 0 10px 30px rgba(0, 201, 177, 0.15);
+    }
+    
+    /* صندوق صور اللوجوهات الجديد للمنشآت */
+    .partner-logo-box {
+      width: 90px;
+      height: 90px;
+      background: #ffffff; /* خلفية بيضاء تبرز لوجوهات الشركات بشكل احترافي */
+      border-radius: 50%;
+      margin: 0 auto 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid var(--border);
+      overflow: hidden;
+      padding: 10px;
+    }
+    .partner-logo-box img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    .partner-card h3 {
+      font-family: var(--font-main);
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--white);
+    }
+    .partner-tag {
+      display: inline-block;
+      padding: 4px 12px;
+      background: rgba(0, 201, 177, 0.1);
+      color: var(--teal);
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+    .partner-card p {
+      font-size: 14px;
+      color: var(--light);
+    }
+
+    .no-results {
+      text-align: center;
+      grid-column: 1 / -1;
+      padding: 40px;
+      color: var(--light);
+      display: none;
+      font-family: var(--font-main);
+    }
+
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--green);
+      text-decoration: none;
+      font-family: var(--font-main);
+      font-weight: 700;
+      margin-bottom: 30px;
+      transition: gap 0.2s;
+    }
+    .back-btn:hover { gap: 12px; }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <a href="index.html" class="back-btn"><i class="fas fa-arrow-right"></i> العودة للرئيسية</a>
+    
+    <header>
+      <h1>شركاء نجاح منظومة <span>كير</span></h1>
+      <p>المنشآت الطبية، المستشفيات، ومراكز التحاليل المعتمدة والمرتبطة بنظامنا السحابي الموحد لتوفير أعلى مستويات الأمان والسرعة للمرضى.</p>
+    </header>
+
+    <!-- صندوق البحث التفاعلي -->
+    <div class="search-container">
+      <i class="fas fa-search search-icon"></i>
+      <input type="text" id="partnerSearch" class="search-input" placeholder="ابحث عن شريك طبي (مثال: مستشفى، مركز تحاليل...)" onkeyup="searchPartners()" />
+    </div>
+
+    <!-- شبكة الشركاء المتاحة وبها وسوم الصور الجاهزة للحقن -->
+    <div class="partners-grid" id="partnersGrid">
+      
+      <!-- شريك 1 -->
+      <div class="partner-card">
+        <div class="partner-logo-box">
+          
+          <img src="https://i.postimg.cc/1XZ2Skrf/download-(3).jpg" alt="لوجو جامعة ساكسونيا" />
+        </div>
+        <h3>جامعة ساكسونيا الدولية (SEU)</h3>
+        <span class="partner-tag">شريك استراتيجي</span>
+        <p>الحاضنة الأكاديمية والداعم التكنولوجي الأول لمنظومة كير؛ حيث توفر بيئة ابتكارية متكاملة تسهم في تطوير حلولنا الأمنية وتحسين جودة الرعاية الرقمية في مصر.</p>
+      </div>
+
+      <!-- شريك 2 -->
+      <div class="partner-card">
+        <div class="partner-logo-box">
+          <!-- ضع رابط لوجو الشريك الثاني في src أدناه -->
+          <img src="https://i.postimg.cc/JhFtpqc9/358114816-679028590909306-1705541117816404477-n.jpg" alt="لوجو مستشفي مكة " />
+        </div>
+        <h3>مستشفى مكة إبشواي التخصصي</h3>
+        <span class="partner-tag">شريك معتمد</span>
+        <p>منشأة طبية معتمدة رسمياً داخل منظومة كير الرقمية لتصدير السجلات والنتائج الطبية مباشرة إلى حساب المريض السحابي بأمان ومصرح لها بربط وتخزين البيانات على خوادم المنظومة المؤمنة منذ تاريخ اعتمادها في 7 نوفمبر 2026</p>
+      </div>
+
+      <!-- شريك 3 -->
+      <div class="partner-card">
+        <div class="partner-logo-box">
+          <!-- ضع رابط لوجو الشريك الثالث في src أدناه -->
+          <img src="https://i.postimg.cc/XqqGXHWS/56BDAAC7-C079-4E66-B8DC-FCFDA6AD9384.jpg" alt="لوجو مستشفى دكتور عادل  " />
+        </div>
+        <h3>مركز الراعي د. مايكل عادل صادق</h3>
+        <span class="partner-tag">مركز معتمد </span>
+        <p>منشأة طبية معتمدة رسمياً داخل منظومة كير الرقمية لتصدير السجلات والنتائج الطبية مباشرة إلى حساب المريض السحابي بأمان ومصرح لها بربط وتخزين البيانات على خوادم المنظومة المؤمنة منذ تاريخ اعتمادها في 7 نوفمبر 2026</p>
+      </div>
+
+      <!-- رسالة عدم وجود نتائج -->
+      <div class="no-results" id="noResults">
+        <i class="fas fa-search-minus" style="font-size: 32px; margin-bottom: 10px; display: block;"></i>
+        عذراً، لم نجد أي شريك يطابق بحثك حالياً.
+      </div>
+
+    </div>
+  </div>
+
+  <!-- كود الجافا سكريبت للبحث الفوري التفاعلي -->
+  <script>
+    function searchPartners() {
+      const input = document.getElementById('partnerSearch');
+      const filter = input.value.toLowerCase();
+      const grid = document.getElementById('partnersGrid');
+      const cards = grid.getElementsByClassName('partner-card');
+      const noResults = document.getElementById('noResults');
+      let hasResults = false;
+
+      for (let i = 0; i < cards.length; i++) {
+        const title = cards[i].getElementsByTagName('h3')[0].textContent || cards[i].getElementsByTagName('h3')[0].innerText;
+        const description = cards[i].getElementsByTagName('p')[0].textContent || cards[i].getElementsByTagName('p')[0].innerText;
+        
+        if (title.toLowerCase().indexOf(filter) > -1 || description.toLowerCase().indexOf(filter) > -1) {
+          cards[i].style.display = "";
+          hasResults = true;
+        } else {
+          cards[i].style.display = "none";
+        }
+      }
+
+      if (hasResults) {
+        noResults.style.display = "none";
+      } else {
+        noResults.style.display = "block";
+      }
+    }
+  </script>
+</body>
+</html>

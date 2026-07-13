@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>قمة "life 2026"</title>
+  <meta name="description" content="اشترك الآن في الحدث التكنولوجي الطبي الأول لمنظومة كير الرقمية وسجل منشأتك لتكون جزءاً من قادة الرعاية الصحية المستدامة في مصر." />
+  <link rel="icon" type="image/png" href="https://i.postimg.cc/VkqLhqMw/70732-(1).png" />
+  
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  
+  <style>
+    :root {
+      --bg: #12102a;
+      --bg2: #1a1535;
+      --card: #1e1a3d;
+      --purple: #6b5ce7;
+      --green: #7ed957;
+      --teal: #00c9b1;
+      --white: #ffffff;
+      --light: #c8c4e0;
+      --border: rgba(107, 92, 231, 0.25);
+      --radius: 16px;
+      --font-main: "Cairo", sans-serif;
+      --font-body: "Tajawal", sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--white);
+      font-family: var(--font-body);
+      line-height: 1.7;
+      direction: rtl;
+    }
+    .container { max-width: 1000px; margin: 0 auto; padding: 0 24px 60px; }
+    
+    /* غلاف أعلى الصفحة (Cover Image) */
+    .event-cover {
+      width: 100%;
+      height: 350px;
+      background: linear-gradient(135deg, rgba(26,21,53,0.8), rgba(107,92,231,0.4)), url('https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=1470&auto=format&fit=crop') center/cover no-repeat;
+      border-radius: 0 0 var(--radius) var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      border-bottom: 2px solid var(--border);
+      margin-bottom: 40px;
+    }
+    .event-cover-text h1 {
+      font-family: var(--font-main);
+      font-size: 38px;
+      font-weight: 900;
+      text-shadow: 0 4px 15px rgba(0,0,0,0.6);
+    }
+    .event-cover-text h1 span { color: var(--green); }
+
+    /* وصف الحدث */
+    .event-details {
+      text-align: center;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 40px 30px;
+      margin-bottom: 40px;
+    }
+    .event-details p {
+      font-size: 16px;
+      color: var(--light);
+      max-width: 800px;
+      margin: 0 auto 25px;
+    }
+    .cta-event-btn {
+      display: inline-block;
+      padding: 14px 35px;
+      background: linear-gradient(90deg, var(--purple), var(--teal));
+      color: var(--white);
+      font-family: var(--font-main);
+      font-weight: 700;
+      font-size: 16px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 20px rgba(107, 92, 231, 0.3);
+    }
+    .cta-event-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(0, 201, 177, 0.4);
+    }
+
+    /* فورم التسجيل الجاهز */
+    .form-section {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 40px;
+      max-width: 650px;
+      margin: 0 auto 60px;
+      display: none; /* مخفي وسيظهر عند الضغط على الزر */
+      scroll-margin-top: 40px;
+    }
+    .form-section h2 {
+      font-family: var(--font-main);
+      font-size: 24px;
+      margin-bottom: 25px;
+      text-align: center;
+      color: var(--white);
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 14px;
+      color: var(--light);
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+    .form-control {
+      width: 100%;
+      padding: 14px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--white);
+      font-family: var(--font-body);
+      font-size: 15px;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+    .form-control:focus {
+      border-color: var(--teal);
+    }
+    
+    /* ستايل مخصص لرفع الشعار */
+    .file-label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: var(--card);
+      border: 2px dashed var(--border);
+      padding: 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      color: var(--light);
+      transition: all 0.3s;
+    }
+    .file-label:hover {
+      border-color: var(--green);
+      color: var(--white);
+    }
+    .file-input { display: none; }
+
+    .submit-btn {
+      width: 100%;
+      padding: 14px;
+      background: var(--green);
+      color: var(--bg);
+      font-family: var(--font-main);
+      font-weight: 700;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.2s;
+      margin-top: 10px;
+    }
+    .submit-btn:hover { background: #6ec44d; }
+
+    /* رسالة النجاح التفاعلية */
+    .alert-success {
+      background: rgba(126, 217, 87, 0.1);
+      border: 1px solid var(--green);
+      color: var(--green);
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+      font-family: var(--font-main);
+      font-weight: 700;
+      margin-bottom: 30px;
+      display: none;
+    }
+
+    /* قسم الكيانات المشاركة الكلاسيكي الفاخر */
+    .exhibitors-section {
+      border-top: 1px solid var(--border);
+      padding-top: 50px;
+      text-align: center;
+    }
+    .exhibitors-section h2 {
+      font-family: var(--font-main);
+      font-size: 26px;
+      margin-bottom: 35px;
+      position: relative;
+    }
+    .exhibitors-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+    .exhibitor-logo-card {
+      background: #ffffff; /* خلفية بيضاء تبرز الشعارات بشكل كلاسيكي مميز */
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px;
+      border: 2px solid var(--border);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      animation: fadeIn 0.6s ease-out forwards;
+    }
+    .exhibitor-logo-card img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--green);
+      text-decoration: none;
+      font-family: var(--font-main);
+      font-weight: 700;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- كفر الإيفنت الرئيسي -->
+  <div class="event-cover">
+    <div class="event-cover-text">
+      <h1>الحدث التكنولوجي السنوي الأول لـ <span>قمة "Life 2026"</span></h1>
+    </div>
+  </div>
+
+  <div class="container">
+    
+    <!-- قسم التفاصيل والوصف -->
+    <section class="event-details">
+      <p>تتشرف شركة كير (CARE-CTE) لتكنولوجيا الرعاية الرقمية بدعوة كافة المنشآت الطبية، والشركات، ورواد الأعمال المهتمين بقطاع الرعاية الصحية المستدامة، لحضور إطلاق منظومتنا الرقمية المتكاملة على أرض الواقع والتعرف على أحدث حلول الهوية الطبية والحماية السيبرانية في مصر لقمة "Life 2026".</p>
+      <button class="cta-event-btn" onclick="showForm()">سجل الآن<i class="fas fa-chevron-down"></i></button>
+    </section>
+
+    <!-- رسالة النجاح التفاعلية عند إرسال الفورم -->
+    <div class="alert-success" id="successAlert">
+      <i class="fas fa-check-circle" style="font-size: 24px; margin-bottom: 8px; display: block;"></i>
+      تم استلام طلبك بنجاح ـــــ شكراً لاهتمامك بمنتجات كير.
+    </div>
+
+    <!-- فورم التسجيل المتصل بـ Formspree وبآلية التحديث الفوري -->
+    <section class="form-section" id="registerFormSection">
+      <h2>قمة "life 2026"</h2>
+      
+      <form id="eventForm" action="https://formspree.io/f/xojgqyqz" method="POST" enctype="multipart/form-data" onsubmit="handleFormSubmit(event)">
+        
+        <div class="form-group">
+          <label for="adminName">الاسم رباعي</label>
+          <input type="text" name="اسم المسؤول" id="adminName" class="form-control" placeholder="اسم المسؤول او صاحب الشركة" required />
+        </div>
+
+        <div class="form-group">
+          <label for="companyName">اسم المنشأة أو الشركة</label>
+          <input type="text" name="اسم الشركة" id="companyName" class="form-control" placeholder="اكتب اسم الشركة أو المستشفى" required />
+        </div>
+
+        <div class="form-group">
+          <label for="whatsapp">رقم الواتساب للتواصل</label>
+          <input type="tel" name="رقم الواتساب" id="whatsapp" class="form-control" placeholder="مثال: 010XXXXXXXX" required />
+        </div>
+
+        <div class="form-group">
+          <label for="email">البريد الإلكتروني</label>
+          <input type="email" name="البريد الإلكتروني" id="email" class="form-control" placeholder="caretechnologie.info@gmail.com" required />
+        </div>
+
+        <div class="form-group">
+          <label>تحميل شعار المنشأة أو الشركة (ملاحظة يتم عرض الشعار بشكل باشر اسفل الموقع ضمن الكيانات والجهات المشاركة)</label>
+          <label for="companyLogo" class="file-label">
+            <i class="fas fa-cloud-upload-alt" style="font-size: 22px; color: var(--teal);"></i>
+            <span id="fileLabelText">تحميل الشعار</span>
+          </label>
+          <input type="file" name="الشعار" id="companyLogo" class="file-input" accept="image/*" onchange="previewFileText()" required />
+        </div>
+
+        <button type="submit" class="submit-btn">تسجيل</button>
+      </form>
+    </section>
+
+    <!-- قسم الكيانات المشاركة الكلاسيكي المميز -->
+    <section class="exhibitors-section">
+      <h2>الكيانات والمنشآت المشاركة في القمة 2026</h2>
+      <div class="exhibitors-grid" id="exhibitorsGrid">
+        <!-- الكيانات الافتراضية الأولى تظهر هنا كمثال، والشعارات الجديدة ستنزل بجانبها تلقائياً -->
+        <div class="exhibitor-logo-card">
+          <img src="https://i.postimg.cc/VkqLhqMw/70732-(1).png" alt="شعار كير الرسمي" />
+        </div>
+      </div>
+    </section>
+
+    <div style="text-align: center;">
+      <a href="index.html" class="back-btn"><i class="fas fa-arrow-right"></i> العودة للرئيسية</a>
+    </div>
+
+  </div>
+
+  <!-- أكواد الجافا سكريبت الذكية للتحكم التفاعلي -->
+  <script>
+    // إظهار الفورم عند الضغط على زر "اشترك في الحدث" وسكرول سلس له
+    function showForm() {
+      const formSec = document.getElementById('registerFormSection');
+      formSec.style.display = 'block';
+      formSec.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // تحديث نص خانة الرفع باسم الملف المختار لتأكيد عملية الرفع للمستخدم
+    function previewFileText() {
+      const fileInput = document.getElementById('companyLogo');
+      const labelText = document.getElementById('fileLabelText');
+      if(fileInput.files.length > 0) {
+        labelText.textContent = "تم اختيار: " + fileInput.files[0].name;
+        labelText.style.color = "var(--green)";
+      }
+    }
+
+    // معالجة إرسال الفورم (الإرسال لـ Formspree + إضافة الشعار فورا في الأسفل)
+    function handleFormSubmit(e) {
+      e.preventDefault(); // إيقاف إعادة تحميل الصفحة الافتراضية للتحكم بالأنيميشن
+      
+      const form = document.getElementById('eventForm');
+      const fileInput = document.getElementById('companyLogo');
+      const grid = document.getElementById('exhibitorsGrid');
+      const successAlert = document.getElementById('successAlert');
+      const formData = new FormData(form);
+
+      // 1. الإرسال في الخلفية عبر الـ API الخاص بـ Formspree دون تدمير تجربة المستخدم
+      fetch(form.action, {
+        method: form.method,
+        body: formData,
+        headers: {
+            'Accept': 'application/json'
+        }
+      }).then(response => {
+        if (response.ok) {
+          // إظهار رسالة النجاح الخاصة بكير وسكرول لها
+          successAlert.style.display = 'block';
+          successAlert.scrollIntoView({ behavior: 'smooth' });
+          form.reset();
+          document.getElementById('fileLabelText').textContent = "اضغط هنا لاختيار ملف الشعار";
+          document.getElementById('fileLabelText').style.color = "var(--light)";
+        } else {
+          alert('عذراً، حدث خطأ أثناء إرسال البيانات، يرجى المحاولة مرة أخرى.');
+        }
+      }).catch(error => {
+        alert('عذراً، تفقد اتصالك بالإنترنت وحاول مجدداً.');
+      });
+
+      // 2. محاكاة الـ Real-Time التفاعلي: قراءة الصورة وعرض الشعار فوراً في الأسفل
+      if (fileInput.files && fileInput.files[0]) {
+        const reader = new FileReader();
+        
+        reader.onload = function(event) {
+          // إنشاء كارت كلاسيكي جديد للشعار
+          const newCard = document.createElement('div');
+          newCard.className = 'exhibitor-logo-card';
+          
+          const newImg = document.createElement('img');
+          newImg.src = event.target.result;
+          newImg.alt = "شعار منشأة مشاركة جديدة";
+          
+          newCard.appendChild(newImg);
+          grid.appendChild(newCard); // حقن الكارت في القسم الأسفل فوراً
+        };
+        
+        reader.readAsDataURL(fileInput.files[0]);
+      }
+    }
+  </script>
+</body>
+</html>

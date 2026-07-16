@@ -1103,7 +1103,9 @@
           }
         })();
       </script>
-</section>
+
+    </section>
+
  <section id="how" class="section" style="background:var(--bg2)">
     <div class="blob-container"><div class="blob" style="width:400px;height:400px;bottom:-100px;right:-100px;background:var(--purple);"></div></div>
     <div class="container">
@@ -1112,13 +1114,81 @@
         <h2 class="section-title">12 خطوات فقط <span class="text-green">للرعاية الكاملة داخل المنظومة</span></h2>
         <p class="section-sub">سواء كنت مريضاً يبحث عن رعاية موثوقة، أو ممرضاً يطمح لبيئة عمل منظمة، أو حتى منشأة طبية تسعى لتطوير نظامها الإلكتروني والاعتماد على بيئة سحابية موحدة.. 'كير' صُمم ليقدم لك تجربة بسيطة ومثالية لدعم القطاع الطبي.</p>
       </div>
-      
+      <style>
+        .how-tabs {
+          display: flex !important;
+          justify-content: space-between !important;
+          align-items: center !important;
+          gap: 8px !important;
+          margin: 0 auto 40px auto !important;
+          padding: 6px !important;
+          background: rgba(107, 92, 231, 0.08) !important;
+          border-radius: 30px !important;
+          border: 1px solid rgba(107, 92, 231, 0.2) !important;
+          max-width: 600px !important;
+          width: 100% !important;
+          box-sizing: border-box !important;
+        }
+        
+        .how-tabs .tab-btn {
+          flex: 1 !important; /* توزيع الأزرار بالتساوي تماماً */
+          display: inline-flex !important;
+          align-items: center !important;
+          justify-content: center !important;
+          gap: 8px !important;
+          padding: 12px 10px !important;
+          font-size: 15.5px !important;
+          font-weight: 700 !important;
+          font-family: var(--font-main) !important;
+          border-radius: 25px !important;
+          border: none !important;
+          background: transparent !important;
+          color: var(--light) !important;
+          cursor: pointer !important;
+          transition: all 0.3s ease !important;
+          white-space: nowrap !important; /* منع نزول النص لسطر جديد */
+          text-align: center !important;
+        }
+
+        .how-tabs .tab-btn i {
+          font-size: 16px !important;
+          transition: transform 0.3s ease !important;
+        }
+
+        /* تنسيق الزر النشط */
+        .how-tabs .tab-btn.active {
+          background: var(--green) !important;
+          color: var(--bg) !important;
+          box-shadow: 0 4px 15px rgba(126, 217, 87, 0.3) !important;
+        }
+
+        .how-tabs .tab-btn.active i {
+          transform: scale(1.1) rotate(-5deg) !important;
+        }
+
+        /* متجاوب مع الموبايل والشاشات الصغيرة جداً */
+        @media (max-width: 480px) {
+          .how-tabs {
+            gap: 4px !important;
+            padding: 4px !important;
+            margin-bottom: 30px !important;
+          }
+          .how-tabs .tab-btn {
+            padding: 10px 4px !important;
+            font-size: 12.5px !important; /* تصغير مرن للخط ليناسب شاشات الموبايل الصغير */
+            gap: 4px !important;
+            border-radius: 20px !important;
+          }
+          .how-tabs .tab-btn i {
+            font-size: 13px !important;
+          }
+        }
+      </style>
       <div class="how-tabs">
         <button class="tab-btn active" onclick="switchTab('patient', this)"><i class="fas fa-user"></i>للمريض</button>
         <button class="tab-btn" onclick="switchTab('nurse', this)"><i class="fas fa-user-nurse"></i>للممرض</button>
         <button class="tab-btn" onclick="switchTab('facility', this)"><i class="fas fa-hospital"></i>للمنشأة</button>
       </div>
-      
       <div class="tab-content active" id="patient">
         <div class="steps-list">
           <div class="step-item reveal"><div class="step-num">1</div><div class="step-body"><h4>حمل تطبيق CARE</h4><p>أضغط على الينك التالي لتحميل التطبيق او تواصل مع فريق الدعم لتحميل التطبيق "https://apkpure.com/p/cte.care2" أو قم بتحميل التطبيق بشكل مباشر من اسفل الموقع</p></div></div>
@@ -1129,14 +1199,12 @@
           <div class="step-item reveal reveal-delay-1"><div class="step-num">6</div><div class="step-body"><h4>حدد الموقع والموعد</h4><p>استخدم النظام لتحديد عنوانك تلقائياً أو أدخله يدوياً، ثم اختر الوقت المناسب لك.</p></div></div>
         </div>
       </div>
-      
       <div class="tab-content" id="nurse">
         <div class="steps-list">
           <div class="step-item reveal"><div class="step-num" style="background:var(--green); color:#000; width:50px; height:50px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; flex-shrink:0;">1</div><div class="step-body"><h4>سجّل وتحقق</h4><p>أرسل بياناتك ومؤهلاتك للمراجعة. فريق CARE-CTE يراجع ملف كل ممرض لضمان الجودة.</p></div></div>
           <div class="step-item reveal reveal-delay-1"><div class="step-num" style="background:var(--green); color:#000; width:50px; height:50px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; flex-shrink:0;">2</div><div class="step-body"><h4>حدد إتاحتك</h4><p>حدد الأيام والأوقات والزون الجغرافي الذي تفضل تغطيته. أنت المدير الكامل لجدولك.</p></div></div>
         </div>
       </div>
-
       <div class="tab-content" id="facility">
         <div class="steps-list">
           <div class="step-item reveal"><div class="step-num" style="background:var(--green); color:#000; width:50px; height:50px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; flex-shrink:0;">1</div><div class="step-body"><h4>تقديم طلب الانضمام</h4><p>فتح حساباً جديداً لمنشأتك الطبية وقدم طلب انضمام رسمي يتضمن (اسم المنشأة، العنوان بالتفصيل، رقم الهاتف، وصورة التسجيل الضريبي والترخيص) لبدء مراجعة وتفعيل ملفك</p></div></div>
@@ -1145,9 +1213,8 @@
           <div class="step-item reveal reveal-delay-1"><div class="step-num" style="background:var(--green); color:#000; width:50px; height:50px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; flex-shrink:0;">4</div><div class="step-body"><h4>استقبال المرضى وبدء الخدمة</h4><p>الآن منشأتك متصلة بالكامل بالمنظومة! يمكنك استقبال طلبات المرضى وتحديث سجلاتهم الطبية لحظياً بأعلى معايير الأمان والتتبع الذكي فـ كل شبر في مصر.</p></div></div>
         </div>
       </div>
-      
     </div>
-  </section>
+  </section> 
 
   <!-- Numbers Section -->
   <section id="numbers" class="section-sm">

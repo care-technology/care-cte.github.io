@@ -508,9 +508,10 @@
   </div>
 
   <!-- Navigation -->
+  <!-- Navigation -->
   <nav id="navbar">
     <div class="nav-inner">
-      <a href="#hero" class="nav-logo"><img src="https://i.postimg.cc/gJmm7th0/Black-and-White-Simple-Modern-Minimalist-Letter-G-Logo-(1).png" alt="شعار كير لتكنولوجيا الرعاية الرقمية width="160" height="44"></a>
+      <a href="#hero" class="nav-logo"><img src="https://i.postimg.cc/gJmm7th0/Black-and-White-Simple-Modern-Minimalist-Letter-G-Logo-(1).png" alt="شعار كير لتكنولوجيا الرعاية الرقمية" width="160" height="44"></a>
       <ul class="nav-links" id="navLinks">
         <li><a href="#about">من نحن</a></li>
         <a href="team.html">المؤسسين</a>
@@ -522,10 +523,12 @@
         <li><a href="javascript:void(0)" onclick="openCareModal('careBlogModal'); return false;">المقالات</a></li>
         <li><a href="careers.html" style="color: var(--green)">وظائف</a></li>
         <li><a href="#join" class="nav-cta">سجّل الآن</a></li>
-        <li><button class="lang-toggle-btn" id="langToggleDesktop" aria-label="تغيير اللغة">EN</button></li>
+        <!-- زر لغة الديسكتوب بعد ربطه بالدالة السحرية للتبديل السحابي الصامت -->
+        <li><button class="lang-toggle-btn" id="langToggleDesktop" onclick="toggleSilentTranslation(event)" aria-label="تغيير اللغة">EN</button></li>
       </ul>
       <div style="display: flex; align-items: center; gap: 12px;">
-        <button class="lang-toggle-btn mobile-only" id="langToggleMobile" aria-label="تغيير اللغة">EN</button>
+        <!-- زر لغة الموبايل بعد ربطه بالدالة السحرية للتبديل السحابي الصامت -->
+        <button class="lang-toggle-btn mobile-only" id="langToggleMobile" onclick="toggleSilentTranslation(event)" aria-label="تغيير اللغة">EN</button>
         <button class="hamburger" id="hamburgerBtn" aria-expanded="false" aria-label="افتح القائمة"><span></span><span></span><span></span></button>
       </div>
     </div>
@@ -540,9 +543,107 @@
       <a href="partners.html">شركاؤنا</a>
       <a href="event.html">حدث</a>
       <li><a href="javascript:void(0)" onclick="openCareModal('careBlogModal'); return false;">المقالات</a></li>
-<a href="#" onclick="document.getElementById('careersModal').style.display='block'; return false;" class="nav-cta">وظائف وتدريب</a>
+      <a href="careers.html" onclick="document.getElementById('careersModal').style.display='block'; return false;" class="nav-cta">وظائف وتدريب</a>
     </div>
   </nav>
+
+  <!-- حاوية الترجمة المخفية في الكواليس تماماً عن أعين المستخدمين لعدم تشويه المنظر الفاخر -->
+  <div id="google_translate_element" style="display:none !important; visibility:hidden !important; position:absolute; top:-9999px; left:-9999px;"></div>
+
+  <!-- ستايلات قوية ومجبرة للتحكم الفوري ببار جوجل وإخفائه وتثبيت جسم الموقع -->
+  <style>
+    /* إخفاء بار الترجمة العلوي والـ iframe وأي تلميحات تظهر فجأة */
+    iframe.goog-te-banner-frame, 
+    .goog-te-banner-frame, 
+    .goog-te-banner, 
+    #goog-gt-tt, 
+    .goog-te-balloon-frame, 
+    .goog-tooltip, 
+    .goog-tooltip:hover { 
+      display: none !important; 
+      visibility: hidden !important; 
+    }
+    body { 
+      top: 0px !important; 
+      position: static !important; 
+    }
+    /* إخفاء تأثير تظليل الكلمات باللون الأصفر أو تلميحات جوجل عند تحريك الماوس */
+    font[style*="background-color"] {
+      background-color: transparent !important;
+      box-shadow: none !important;
+    }
+  </style>
+
+  <!-- سكربت جلب محرك جوجل السحابي الصامت -->
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'ar',
+        includedLanguages: 'ar,en',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+        autoDisplay: false
+      }, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+  <!-- سكربت التحكم والتشغيل السحري الخالي من التشويه -->
+  <script type="text/javascript">
+    function toggleSilentTranslation(e) {
+      if (e) {
+        e.preventDefault();
+        e.stopPropagation(); // منع تداخل الأحداث الخارجية
+      }
+
+      const desktopBtn = document.getElementById('langToggleDesktop');
+      const mobileBtn = document.getElementById('langToggleMobile');
+      const translateSelect = document.querySelector('.goog-te-combo');
+
+      if (translateSelect) {
+        if (translateSelect.value === 'en') {
+          // في حال كانت اللغة إنجليزية، نعود فوراً للعربية
+          translateSelect.value = 'ar';
+          translateSelect.dispatchEvent(new Event('change'));
+          if (desktopBtn) desktopBtn.textContent = 'EN';
+          if (mobileBtn) mobileBtn.textContent = 'EN';
+          document.body.dir = 'rtl';
+        } else {
+          // في حال كانت اللغة عربية، نحول فوراً للملف الإنجليزي بالكامل
+          translateSelect.value = 'en';
+          translateSelect.dispatchEvent(new Event('change'));
+          if (desktopBtn) desktopBtn.textContent = 'AR';
+          if (mobileBtn) mobileBtn.textContent = 'AR';
+          document.body.dir = 'ltr';
+        }
+      } else {
+        // إذا كان السكريبت لا يزال في مرحلة التهيئة، نغير الزر لشكل الانتظار المؤقت لكي لا يشعر الزائر بالتعليق
+        if (desktopBtn) desktopBtn.textContent = '...';
+        if (mobileBtn) mobileBtn.textContent = '...';
+        setTimeout(() => {
+          toggleSilentTranslation();
+        }, 200);
+      }
+    }
+
+    // تتبع مستمر وتلقائي لضمان مزامنة نصوص الأزرار والاتجاهات
+    setInterval(() => {
+      const translateSelect = document.querySelector('.goog-te-combo');
+      const desktopBtn = document.getElementById('langToggleDesktop');
+      const mobileBtn = document.getElementById('langToggleMobile');
+      
+      if (translateSelect && desktopBtn && mobileBtn) {
+        if (translateSelect.value === 'en') {
+          if (desktopBtn.textContent !== 'AR') desktopBtn.textContent = 'AR';
+          if (mobileBtn.textContent !== 'AR') mobileBtn.textContent = 'AR';
+          document.body.dir = 'ltr';
+        } else {
+          if (desktopBtn.textContent !== 'EN') desktopBtn.textContent = 'EN';
+          if (mobileBtn.textContent !== 'EN') mobileBtn.textContent = 'EN';
+          document.body.dir = 'rtl';
+        }
+      }
+    }, 400);
+  </script>
 
   <!-- Hero Section -->
   <section id="hero">

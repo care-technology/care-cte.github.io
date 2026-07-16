@@ -764,7 +764,7 @@
           }
         </style>
         
-        <h3 class="video-title"><i class="fas fa-play-circle" style="color: var(--green);"></i> دليل مرئي:عن كير تكنولوجي</h3>
+        <h3 class="video-title"><i class="fas fa-play-circle" style="color: var(--green);"></i> دليل مرئي: كيفية استخدام نظام كير والمنظومة الرقمية</h3>
         
         <div class="video-container">
           <!-- تم دمج رابطك المباشر الحصري بنجاح مع خواص التشغيل الداخلي الفوري وبدون أخطاء -->
@@ -778,6 +778,331 @@
         <a href="#join" class="btn-primary" style="padding:16px 36px;font-size:16px;"><i class="fas fa-hand-holding-medical"></i>اطلب الخدمة الآن</a>
       </div>
     </div>
+    <div class="product-showcase-section reveal" style="margin-top: 60px; text-align: center; position: relative; z-index: 999;">
+        <style>
+          .product-showcase-section h3 {
+            font-family: var(--font-main);
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 20px;
+          }
+          .product-interactive-card {
+            background: var(--bg2);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 30px;
+            max-width: 500px;
+            margin: 0 auto;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            position: relative;
+          }
+          .product-interactive-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--green);
+            box-shadow: 0 15px 35px rgba(126, 217, 87, 0.25);
+          }
+          .product-interactive-card img {
+            width: 100%;
+            max-width: 280px;
+            height: auto;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            transition: transform 0.3s ease;
+          }
+          .product-interactive-card:hover img {
+            transform: scale(1.03);
+          }
+          .product-badge {
+            display: inline-block;
+            background: rgba(126, 217, 87, 0.15);
+            color: var(--green);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 10px;
+          }
+          .product-btn {
+            background: linear-gradient(90deg, var(--green), var(--teal));
+            color: var(--bg);
+            border: none;
+            font-family: var(--font-main);
+            font-weight: 800;
+            font-size: 15px;
+            padding: 12px 30px;
+            border-radius: 25px;
+            margin-top: 15px;
+            cursor: pointer;
+            transition: transform 0.2s;
+          }
+          .product-btn:hover {
+            transform: scale(1.05);
+          }
+
+          /* تصميم المودال الحصري الفائق الحماية والظهور */
+          .unique-care-overlay {
+            display: none !important; /* نتحكم بالـ flex برمجياً */
+            position: fixed !important;
+            top: 0 !important; 
+            left: 0 !important; 
+            width: 100% !important; 
+            height: 100% !important;
+            background: rgba(10, 8, 25, 0.95) !important;
+            z-index: 10000000 !important; /* أعلى من أي نافذة أو عنصر آخر بالموقع */
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            backdrop-filter: blur(10px) !important;
+            -webkit-backdrop-filter: blur(10px) !important;
+          }
+          .unique-care-box {
+            background: #1a1535 !important;
+            border: 2px solid rgba(107, 92, 231, 0.3) !important;
+            width: 100%;
+            max-width: 580px;
+            border-radius: 16px;
+            padding: 30px;
+            position: relative;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+            direction: rtl;
+            max-height: 90vh;
+            overflow-y: auto;
+          }
+          .unique-close-btn {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            font-size: 32px;
+            color: #c8c4e0;
+            cursor: pointer;
+            transition: color 0.2s;
+            line-height: 1;
+            font-weight: bold;
+          }
+          .unique-close-btn:hover { color: #7ed957; }
+          
+          .modal-title-custom {
+            font-family: var(--font-main);
+            font-size: 20px;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(107, 92, 231, 0.25);
+            padding-bottom: 12px;
+            text-align: right;
+          }
+          .modal-note-box-custom {
+            background: rgba(107, 92, 231, 0.1);
+            border-right: 4px solid #6b5ce7;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            font-size: 13px;
+            color: #c8c4e0;
+            line-height: 1.6;
+            text-align: right;
+          }
+          .form-group-custom {
+            margin-bottom: 16px;
+            text-align: right;
+          }
+          .form-group-custom label {
+            display: block;
+            font-size: 14px;
+            color: #c8c4e0;
+            margin-bottom: 6px;
+            font-family: var(--font-main);
+          }
+          .form-control-custom {
+            width: 100%;
+            padding: 12px;
+            background: #1e1a3d;
+            border: 1px solid rgba(107, 92, 231, 0.25);
+            border-radius: 8px;
+            color: #ffffff;
+            font-family: var(--font-body);
+            font-size: 14.5px;
+            outline: none;
+            text-align: right;
+          }
+          .form-control-custom:focus { border-color: #7ed957; }
+          
+          .btn-submit-custom {
+            width: 100%;
+            padding: 14px;
+            background: #7ed957;
+            color: #12102a;
+            font-family: var(--font-main);
+            font-weight: 700;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.2s;
+          }
+          .btn-submit-custom:hover { background: #6ec44d; }
+          
+          .success-alert-custom {
+            display: none;
+            background: rgba(126, 217, 87, 0.15);
+            border: 1px solid #7ed957;
+            color: #7ed957;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: bold;
+            margin-top: 15px;
+            font-family: var(--font-body);
+          }
+        </style>
+
+        <h3><i class="fas fa-cubes" style="color: var(--green);"></i> هويتك الطبية الذكية</h3>
+        
+        <div class="product-interactive-card" id="uniqueProductCard">
+          <span class="product-badge">الإصدار الأحدث: Life Tag X200</span>
+          <img src="https://i.postimg.cc/9XY9s0LB/Blue-White-Bold-Simple-Travel-Agency-Logo.png" alt="Life Tag X200 Smart Bracelet" />
+          <h4 style="font-family: var(--font-main); font-size: 18px; color: var(--white); margin-bottom: 8px;">إسورة كير الذكية (Life Tag X200)</h4>
+          <p style="font-size: 13.5px; color: var(--light);">انقر فوق صورة الإسورة لطلبها فوراً وتأمين ملفك الطبي الرقمي في ثوانٍ معدودة.</p>
+          <button class="product-btn" id="uniqueProductBtn" type="button"><i class="fas fa-shopping-cart"></i> اطلب الآن</button>
+        </div>
+      </div>
+
+      <div class="unique-care-overlay" id="uniqueCareModal">
+        <div class="unique-care-box">
+          <span class="unique-close-btn" id="uniqueCloseBtn">&times;</span>
+          <div class="modal-title-custom"> حجز إسورة Life Tag X200 الذكية</div>
+          
+          <div class="modal-note-box-custom">
+            <strong>ملاحظة هامة جداً للعملاء:</strong><br>
+            عند ملء نموذج الطلب سيتم ارسال طلب لاقرب منشأة طبية اليك تابعة لنفس مركزك او محافظتك وسيتم ابلاغك عند استلام المنتج من اي منشأة طبية قريبة منك فقط لضمان توثيق بياناتك، عند استلامك للمنتج سيقوم الطبيب بتوثيق بياناتك او تفعيل حسابك وفقاً لشروط استخدام خدمات منظومة كير لتكنولوجيا الرعاية الرقمية.
+          </div>
+
+          <form id="uniqueOrderForm" action="https://formspree.io/f/xbdndarb" method="POST">
+            <div class="form-group-custom">
+              <label for="uniqueName">الاسم بالكامل</label>
+              <input type="text" name="الاسم بالكامل" id="uniqueName" class="form-control-custom" placeholder="اكتب الاسم ثلاثياً" required />
+            </div>
+            
+            <div class="form-group-custom">
+              <label for="uniqueMobile">رقم الموبايل</label>
+              <input type="tel" name="رقم الهاتف" id="uniqueMobile" class="form-control-custom" placeholder="مثال: 010XXXXXXXX" required />
+            </div>
+
+            <div class="form-group-custom">
+              <label for="uniqueEmail">البريد الإلكتروني</label>
+              <input type="email" name="البريد الإلكتروني" id="uniqueEmail" class="form-control-custom" placeholder="caretechnologie.info@gamil.com" required />
+            </div>
+
+            <div class="form-group-custom">
+              <label for="uniqueGov">المحافظة والمركز التابع له</label>
+              <input type="text" name="المحافظة والمركز" id="uniqueGov" class="form-control-custom" placeholder="مثال: الفيوم - مركز ابشواي" required />
+            </div>
+
+            <div class="form-group-custom">
+              <label for="uniqueAddress">العنوان التفصيلي</label>
+              <input type="text" name="العنوان بالتفصيل" id="uniqueAddress" class="form-control-custom" placeholder="اسم الشارع - بجانب معالم مميزة" required />
+            </div>
+
+            <button type="submit" class="btn-submit-custom">إرسال</button>
+          </form>
+
+          <div class="success-alert-custom" id="uniqueSuccessAlert">
+            <i class="fas fa-check-circle"></i> تم إرسال طلب حجز إسورتك بنجاح! سيقوم فريق كير بالتنسيق مع أقرب مستشفى أو منشأة طبية في مركزك وسنتصل بك فورًا لتوجيهك للتفعيل والاستلام.
+          </div>
+        </div>
+      </div>
+
+      <script>
+        (function() {
+          function initUniqueModal() {
+            const card = document.getElementById('uniqueProductCard');
+            const btn = document.getElementById('uniqueProductBtn');
+            const modal = document.getElementById('uniqueCareModal');
+            const closeBtn = document.getElementById('uniqueCloseBtn');
+            const form = document.getElementById('uniqueOrderForm');
+            const alertSuccess = document.getElementById('uniqueSuccessAlert');
+
+            if (!card || !modal) return;
+
+            // دالة الفتح الآمنة والمستقلة
+            function forceOpenModal(e) {
+              if (e) {
+                e.preventDefault();
+                e.stopPropagation(); // كسر أي تداخل نقرات خارجي
+              }
+              modal.style.setProperty('display', 'flex', 'important');
+              document.body.style.setProperty('overflow', 'hidden', 'important');
+            }
+
+            // دالة الإغلاق الآمنة
+            function forceCloseModal(e) {
+              if (e) {
+                e.preventDefault();
+                e.stopPropagation();
+              }
+              modal.style.setProperty('display', 'none', 'important');
+              document.body.style.removeProperty('overflow');
+            }
+
+            // ربط الأحداث
+            card.onclick = forceOpenModal;
+            if (btn) btn.onclick = forceOpenModal;
+            if (closeBtn) closeBtn.onclick = forceCloseModal;
+
+            // الإغلاق عند النقر بالخارج
+            modal.onclick = function(e) {
+              if (e.target === modal) {
+                forceCloseModal();
+              }
+            };
+
+            // حماية الفورم من تداخل الـ scripts الخاصة بالموقع
+            if (form) {
+              form.onsubmit = function(event) {
+                event.preventDefault();
+                event.stopPropagation();
+                
+                const submitBtn = form.querySelector('.btn-submit-custom');
+                const formData = new FormData(form);
+
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'جاري إرسال الطلب...';
+
+                fetch(form.action, {
+                  method: 'POST',
+                  body: formData,
+                  headers: {
+                    'Accept': 'application/json'
+                  }
+                }).then(response => {
+                  if (response.ok) {
+                    form.style.setProperty('display', 'none', 'important');
+                    alertSuccess.style.setProperty('display', 'block', 'important');
+                  } else {
+                    alert('حدث خطأ أثناء إرسال طلبك، يرجى إعادة المحاولة.');
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'إرسال';
+                  }
+                }).catch(error => {
+                  alert('تأكد من اتصالك بالإنترنت ثم حاول مرة أخرى.');
+                  submitBtn.disabled = false;
+                  submitBtn.textContent = 'إرسال';
+                });
+              };
+            }
+          }
+
+          // تشغيل السكريبت فوراً وبمجرد تحميل الصفحة بالكامل
+          if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initUniqueModal);
+          } else {
+            initUniqueModal();
+          }
+        })();
+      </script>
 </section>
  <section id="how" class="section" style="background:var(--bg2)">
     <div class="blob-container"><div class="blob" style="width:400px;height:400px;bottom:-100px;right:-100px;background:var(--purple);"></div></div>

@@ -40,26 +40,26 @@
   <style>
     /* ─── CSS Variables ─────────────────────────────────────── */
     :root {
-      --bg: #12102a;
-      --bg2: #1a1535;
-      --card: #1e1a3d;
-      --card2: #251f4a;
-      --purple: #6b5ce7;
-      --purple-dim: #3d2b8e;
+      --bg: #f8fafc;
+      --bg2: #f1f5f9;
+      --card: #ffffff;
+      --card2: #e2e8f0;
+      --purple: #00d2ff;
+      --purple-dim: #0099cc;
       --green: #7ed957;
       --green-dim: #4caf50;
-      --white: #ffffff;
-      --off-white: #f0eeff;
-      --light: #c8c4e0;
-      --muted: #6b7280;
+      --white: #0f172a;
+      --off-white: #1e293b;
+      --light: #334155;
+      --muted: #64748b;
       --accent: #ff6b6b;
       --gold: #e8b84b;
       --teal: #00c9b1;
-      --border: rgba(107, 92, 231, 0.25);
+      --border: rgba(0, 210, 255, 0.25);
       --radius: 16px;
       --radius-sm: 10px;
-      --shadow: 0 8px 40px rgba(0, 0, 0, 0.35);
-      --glow-p: 0 0 40px rgba(107, 92, 231, 0.25);
+      --shadow: 0 8px 40px rgba(0, 0, 0, 0.08);
+      --glow-p: 0 0 40px rgba(0, 210, 255, 0.25);
       --glow-g: 0 0 40px rgba(126, 217, 87, 0.2);
       --font-main: "Cairo", sans-serif;
       --font-body: "Tajawal", sans-serif;
@@ -102,9 +102,9 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      background: rgba(0, 20, 243, 0.847);
+      background: rgba(0, 210, 255, 0.1);
       border: 1px solid var(--border);
-      color: var(--green);
+      color: var(--green-dim);
       padding: 6px 18px;
       border-radius: 999px;
       font-size: 13px;
@@ -143,20 +143,20 @@
     /* ─── NAV ────────────────────────────────────────────────── */
     #navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 0; transition: all 0.4s ease; }
     #navbar.scrolled {
-      background: rgba(18, 16, 42, 0.95);
+      background: rgba(248, 250, 252, 0.95);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
       border-bottom: 1px solid var(--border);
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
     }
     .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 14px 24px; max-width: 1200px; margin: 0 auto; }
     .nav-logo { display: flex; align-items: center; gap: 10px; font-family: var(--font-main); font-size: 24px; font-weight: 900; color: var(--white); flex-shrink: 0; }
     .nav-logo img { height: 44px; width: auto; object-fit: contain; display: block; max-width: 160px; }
     .nav-links { display: flex; align-items: center; gap: 4px; list-style: none; }
     .nav-links a { padding: 8px 14px; border-radius: var(--radius-sm); font-size: 14px; font-weight: 600; color: var(--light); transition: all 0.25s; font-family: var(--font-main); white-space: nowrap; }
-    .nav-links a:hover, .nav-links a.nav-active { color: var(--white); background: rgba(107, 92, 231, 0.15); }
+    .nav-links a:hover, .nav-links a.nav-active { color: var(--white); background: rgba(0, 210, 255, 0.15); }
     .nav-cta { background: var(--green) !important; color: #1a1535 !important; font-weight: 700 !important; padding: 9px 22px !important; border-radius: var(--radius-sm) !important; }
-    .nav-cta:hover { background: #ffffff !important; transform: translateY(-1px); box-shadow: 0 4px 20px rgba(126, 217, 87, 0.35); }
+    .nav-cta:hover { background: #00d2ff !important; transform: translateY(-1px); box-shadow: 0 4px 20px rgba(0, 210, 255, 0.35); }
 
     .hamburger { display: none; flex-direction: column; gap: 6px; cursor: pointer; padding: 8px; background: none; border: none; z-index: 1001; }
     .hamburger span { width: 28px; height: 2px; background: var(--white); border-radius: 2px; transition: all 0.35s ease; display: block; }
@@ -167,17 +167,17 @@
     .mobile-menu {
       position: fixed; top: 0; left: -100%; width: 85%; height: 100vh; background: var(--bg); padding: 100px 32px 40px;
       display: flex; flex-direction: column; gap: 20px; transition: left 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      z-index: 999; box-shadow: 20px 0 60px rgba(0, 0, 0, 0.5); overflow-y: auto;
+      z-index: 999; box-shadow: 20px 0 60px rgba(0, 0, 0, 0.1); overflow-y: auto;
     }
     .mobile-menu.active { left: 0; }
     .mobile-menu a { font-family: var(--font-main); font-size: 20px; font-weight: 700; color: var(--light); text-decoration: none; padding-bottom: 12px; border-bottom: 1px solid var(--border); transition: color 0.2s; }
-    .mobile-menu a:hover { color: var(--green); }
+    .mobile-menu a:hover { color: var(--purple); }
 
     /* ─── HERO ───────────────────────────────────────────────── */
     #hero { position: relative; min-height: 100vh; display: flex; align-items: center; justify-content: center; overflow: hidden; padding-top: 80px; }
     .hero-grid {
       position: absolute; inset: 0; z-index: 0;
-      background-image: linear-gradient(rgba(107, 92, 231, 0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(107, 92, 231, 0.06) 1px, transparent 1px);
+      background-image: linear-gradient(rgba(0, 210, 255, 0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 210, 255, 0.08) 1px, transparent 1px);
       background-size: 60px 60px; animation: grid-pulse 8s ease-in-out infinite;
     }
     @keyframes grid-pulse { 0%, 100% { opacity: 0.5; } 50% { opacity: 1; } }
@@ -187,30 +187,30 @@
     
     .hero-badge { margin-bottom: 24px; animation: fadeUp 0.8s 0.1s ease both; }
     .hero-title { font-family: var(--font-main); font-size: clamp(36px, 6vw, 72px); font-weight: 900; line-height: 1.15; margin-bottom: 24px; animation: fadeUp 0.8s 0.2s ease both; }
-    .hero-title .highlight { color: var(--green); position: relative; display: inline-block; }
-    .hero-title .highlight::after { content: ""; position: absolute; bottom: -4px; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--green), transparent); border-radius: 2px; }
+    .hero-title .highlight { color: var(--purple); position: relative; display: inline-block; }
+    .hero-title .highlight::after { content: ""; position: absolute; bottom: -4px; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--purple), transparent); border-radius: 2px; }
     
     .hero-sub { font-size: clamp(16px, 2vw, 20px); color: var(--light); max-width: 600px; margin: 0 auto 40px; line-height: 1.8; animation: fadeUp 0.8s 0.3s ease both; }
     .hero-btns { display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; animation: fadeUp 0.8s 0.4s ease both; margin-bottom: 64px; }
     
     .btn-primary {
-      background: var(--green); color: #1a1535; padding: 16px 36px; border-radius: var(--radius-sm);
+      background: var(--purple); color: #0f172a; padding: 16px 36px; border-radius: var(--radius-sm);
       font-size: 16px; font-weight: 800; font-family: var(--font-main); border: none; cursor: pointer;
-      transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 20px rgba(126, 217, 87, 0.3);
+      transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 20px rgba(0, 210, 255, 0.3);
     }
-    .btn-primary:hover { background: #2b00ff; transform: translateY(-3px); box-shadow: 0 8px 30px rgba(126, 217, 87, 0.45); }
+    .btn-primary:hover { background: #00b8e6; transform: translateY(-3px); box-shadow: 0 8px 30px rgba(0, 210, 255, 0.45); }
     
     .btn-secondary {
       background: transparent; color: var(--white); padding: 15px 36px; border-radius: var(--radius-sm);
       font-size: 16px; font-weight: 700; font-family: var(--font-main); border: 1px solid var(--border); cursor: pointer;
       transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px;
     }
-    .btn-secondary:hover { background: rgba(107, 92, 231, 0.15); border-color: var(--purple); transform: translateY(-3px); }
+    .btn-secondary:hover { background: rgba(0, 210, 255, 0.15); border-color: var(--purple); transform: translateY(-3px); }
 
     .hero-stats { display: flex; align-items: center; justify-content: center; gap: 0; flex-wrap: wrap; animation: fadeUp 0.8s 0.5s ease both; }
     .stat-item { text-align: center; padding: 24px 40px; border-right: 1px solid var(--border); }
     .stat-item:last-child { border-right: none; }
-    .stat-num { font-family: var(--font-main); font-size: 42px; font-weight: 900; color: var(--green); line-height: 1; display: block; }
+    .stat-num { font-family: var(--font-main); font-size: 42px; font-weight: 900; color: var(--purple); line-height: 1; display: block; }
     .stat-lbl { font-size: 13px; color: var(--muted); display: block; margin-top: 6px; }
 
     /* ─── SCROLL INDICATOR ───────────────────────────────────── */
@@ -231,34 +231,34 @@
     .highlight-item { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 20px; transition: all 0.3s; }
     .highlight-item:hover { border-color: var(--purple); transform: translateY(-4px); box-shadow: var(--glow-p); }
     .highlight-item .icon { font-size: 24px; margin-bottom: 10px; }
-    .highlight-item h4 { font-family: var(--font-main); font-size: 14px; font-weight: 700; color: var(--green); margin-bottom: 6px; }
+    .highlight-item h4 { font-family: var(--font-main); font-size: 14px; font-weight: 700; color: var(--purple); margin-bottom: 6px; }
     .highlight-item p { font-size: 12px; color: var(--muted); margin: 0; }
     
     .about-visual { position: relative; display: flex; justify-content: center; }
     .phone-mockup {
       width: 260px; background: var(--card); border-radius: 40px; border: 2px solid var(--border); padding: 16px;
-      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5), var(--glow-p); position: relative; transform: perspective(800px) rotateY(-8deg); transition: transform 0.4s;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.08), var(--glow-p); position: relative; transform: perspective(800px) rotateY(-8deg); transition: transform 0.4s;
     }
     .phone-mockup:hover { transform: perspective(800px) rotateY(0deg); }
     .phone-screen {
       background: var(--purple); border-radius: 28px; padding: 24px 20px; min-height: 460px;
       display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; position: relative; overflow: hidden;
     }
-    .phone-screen::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 50% 30%, rgba(126, 217, 87, 0.2), transparent 60%); }
-    .phone-notch { position: absolute; top: 12px; left: 50%; transform: translateX(-50%); width: 80px; height: 6px; background: rgba(0, 0, 0, 0.4); border-radius: 3px; }
-    .phone-logo { font-size: 24px; font-weight: 800; color: var(--green); margin-bottom: 5px; font-family: var(--font-main); z-index: 1; }
-    .phone-sub { font-size: 10px; opacity: 0.7; text-align: center; padding: 0 20px; margin-bottom: 40px; z-index: 1; }
+    .phone-screen::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 50% 30%, rgba(255, 255, 255, 0.3), transparent 60%); }
+    .phone-notch { position: absolute; top: 12px; left: 50%; transform: translateX(-50%); width: 80px; height: 6px; background: rgba(0, 0, 0, 0.2); border-radius: 3px; }
+    .phone-logo { font-size: 24px; font-weight: 800; color: #0f172a; margin-bottom: 5px; font-family: var(--font-main); z-index: 1; }
+    .phone-sub { font-size: 10px; opacity: 0.8; text-align: center; color: #0f172a; padding: 0 20px; margin-bottom: 40px; z-index: 1; }
     .phone-btns { display: flex; flex-direction: column; gap: 12px; width: 80%; z-index: 1; }
-    .phone-btn { background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); padding: 12px; border-radius: 12px; text-align: center; font-family: var(--font-main); font-size: 13px; color: var(--white); }
+    .phone-btn { background: rgba(15, 23, 42, 0.1); border: 1px solid rgba(15, 23, 42, 0.2); padding: 12px; border-radius: 12px; text-align: center; font-family: var(--font-main); font-size: 13px; color: #0f172a; }
 
     .float-badge {
-      position: absolute; background: rgba(18, 16, 42, 0.9); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
-      border: 1px solid var(--border); padding: 14px 20px; border-radius: 16px; display: flex; align-items: center; gap: 10px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); z-index: 3;
+      position: absolute; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
+      border: 1px solid var(--border); padding: 14px 20px; border-radius: 16px; display: flex; align-items: center; gap: 10px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); z-index: 3;
     }
     .float-badge.top-left { top: 10%; left: -5%; animation: float-badge-anim 5s ease-in-out infinite; }
     .float-badge.bottom-right { bottom: 10%; right: -5%; animation: float-badge-anim 5s ease-in-out infinite 1s; }
     @keyframes float-badge-anim { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
-    .fb-num { font-family: var(--font-main); font-size: 28px; font-weight: 900; color: var(--green); line-height: 1; }
+    .fb-num { font-family: var(--font-main); font-size: 28px; font-weight: 900; color: var(--purple); line-height: 1; }
     .fb-txt { font-size: 11px; color: var(--light); line-height: 1.5; }
 
     /* ─── PROBLEM ────────────────────────────────────────────── */
@@ -272,7 +272,7 @@
     .problem-card .pc-stat { font-family: var(--font-main); font-size: 36px; font-weight: 900; color: var(--accent); }
     .problem-card .pc-statlbl { font-size: 11px; color: var(--muted); display: block; }
 
-    .drama-quote { background: linear-gradient(135deg, rgba(255, 107, 107, 0.1), rgba(107, 92, 231, 0.1)); border: 1px solid rgba(255, 107, 107, 0.3); border-radius: var(--radius); padding: 36px 48px; margin-bottom: 56px; text-align: center; position: relative; }
+    .drama-quote { background: linear-gradient(135deg, rgba(255, 107, 107, 0.05), rgba(0, 210, 255, 0.05)); border: 1px solid rgba(255, 107, 107, 0.2); border-radius: var(--radius); padding: 36px 48px; margin-bottom: 56px; text-align: center; position: relative; }
     .drama-quote::before { content: '"'; position: absolute; top: -20px; right: 40px; font-size: 120px; color: rgba(255, 107, 107, 0.15); font-family: Georgia, serif; line-height: 1; }
     .drama-quote p { font-size: 20px; font-style: italic; color: var(--white); font-family: var(--font-main); line-height: 1.6; }
     .drama-quote span { color: var(--accent); font-style: normal; }
@@ -284,10 +284,10 @@
     .solution-side { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 36px; transition: all 0.3s; }
     .solution-side:hover { border-color: var(--purple); box-shadow: var(--glow-p); transform: translateY(-4px); }
     .solution-side h3 { font-family: var(--font-main); font-size: 18px; font-weight: 800; margin-bottom: 24px; display: flex; align-items: center; gap: 10px; }
-    .solution-side h3 .tag { background: rgba(107, 92, 231, 0.2); border: 1px solid var(--border); color: var(--green); padding: 3px 12px; border-radius: 999px; font-size: 11px; }
+    .solution-side h3 .tag { background: rgba(0, 210, 255, 0.1); border: 1px solid var(--border); color: var(--purple); padding: 3px 12px; border-radius: 999px; font-size: 11px; }
     
     .feature-item { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 18px; }
-    .feature-item .check { width: 22px; height: 22px; min-width: 22px; background: rgba(126, 217, 87, 0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; color: var(--green); margin-top: 2px; }
+    .feature-item .check { width: 22px; height: 22px; min-width: 22px; background: rgba(0, 210, 255, 0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; color: var(--purple); margin-top: 2px; }
     .feature-item p { font-size: 14px; color: var(--light); line-height: 1.6; }
     .feature-item strong { color: var(--white); }
 
@@ -311,15 +311,15 @@
     /* ─── SERVICES ───────────────────────────────────────────── */
     .services-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; }
     .service-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 32px; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); position: relative; overflow: hidden; text-align: right; }
-    .service-card:hover { transform: translateY(-8px); border-color: var(--green); box-shadow: 0 20px 50px rgba(126, 217, 87, 0.15); }
-    .service-card::after { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: linear-gradient(90deg, var(--green), transparent); opacity: 0; transition: opacity 0.3s; }
+    .service-card:hover { transform: translateY(-8px); border-color: var(--purple); box-shadow: 0 20px 50px rgba(0, 210, 255, 0.15); }
+    .service-card::after { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: linear-gradient(90deg, var(--purple), transparent); opacity: 0; transition: opacity 0.3s; }
     .service-card:hover::after { opacity: 1; }
 
     /* ─── HOW IT WORKS ───────────────────────────────────────── */
     #how { position: relative; overflow: hidden; }
     .how-tabs { display: flex; justify-content: center; gap: 0; margin-bottom: 56px; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 6px; width: fit-content; margin-left: auto; margin-right: auto; }
     .tab-btn { padding: 12px 36px; border-radius: 8px; font-family: var(--font-main); font-size: 15px; font-weight: 700; color: var(--muted); background: transparent; border: none; cursor: pointer; transition: all 0.3s; display: flex; align-items: center; gap: 8px; }
-    .tab-btn.active { background: var(--purple); color: var(--white); box-shadow: var(--glow-p); }
+    .tab-btn.active { background: var(--purple); color: #0f172a; box-shadow: var(--glow-p); }
     
     .tab-content { display: none; }
     .tab-content.active { display: block; }
@@ -328,7 +328,7 @@
     
     .step-item { display: flex; align-items: flex-start; gap: 24px; padding: 28px 0; flex-direction: row; }
     .step-num { width: 60px; height: 60px; min-width: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--font-main); font-size: 20px; font-weight: 900; position: relative; z-index: 1; }
-    .tab-content#patient .step-num { background: var(--purple); color: var(--white); box-shadow: var(--glow-p); }
+    .tab-content#patient .step-num { background: var(--purple); color: #0f172a; box-shadow: var(--glow-p); }
     .tab-content#nurse .step-num { background: var(--green); color: #1a1535; box-shadow: var(--glow-g); }
     
     .step-body { flex: 1; text-align: right; }
@@ -342,17 +342,17 @@
     .why-card::after { content: ""; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--purple), var(--green)); transform: scaleX(0); transition: transform 0.35s; }
     .why-card:hover::after { transform: scaleX(1); }
     .why-card:hover { transform: translateY(-6px); box-shadow: var(--glow-p); border-color: var(--purple); }
-    .why-icon { width: 56px; height: 56px; background: rgba(107, 92, 231, 0.15); border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 20px; }
+    .why-icon { width: 56px; height: 56px; background: rgba(0, 210, 255, 0.1); border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 20px; }
     .why-card h3 { font-family: var(--font-main); font-size: 17px; font-weight: 800; margin-bottom: 12px; color: var(--white); }
     .why-card p { font-size: 14px; color: var(--light); line-height: 1.8; }
 
     /* ─── NUMBERS ────────────────────────────────────────────── */
-    #numbers { position: relative; overflow: hidden; background: linear-gradient(135deg, var(--purple-dim) 0%, var(--bg) 60%); }
-    #numbers::before { content: ""; position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%236B5CE7' fill-opacity='0.06'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
+    #numbers { position: relative; overflow: hidden; background: linear-gradient(135deg, rgba(0, 210, 255, 0.1) 0%, var(--bg) 60%); }
+    #numbers::before { content: ""; position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2300D2FF' fill-opacity='0.06'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
     .numbers-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; background: var(--border); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; position: relative; z-index: 1; }
-    .number-item { background: rgba(30, 26, 61, 0.6); padding: 48px 24px; text-align: center; backdrop-filter: blur(10px); transition: all 0.3s; }
-    .number-item:hover { background: rgba(107, 92, 231, 0.15); }
-    .num-val { font-family: var(--font-main); font-size: 52px; font-weight: 900; color: var(--green); line-height: 1; display: block; margin-bottom: 8px; }
+    .number-item { background: rgba(255, 255, 255, 0.7); padding: 48px 24px; text-align: center; backdrop-filter: blur(10px); transition: all 0.3s; }
+    .number-item:hover { background: rgba(0, 210, 255, 0.1); }
+    .num-val { font-family: var(--font-main); font-size: 52px; font-weight: 900; color: var(--purple); line-height: 1; display: block; margin-bottom: 8px; }
     .num-lbl { font-size: 15px; color: var(--light); display: block; margin-bottom: 6px; font-weight: 600; }
     .num-sub { font-size: 12px; color: var(--muted); }
 
@@ -364,7 +364,7 @@
     .testi-card .quote-mark { font-size: 60px; color: var(--purple); line-height: 0.5; font-family: Georgia, serif; margin-bottom: 20px; display: block; opacity: 0.5; }
     .testi-card p { font-size: 14px; color: var(--light); line-height: 1.8; margin-bottom: 24px; font-style: italic; }
     .testi-author { display: flex; align-items: center; gap: 14px; }
-    .testi-avatar { width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, var(--purple), var(--green)); display: flex; align-items: center; justify-content: center; font-family: var(--font-main); font-size: 16px; font-weight: 800; color: var(--white); flex-shrink: 0; }
+    .testi-avatar { width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, var(--purple), var(--green)); display: flex; align-items: center; justify-content: center; font-family: var(--font-main); font-size: 16px; font-weight: 800; color: #0f172a; flex-shrink: 0; }
     .testi-name { font-family: var(--font-main); font-size: 15px; font-weight: 700; color: var(--white); }
     .testi-role { font-size: 12px; color: var(--muted); }
     .testi-stars { color: var(--gold); font-size: 12px; margin-bottom: 2px; }
@@ -377,7 +377,7 @@
     .join-benefits { display: flex; flex-direction: column; gap: 16px; }
     
     .benefit-item { display: flex; align-items: center; gap: 16px; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 16px 20px; transition: all 0.3s; }
-    .benefit-item:hover { border-color: var(--green); transform: translateX(-6px); }
+    .benefit-item:hover { border-color: var(--purple); transform: translateX(-6px); }
     .benefit-item .b-icon { font-size: 22px; }
     .benefit-item p { font-size: 14px; color: var(--light); margin: 0; }
     .benefit-item strong { color: var(--white); }
@@ -391,18 +391,18 @@
     .form-group label { display: block; font-size: 13px; font-weight: 700; color: var(--light); margin-bottom: 8px; font-family: var(--font-main); }
     .form-group input, .form-group select, .form-group textarea { width: 100%; background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 14px 18px; font-size: 14px; color: var(--white); font-family: var(--font-body); transition: all 0.3s; outline: none; appearance: none; }
     .form-group input::placeholder, .form-group textarea::placeholder { color: var(--muted); }
-    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--purple); box-shadow: 0 0 0 3px rgba(107, 92, 231, 0.15); }
-    .form-group select option { background: var(--bg2); color: var(--white); }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--purple); box-shadow: 0 0 0 3px rgba(0, 210, 255, 0.15); }
+    .form-group select option { background: var(--card); color: var(--white); }
     .form-group textarea { resize: vertical; min-height: 110px; }
     
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    .form-submit { width: 100%; background: var(--green); color: #1a1535; padding: 16px; border-radius: var(--radius-sm); font-size: 16px; font-weight: 800; font-family: var(--font-main); border: none; cursor: pointer; transition: all 0.3s; display: flex; align-items: center; justify-content: center; gap: 8px; }
-    .form-submit:hover { background: #9ae866; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(126, 217, 87, 0.3); }
+    .form-submit { width: 100%; background: var(--purple); color: #0f172a; padding: 16px; border-radius: var(--radius-sm); font-size: 16px; font-weight: 800; font-family: var(--font-main); border: none; cursor: pointer; transition: all 0.3s; display: flex; align-items: center; justify-content: center; gap: 8px; }
+    .form-submit:hover { background: #00b8e6; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0, 210, 255, 0.3); }
     .form-submit:disabled { opacity: 0.7; cursor: not-allowed; transform: none; }
     
     .form-success { display: none; text-align: center; padding: 32px; }
     .form-success .success-icon { font-size: 56px; margin-bottom: 16px; }
-    .form-success h3 { font-family: var(--font-main); font-size: 22px; font-weight: 800; color: var(--green); margin-bottom: 10px; }
+    .form-success h3 { font-family: var(--font-main); font-size: 22px; font-weight: 800; color: var(--purple); margin-bottom: 10px; }
     .form-success p { font-size: 14px; color: var(--light); }
 
     /* ─── CONTACT ────────────────────────────────────────────── */
@@ -413,17 +413,17 @@
     .contact-cards { display: flex; flex-direction: column; gap: 16px; }
     .contact-card { display: flex; align-items: center; gap: 18px; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 20px 24px; transition: all 0.3s; }
     .contact-card:hover { border-color: var(--purple); transform: translateX(-4px); }
-    .contact-card .c-icon { width: 48px; height: 48px; background: rgba(86, 71, 224, 0.15); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+    .contact-card .c-icon { width: 48px; height: 48px; background: rgba(0, 210, 255, 0.15); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; color: var(--purple); }
     .contact-card h4 { font-family: var(--font-main); font-size: 14px; font-weight: 700; color: var(--light); margin-bottom: 4px; }
     .contact-card p { font-size: 15px; color: var(--white); font-weight: 600; margin: 0; }
     
     .social-row { display: flex; gap: 12px; margin-top: 32px; }
     .social-btn { width: 46px; height: 46px; background: var(--card); border: 1px solid var(--border); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 18px; color: var(--light); transition: all 0.3s; }
-    .social-btn:hover { background: var(--purple); border-color: var(--purple); color: var(--white); transform: translateY(-4px); }
+    .social-btn:hover { background: var(--purple); border-color: var(--purple); color: #0f172a; transform: translateY(-4px); }
     .contact-form { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 40px; }
 
     /* ─── CTA BANNER ─────────────────────────────────────────── */
-    #cta { background: linear-gradient(135deg, var(--purple-dim), var(--bg)); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); position: relative; overflow: hidden; }
+    #cta { background: linear-gradient(135deg, rgba(0, 210, 255, 0.15), var(--bg)); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); position: relative; overflow: hidden; }
     .cta-inner { text-align: center; position: relative; z-index: 1; padding: 80px 24px; }
     .cta-inner h2 { font-family: var(--font-main); font-size: clamp(28px, 4vw, 48px); font-weight: 900; margin-bottom: 16px; }
     .cta-inner p { font-size: 18px; color: var(--light); margin-bottom: 40px; }
@@ -438,11 +438,11 @@
     .footer-col h4 { font-family: var(--font-main); font-size: 14px; font-weight: 800; color: var(--white); margin-bottom: 20px; }
     .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
     .footer-col ul li a { font-size: 13px; color: var(--muted); transition: color 0.2s; }
-    .footer-col ul li a:hover { color: var(--green); }
+    .footer-col ul li a:hover { color: var(--purple); }
     
     .footer-bottom { display: flex; align-items: center; justify-content: space-between; padding-top: 24px; border-top: 1px solid var(--border); flex-wrap: wrap; gap: 12px; }
     .footer-bottom p { font-size: 13px; color: var(--muted); }
-    .footer-bottom .made { color: var(--green); }
+    .footer-bottom .made { color: var(--purple); }
 
     /* ─── WHATSAPP FLOAT ─────────────────────────────────────── */
     .whatsapp-float { position: fixed; bottom: 30px; left: 30px; z-index: 999; width: 60px; height: 60px; background: #25d366; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; color: white; box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4); transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
@@ -460,14 +460,14 @@
     #loader { position: fixed; inset: 0; z-index: 9999; background: var(--bg); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; transition: opacity 0.5s, visibility 0.5s; }
     #loader.hidden { opacity: 0; visibility: hidden; }
     .loader-logo { font-family: var(--font-main); font-size: 36px; font-weight: 900; color: var(--white); }
-    .loader-logo span { color: var(--green); }
+    .loader-logo span { color: var(--purple); }
     .loader-bar { width: 200px; height: 3px; background: var(--border); border-radius: 2px; overflow: hidden; }
     .loader-bar-fill { height: 100%; background: linear-gradient(90deg, var(--purple), var(--green)); border-radius: 2px; animation: load 1.2s ease forwards; }
     @keyframes load { from { width: 0; } to { width: 100%; } }
 
     /* ─── LANG TOGGLE ────────────────────────────────────────── */
-    .lang-toggle-btn { background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border); color: var(--light); padding: 5px 10px; border-radius: 6px; font-weight: 700; cursor: pointer; transition: all 0.3s; font-family: var(--font-main); font-size: 14px; }
-    .lang-toggle-btn:hover { background: rgba(107, 92, 231, 0.15); border-color: var(--purple); color: var(--white); }
+    .lang-toggle-btn { background: rgba(0, 0, 0, 0.05); border: 1px solid var(--border); color: var(--light); padding: 5px 10px; border-radius: 6px; font-weight: 700; cursor: pointer; transition: all 0.3s; font-family: var(--font-main); font-size: 14px; }
+    .lang-toggle-btn:hover { background: rgba(0, 210, 255, 0.15); border-color: var(--purple); color: var(--white); }
     .mobile-only { display: none; }
 
     /* ─── HIDE GOOGLE TRANSLATE ELEMENTS ────────────────────── */
@@ -501,71 +501,73 @@
 </head>
 <body>
 
-  <!-- Loading Screen -->
-  <div id="loader">
-    <div class="loader-logo">كير تكنولوجي<span>...</span></div>
-    <div class="loader-bar"><div class="loader-bar-fill"></div></div>
-    <p style="font-size: 13px; color: var(--muted); font-family: var(--font-main);">أول منصة تعمل كوسيط موثوق لتخزين بيانات المرضى في مصر</p>
-  </div>
-  <!-- Navigation -->
-  <nav id="navbar">
-    <div class="nav-inner">
-      <a href="#hero" class="nav-logo"><img src="https://i.postimg.cc/gJmm7th0/Black-and-White-Simple-Modern-Minimalist-Letter-G-Logo-(1).png" alt="شعار كير لتكنولوجيا الرعاية الرقمية width="160" height="44"></a>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#about">من نحن</a></li>
-        <a href="team.html">المؤسسين</a>
-        <li><a href="#services">خدماتنا</a></li>
-        <li><a href="#how">كيف يعمل</a></li>
-        <li><a href="#why">لماذا كير</a></li>
-        <a href="partners.html">شركاؤنا</a>
-        <li><a href="event.html" style="color: var(--green)">حدث</a></li>
-        <li><a href="javascript:void(0)" onclick="openCareModal('careBlogModal'); return false;">المقالات</a></li>
-        <li><a href="careers.html" style="color: var(--green)">وظائف</a></li>
-        <li><a href="#join" class="nav-cta">سجّل الآن</a></li>
-        <li><button class="lang-toggle-btn" id="langToggleDesktop" aria-label="تغيير اللغة">EN</button></li>
-      </ul>
-      <div style="display: flex; align-items: center; gap: 12px;">
-        <button class="lang-toggle-btn mobile-only" id="langToggleMobile" aria-label="تغيير اللغة">EN</button>
-        <button class="hamburger" id="hamburgerBtn" aria-expanded="false" aria-label="افتح القائمة"><span></span><span></span><span></span></button>
-      </div>
-    </div>
-    <div class="mobile-menu" id="mobileMenu">
-      <a href="#about">من نحن</a>
-      <a href="team.html">المؤسسين</a>
-      <a href="#services">خدماتنا</a>
-      <a href="#how">كيف يعمل</a>
-      <a href="#why">لماذا كير</a>
-      <a href="#join">انضم إلينا</a>
-      <a href="#contact">تواصل معنا</a>
-      <a href="partners.html">شركاؤنا</a>
-      <a href="event.html">حدث</a>
+ <!-- Loading Screen -->
+<div id="loader">
+  <div class="loader-logo">كير تكنولوجي<span>...</span></div>
+  <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+  <p style="font-size: 13px; color: var(--muted); font-family: var(--font-main);">أول منصة تعمل كوسيط موثوق لتخزين بيانات المرضى في مصر</p>
+</div>
+
+<!-- Navigation -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo"><img src="https://i.postimg.cc/VkqLhqMw/70732-(1).png" alt="شعار كير لتكنولوجيا الرعاية الرقمية" width="160" height="44"></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">من نحن</a></li>
+      <li><a href="team.html">المؤسسين</a></li>
+      <li><a href="#services">خدماتنا</a></li>
+      <li><a href="#how">كيف يعمل</a></li>
+      <li><a href="#why">لماذا كير</a></li>
+      <li><a href="partners.html">شركاؤنا</a></li>
+      <li><a href="event.html" style="color: var(--green);">حدث</a></li>
       <li><a href="javascript:void(0)" onclick="openCareModal('careBlogModal'); return false;">المقالات</a></li>
-      <a href="careers.html" onclick="document.getElementById('careersModal').style.display='block'; return false;" class="nav-cta">وظائف وتدريب</a>
+      <li><a href="careers.html" style="color: var(--green);">وظائف</a></li>
+      <li><a href="#join" class="nav-cta">سجّل الآن</a></li>
+      <li><button class="lang-toggle-btn" id="langToggleDesktop" aria-label="تغيير اللغة">EN</button></li>
+    </ul>
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <button class="lang-toggle-btn mobile-only" id="langToggleMobile" aria-label="تغيير اللغة">EN</button>
+      <button class="hamburger" id="hamburgerBtn" aria-expanded="false" aria-label="افتح القائمة"><span></span><span></span><span></span></button>
     </div>
-  </nav>
-  <!-- Hero Section -->
-  <section id="hero">
-    <div class="blob-container">
-      <div class="blob" style="width:600px;height:600px;top:-100px;right:-150px;background:var(--purple);"></div>
-      <div class="blob" style="width:400px;height:400px;bottom:-50px;left:-100px;background:var(--green);"></div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about">من نحن</a>
+    <a href="team.html">المؤسسين</a>
+    <a href="#services">خدماتنا</a>
+    <a href="#how">كيف يعمل</a>
+    <a href="#why">لماذا كير</a>
+    <a href="#join">انضم إلينا</a>
+    <a href="#contact">تواصل معنا</a>
+    <a href="partners.html">شركاؤنا</a>
+    <a href="event.html">حدث</a>
+    <a href="javascript:void(0)" onclick="openCareModal('careBlogModal'); return false;">المقالات</a>
+    <a href="careers.html" onclick="document.getElementById('careersModal').style.display='block'; return false;" class="nav-cta">وظائف وتدريب</a>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section id="hero">
+  <div class="blob-container">
+    <div class="blob" style="width:600px;height:600px;top:-100px;right:-150px;background:var(--purple);"></div>
+    <div class="blob" style="width:400px;height:400px;bottom:-50px;left:-100px;background:var(--green);"></div>
+  </div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-badge"><span class="badge"><span style="width:8px;height:8px;border-radius:50%;background:var(--green);display:inline-block;"></span>تغطية كاملة الآن في مصر</span></div>
+    <h1 class="hero-title">أول منصة تعمل كوسيط موثوق<br /><span class="highlight">لتخزين بيانات المرضى</span><br />في مصر</h1>
+    <p class="hero-sub">كير — منصة تربط المرضى بالقطاع الطبي لتقديم <strong style="color:var(--white);">نظام رقمي موحد</strong> خدمات رقمية مشفرة لتخزين بيانات المرضى بأعلى معايير التشفير العالمية.</p>
+    <div class="hero-btns">
+      <a href="#join" class="btn-primary" style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 10px;"><i class="fas fa-hospital"></i>منشأة</a>
+      <a href="https://wa.me/201124280827?text=مرحباً، أريد حجز خدمات كير" class="btn-primary"><i class="fas fa-hand-holding-medical"></i>مريض</a>
     </div>
-    <div class="hero-grid"></div>
-    <div class="hero-content">
-      <div class="hero-badge"><span class="badge"><span style="width:8px;height:8px;border-radius:50%;background:var(--green);display:inline-block;"></span>تغطية كاملة الآن في مصر</span></div>
-      <h1 class="hero-title">أول منصة تعمل كوسيط موثوق<br /><span class="highlight">لتخزين بيانات المرضى</span><br />في مصر</h1>
-      <p class="hero-sub">كير — منصة تربط المرضى بالقطاع الطبي لتقديم <strong style="color:var(--white)">نظام رقمي موحد</strong> خدمات رقمية مشفرة لتخزين بيانات المرضى بأعلى معايير التشفير العالمية.</p>
-      <div class="hero-btns">
-        <a href="#join" class="btn-primary" style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 10px;"><i class="fas fa-hospital"></i>منشأة</a>
-        <a href="https://wa.me/201124280827?text=مرحباً، أريد حجز خدمات كير" class="btn-primary"><i class="fas fa-hand-holding-medical"></i>مريض</a>
-      </div>
-      <div class="hero-stats">  
-  <div class="stat-item"><span class="stat-num">100%</span><span class="stat-lbl">وصول فوري للبيانات الطبية</span></div>
-  <div class="stat-item"><span class="stat-num">NFC</span><span class="stat-lbl">ربط ذكي بإسورة Life Tag</span></div>
-  <div class="stat-item"><span class="stat-num">0.5 ث</span><span class="stat-lbl">سرعة قراءة الملف بالطوارئ</span></div>
-  <div class="stat-item"><span class="stat-num">256-bit</span><span class="stat-lbl">تشفير وحماية سيبرانية</span></div>
-  <div class="stat-item"><span class="stat-num">24/7</span><span class="stat-lbl">مزامنة سحابية مستمرة</span></div>
-</div>
-</div>
+    <div class="hero-stats">  
+      <div class="stat-item"><span class="stat-num counter" data-target="100" data-suffix="%">0%</span><span class="stat-lbl">وصول فوري للبيانات الطبية</span></div>
+      <div class="stat-item"><span class="stat-num">NFC</span><span class="stat-lbl">ربط ذكي بإسورة Life Tag</span></div>
+      <div class="stat-item"><span class="stat-num counter" data-target="0.5" data-decimals="1" data-suffix=" ث">0 ث</span><span class="stat-lbl">سرعة قراءة الملف بالطوارئ</span></div>
+      <div class="stat-item"><span class="stat-num">256-bit</span><span class="stat-lbl">تشفير وحماية سيبرانية</span></div>
+      <div class="stat-item"><span class="stat-num">24/7</span><span class="stat-lbl">مزامنة سحابية مستمرة</span></div>
+    </div>
+  </div>
 </section>
 
 <!-- About Section -->
@@ -579,12 +581,12 @@
         <span class="badge" style="margin-bottom:24px"><i class="fas fa-microchip"></i>&nbsp; من نحن</span>
         <h2 class="section-title">كير— لتكنولوجيا الرعاية الرقمية<br /><span class="text-green">أنت بطل الحكاية</span></h2>
         
-        <p>كير هي منصة وطنية متطورة تابعة لـ <strong>CARE Technology Egypt (CARE-CTE)</strong>، تهدف إلى توفير نظام رقمي ذكي لتخزين وإدارة الملفات الطبية وتسهيل وصول المنشآت والفرق الطبية للبيانات الحرجة فوراً وقت الطوارئ، بالاعتماد على أحدث حلول التشفير والتقنيات اللاتلامسية (NFC).</p>
+        <p>كير هي منصة متطورة تابعة لـ <strong>CARE Technology Egypt (CARE-CTE)</strong>، تهدف إلى توفير نظام رقمي ذكي لتخزين وإدارة الملفات الطبية وتسهيل وصول المنشآت والفرق الطبية للبيانات الحرجة فوراً وقت الطوارئ، بالاعتماد على أحدث حلول التشفير والتقنيات اللاتلامسية (NFC).</p>
         
         <p>تأسست الشركة سنة <strong>2024 بتاريخ 1/11/2024</strong> كعلامة تجارية مسجلة لأنشطة البرمجة الحاسوبية وحلول الرعاية الرقمية برقم إشهار 6201 ورقم تسجيل ضريبي 767644794، بقيادة مؤسسها الباحث محمد حسن بمحافظة الفيوم.</p>
         
         <p>نؤمن أن كل فرد هو بطل قصته الصحية، ولذلك صممنا منظومة كير لتمنحك السيطرة الكاملة على ملفك الطبي وتوفر للجهات الطبية البيانات المنقذة للحياة في ثوانٍ معدودة.</p>
-        
+
         <div class="about-highlights">          
           <div class="highlight-item">
             <div class="icon">🔒</div>
@@ -628,13 +630,13 @@
             <div class="phone-sub">ملفك الطبي وهويتك الذكية في جيبك</div>
             <div class="phone-btns">
               <div class="phone-btn">تصفح ملفك الطبي</div>
-              <div class="phone-btn" style="background:var(--green);color:#000;border:none;font-weight:700;">اطلب Life Tag X200</div>
+              <div class="phone-btn" style="background:var(--green);color:var(--bg);border:none;font-weight:700;">اطلب Life Tag X200</div>
             </div>
           </div>
         </div>
         
         <div class="float-badge top-left">
-          <div class="fb-num">100%</div>
+          <div class="fb-num counter" data-target="100" data-suffix="%">0%</div>
           <div class="fb-txt">أمان وسرية<br />للبيانات الطبية</div>
         </div>
         
@@ -647,101 +649,106 @@
   </div>
 </section>
 
-  <!-- Problem Section -->
-  <section id="problem" class="section">
-    <div class="container">
-      <div class="text-center reveal">
-        <span class="badge" style="background:rgba(255,107,107,0.1);border-color:rgba(255,107,107,0.3);color:var(--accent);margin-bottom:24px;"><i class="fas fa-exclamation-triangle"></i>&nbsp; المشكلة</span>
-        <h2 class="section-title">كل يوم في مصر <span class="text-accent">يعاني الناس </span> في صمت</h2>
+<!-- Problem Section -->
+<section id="problem" class="section">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="badge" style="background:rgba(255,107,107,0.1);border-color:rgba(255,107,107,0.3);color:var(--accent);margin-bottom:24px;"><i class="fas fa-exclamation-triangle"></i>&nbsp; المشكلة</span>
+      <h2 class="section-title">كل يوم في مصر <span class="text-accent">يعاني الناس </span> في صمت</h2>
+    </div>
+    <div class="drama-quote reveal reveal-delay-1">
+      <p>
+        الساعة 11:30 بالليل، في قلب القاهرة.. طوارئ ومريض سكر محتاج إنقاذ عاجل. 
+        <span>3 ساعات ضاعت في الشوارع</span> بين صيدليات مش عارفة تقرأ خط الروشتة، ودكاترة بتسأل عن تاريخه المرضي اللي تاه وسط طابور الكراكيب والورق! 
+        في الدقائق الذهبية دي، المريض ما كانش ناقصه دواء وبس، كان ناقصه <strong>"ملف طبي رقمي أمن"</strong> يقرأ حالته في ثواني ويحمي حياته.
+      </p>
+      <cite>— حالة حقيقية، من واقع البحث الميداني لشركة CARE</cite>
+    </div>
+    <p class="text-center" style="color:var(--white);font-weight:700;font-size:16px;margin-bottom:40px;font-family:var(--font-main);">هذا ليس استثناءً — هذا هو حال المجتمع اليومي الذي نغيره الآن.</p>
+    <div class="problem-grid">
+      <div class="problem-card reveal">
+        <div class="pc-icon">🚨</div>
+        <h3>فجوة البيانات في الطوارئ</h3>
+        <p>تأخر أو غياب التاريخ الطبي الموثوق أثناء اللحظات والدقائق الحرجة والذهبية للإنقاذ</p>
+        <div class="pc-stat counter" data-target="30" data-suffix="%">0%</div>
+        <span class="pc-statlbl">من وفيات الطوارئ تحدث نتيجة النقص الحاد في البيانات الطبية الفورية</span>
       </div>
-   <div class="drama-quote reveal reveal-delay-1">
-        <p>
-          الساعة 11:30 بالليل، في قلب القاهرة.. طوارئ ومريض سكر محتاج إنقاذ عاجل. 
-          <span>3 ساعات ضاعت في الشوارع</span> بين صيدليات مش عارفة تقرأ خط الروشتة، ودكاترة بتسأل عن تاريخه المرضي اللي تاه وسط طابور الكراكيب والورق! 
-          في الدقائق الذهبية دي، المريض ما كانش ناقصه دواء وبس، كان ناقصه <strong>"ملف طبي رقمي أمن"</strong> يقرأ حالته في ثواني ويحمي حياته.
-        </p>
-        <cite>— حالة حقيقية، من واقع البحث الميداني لشركة CARE</cite>
+      <div class="problem-card reveal reveal-delay-1">
+        <div class="pc-icon">🆔</div>
+        <h3>صعوبة التعرف على الهوية</h3>
+        <p>عجز الطاقم الطبي عن التحديد الفوري لهوية المصاب أو المسن وحالته الصحية عند غياب الوعي</p>
+        <div class="pc-stat counter" data-target="78" data-suffix="%">0%</div>
+        <span class="pc-statlbl">من حالات الطوارئ المنفردة تواجه صعوبة في تحديد الهوية والملف الطبي</span>
       </div>
-      <p class="text-center" style="color:var(--white);font-weight:700;font-size:16px;margin-bottom:40px;font-family:var(--font-main);">هذا ليس استثناءً — هذا هو حال المجتمع اليومي الذي نغيره الآن.</p>
-      <div class="problem-grid">
-  <div class="problem-card reveal">
-    <div class="pc-icon">🚨</div>
-    <h3>فجوة البيانات في الطوارئ</h3>
-    <p>تأخر أو غياب التاريخ الطبي الموثوق أثناء اللحظات والدقائق الحرجة والذهبية للإنقاذ</p>
-    <div class="pc-stat">30%</div>
-    <span class="pc-statlbl">من وفيات الطوارئ تحدث نتيجة النقص الحاد في البيانات الطبية الفورية</span>
-  </div>
-  <div class="problem-card reveal reveal-delay-1">
-    <div class="pc-icon">🆔</div>
-    <h3>صعوبة التعرف على الهوية</h3>
-    <p>عجز الطاقم الطبي عن التحديد الفوري لهوية المصاب أو المسن وحالته الصحية عند غياب الوعي</p>
-    <div class="pc-stat">78%</div>
-    <span class="pc-statlbl">من حالات الطوارئ المنفردة تواجه صعوبة في تحديد الهوية والملف الطبي</span>
-  </div>
 
-  <div class="problem-card reveal reveal-delay-2">
-    <div class="pc-icon">📋</div>
-    <h3>تشتت السجلات الورقية</h3>
-    <p>ضياع أو تلف التحاليل والروشتات القديمة مما يؤدي لتشخيص مكرر أو أخطاء علاجية خطيرة</p>
-    <div class="pc-stat">85%</div>
-    <span class="pc-statlbl">من المرضى يعانون من عدم وجود أرشيف طبي رقمي مجمع ومتاح دائماً</span>
-  </div>
+      <div class="problem-card reveal reveal-delay-2">
+        <div class="pc-icon">📋</div>
+        <h3>تشتت السجلات الورقية</h3>
+        <p>ضياع أو تلف التحاليل والروشتات القديمة مما يؤدي لتشخيص مكرر أو أخطاء علاجية خطيرة</p>
+        <div class="pc-stat counter" data-target="85" data-suffix="%">0%</div>
+        <span class="pc-statlbl">من المرضى يعانون من عدم وجود أرشيف طبي رقمي مجمع ومتاح دائماً</span>
+      </div>
 
-  <div class="problem-card reveal reveal-delay-3">
-    <div class="pc-icon">💊</div>
-    <h3>غياب التنبيهات الحرجة</h3>
-    <p>عدم معرفة الفريق الطبي بالحساسيات الأدوية، الأمراض المزمنة، أو فصيلة الدم قبل اتخاذ القرار</p>
-    <div class="pc-stat">65%</div>
-    <span class="pc-statlbl">يتعرضون لمضاعفات بسبب إعطاء أدوية تتعارض مع تاريخهم المرضي</span>
-  </div>
+      <div class="problem-card reveal reveal-delay-3">
+        <div class="pc-icon">💊</div>
+        <h3>غياب التنبيهات الحرجة</h3>
+        <p>عدم معرفة الفريق الطبي بالحساسيات الأدوية، الأمراض المزمنة، أو فصيلة الدم قبل اتخاذ القرار</p>
+        <div class="pc-stat counter" data-target="65" data-suffix="%">0%</div>
+        <span class="pc-statlbl">يتعرضون لمضاعفات بسبب إعطاء أدوية تتعارض مع تاريخهم المرضي</span>
+      </div>
 
-  <div class="problem-card reveal reveal-delay-3">
-    <div class="pc-icon">🌐</div>
-    <h3>غياب الهوية الطبية الذكية</h3>
-    <p>اعتماد الأفراد على وسائل قديمة وغير مرقمنة لتخزين بياناتهم الصحية دون نظام وصول فوري ذكي</p>
-    <div class="pc-stat">100%</div>
-    <span class="pc-statlbl">حاجة ماسة لمنظومة رقمية موحدة للوصول السريع للملف الطبي الشخصي</span>
+      <div class="problem-card reveal reveal-delay-3">
+        <div class="pc-icon">🌐</div>
+        <h3>غياب الهوية الطبية الذكية</h3>
+        <p>اعتماد الأفراد على وسائل قديمة وغير مرقمنة لتخزين بياناتهم الصحية دون نظام وصول فوري ذكي</p>
+        <div class="pc-stat counter" data-target="100" data-suffix="%">0%</div>
+        <span class="pc-statlbl">حاجة ماسة لمنظومة رقمية موحدة للوصول السريع للملف الطبي الشخصي</span>
+      </div>
+    </div>
   </div>
-</div>
-  </section>
-  <!-- Solution Section -->
-  <section id="solution" class="section">
-    <div class="blob-container"><div class="blob" style="width:500px;height:500px;top:0;right:-200px;background:var(--green);"></div></div>
-    <div class="container">
-      <div class="text-center reveal">
-        <span class="badge" style="margin-bottom:24px"><i class="fas fa-bolt"></i>&nbsp; الحل</span>
-<h2 class="section-title">كير: لتكنولوجيا الرعاية الرقمية <span class="text-green">الوصول الفوري </span>لتاريخك الطبي في لحظة </h2>
-<p class="section-sub">منصة رقمية ذكية بتسجل وتأمن ملفك الطبي كاملاً، وبتربطه بهويتك الذكية للوصول لبياناتك في ثوانٍ معدودة</p>
-</div>
+</section>
 
-<div class="solution-top">
-  <!-- الجانب الأول: مميزات الملف الطبي الرقمي والتطبيق -->
-  <div class="solution-side reveal">
-    <h3><i class="fas fa-mobile-alt" style="color:var(--purple)"></i>تطبيق كير الرقمي <span class="tag">التطبيق</span></h3>
-    <div class="feature-item"><div class="check"><i class="fas fa-check"></i></div><p><strong>سجل طبي متكامل في جيبك</strong> — كل روشتاتك، تحاليلك، وأشعتك المتجمعة في مكان واحد ومنسق بشكل ذكي.</p></div>
-    <div class="feature-item"><div class="check"><i class="fas fa-check"></i></div><p><strong>تخزين سحابي دائم وآمن</strong> — بياناتك الطبية والشخصية مشفرة ومتاحة ليك ولأسرتك 24/7 من أي مكان وفي أي وقت.</p></div>
-    <div class="feature-item"><div class="check"><i class="fas fa-check"></i></div><p><strong>تحديث وتطوير سلس</strong> — ضيف أي كشف أو دواء جديد في ثوانٍ، والتطبيق هينظم ملفك تلقائياً لسهولة المتابعة.</p></div>
-    <div class="feature-item"><div class="check"><i class="fas fa-check"></i></div><p><strong>مشاركة فورية مع الأطباء</strong> — شارك ملفك الطبي بضغطة واحدة مع أي دكتور عشان تضمن تشخيص مظبوط ومسح أي خطأ دارج.</p></div>
-    <div class="feature-item"><div class="check"><i class="fas fa-check"></i></div><p><strong>نظام تنبيهات الطوارئ</strong> — حفظ بيانات الأمراض المزمنة والحساسية الدوائية لتقديمها أول ما تحتاجها من غير لغبطة.</p></div>
+<!-- Solution Section -->
+<section id="solution" class="section">
+  <div class="blob-container"><div class="blob" style="width:500px;height:500px;top:0;right:-200px;background:var(--green);"></div></div>
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="badge" style="margin-bottom:24px"><i class="fas fa-bolt"></i>&nbsp; الحل</span>
+      <h2 class="section-title">كير: لتكنولوجيا الرعاية الرقمية <span class="text-green">الوصول الفوري </span>لتاريخك الطبي في لحظة </h2>
+      <p class="section-sub">منصة رقمية ذكية بتسجل وتأمن ملفك الطبي كاملاً، وبتربطه بهويتك الذكية للوصول لبياناتك في ثوانٍ معدودة</p>
+    </div>
+
+    <div class="solution-top">
+      <!-- الجانب الأول: مميزات الملف الطبي الرقمي والتطبيق -->
+      <div class="solution-side reveal">
+        <h3><i class="fas fa-mobile-alt" style="color:var(--purple)"></i>تطبيق كير الرقمي <span class="tag">التطبيق</span></h3>
+        <div class="feature-item"><div class="check"><i class="fas fa-check"></i></div><p><strong>سجل طبي متكامل في جيبك</strong> — كل روشتاتك، تحاليلك، وأشعتك المتجمعة في مكان واحد ومنسق بشكل ذكي.</p></div>
+        <div class="feature-item"><div class="check"><i class="fas fa-check"></i></div><p><strong>تخزين سحابي دائم وآمن</strong> — بياناتك الطبية والشخصية مشفرة ومتاحة ليك ولأسرتك 24/7 من أي مكان وفي أي وقت.</p></div>
+        <div class="feature-item"><div class="check"><i class="fas fa-check"></i></div><p><strong>تحديث وتطوير سلس</strong> — ضيف أي كشف أو دواء جديد في ثوانٍ، والتطبيق هينظم ملفك تلقائياً لسهولة المتابعة.</p></div>
+        <div class="feature-item"><div class="check"><i class="fas fa-check"></i></div><p><strong>مشاركة فورية مع الأطباء</strong> — شارك ملفك الطبي بضغطة واحدة مع أي دكتور عشان تضمن تشخيص مظبوط ومسح أي خطأ دارج.</p></div>
+        <div class="feature-item"><div class="check"><i class="fas fa-check"></i></div><p><strong>نظام تنبيهات الطوارئ</strong> — حفظ بيانات الأمراض المزمنة والحساسية الدوائية لتقديمها أول ما تحتاجها من غير لغبطة.</p></div>
+      </div>
+
+      <!-- الجانب الثاني: مميزات الأسورة الذكية Life Tag -->
+      <div class="solution-side reveal reveal-delay-2">
+        <h3><i class="fas fa-id-card-alt" style="color:var(--green)"></i>الأسورة الذكية (Life Tag) <span class="tag" style="background:rgba(126,217,87,0.1);border-color:rgba(126,217,87,0.2);color:var(--green);">المنتج الذكي</span></h3>
+        <div class="feature-item"><div class="check" style="background:rgba(126,217,87,0.1)"><i class="fas fa-check" style="color:var(--green)"></i></div><p><strong>وصول بلمسة واحدة (NFC)</strong> — مجرد ملامسة الأسورة لأي موبايل ذكي، بيتعرض الملف الطبي الفوري في ثوانٍ.</p></div>
+        <div class="feature-item"><div class="check" style="background:rgba(126,217,87,0.1)"><i class="fas fa-check" style="color:var(--green)"></i></div><p><strong>منقذ في لحظات الطوارئ</strong> — بتساعد الطاقم الطبي والإسعاف يتعرفوا على هويتك وفصيلة دمك لو قدر الله حصل إغماء أو حادثة.</p></div>
+        <div class="feature-item"><div class="check" style="background:rgba(126,217,87,0.1)"><i class="fas fa-check" style="color:var(--green)"></i></div><p><strong>سهولة التفعيل والربط</strong> — بتستلم الأسورة في بيتك، وبتفعلها وتربطها بحسابك على التطبيق بنفسك في ثوانٍ بسيطة.</p></div>
+        <div class="feature-item"><div class="check" style="background:rgba(126,217,87,0.1)"><i class="fas fa-check" style="color:var(--green)"></i></div><p><strong>بدون بطاريات أو شحن</strong> — شغال دايماً وفي أي مكان من غير ما تقلق إنها تفصل شحن أو تعطل.</p></div>
+      </div>
+    </div>
+
+    <div class="pillars">
+      <div class="pillar p1 reveal"><div class="pillar-icon">🔐</div><h3>الخصوصية والأمان</h3><p>بياناتك الطبية متشفرة بالكامل، وأنت الوحيد اللي بتتحكم مين يشوفها وبأي طريقة — لأن أسرارك الصحية خط أحمر.</p></div>
+      <div class="pillar p2 reveal reveal-delay-1"><div class="pillar-icon">⚡</div><h3>السرعة والإنقاذ</h3><p>الوصول لبياناتك بياخد أقل من ثانيتين بلمسة الموبايل — لأن الدقائق الذهبية في الطوارئ بتفرق في إنقاذ الحياة.</p></div>
+      <div class="pillar p3 reveal reveal-delay-2"><div class="pillar-icon">💎</div><h3>السلاسة والإتاحة</h3><p>منظومة رقمية سهولة الاستخدام للجميع وبدون تعقيد، بتخلي سجل طبي كامل بين إيديك في أي وقت ولأي حالة.</p></div>
+    </div>
   </div>
+</section>
 
-  <!-- الجانب الثاني: مميزات الأسورة الذكية Life Tag -->
-  <div class="solution-side reveal reveal-delay-2">
-    <h3><i class="fas fa-id-card-alt" style="color:var(--green)"></i>الأسورة الذكية (Life Tag) <span class="tag" style="background:rgba(126,217,87,0.1);border-color:rgba(126,217,87,0.2);color:var(--green);">المنتج الذكي</span></h3>
-    <div class="feature-item"><div class="check" style="background:rgba(126,217,87,0.1)"><i class="fas fa-check" style="color:var(--green)"></i></div><p><strong>وصول بلمسة واحدة (NFC)</strong> — مجرد ملامسة الأسورة لأي موبايل ذكي، بيتعرض الملف الطبي الفوري في ثوانٍ.</p></div>
-    <div class="feature-item"><div class="check" style="background:rgba(126,217,87,0.1)"><i class="fas fa-check" style="color:var(--green)"></i></div><p><strong>منقذ في لحظات الطوارئ</strong> — بتساعد الطاقم الطبي والإسعاف يتعرفوا على هويتك وفصيلة دمك لو قدر الله حصل إغماء أو حادثة.</p></div>
-    <div class="feature-item"><div class="check" style="background:rgba(126,217,87,0.1)"><i class="fas fa-check" style="color:var(--green)"></i></div><p><strong>سهولة التفعيل والربط</strong> — بتستلم الأسورة في بيتك، وبتفعلها وتربطها بحسابك على التطبيق بنفسك في ثوانٍ بسيطة.</p></div>
-    <div class="feature-item"><div class="check" style="background:rgba(126,217,87,0.1)"><i class="fas fa-check" style="color:var(--green)"></i></div><p><strong>بدون بطاريات أو شحن</strong> — شغال دايماً وفي أي مكان من غير ما تقلق إنها تفصل شحن أو تعطل.</p></div>
-  </div>
-</div>
-
-<div class="pillars">
-  <div class="pillar p1 reveal"><div class="pillar-icon">🔐</div><h3>الخصوصية والأمان</h3><p>بياناتك الطبية متشفرة بالكامل، وأنت الوحيد اللي بتتحكم مين يشوفها وبأي طريقة — لأن أسرارك الصحية خط أحمر.</p></div>
-  <div class="pillar p2 reveal reveal-delay-1"><div class="pillar-icon">⚡</div><h3>السرعة والإنقاذ</h3><p>الوصول لبياناتك بياخد أقل من ثانيتين بلمسة الموبايل — لأن الدقائق الذهبية في الطوارئ بتفرق في إنقاذ الحياة.</p></div>
-  <div class="pillar p3 reveal reveal-delay-2"><div class="pillar-icon">💎</div><h3>السلاسة والإتاحة</h3><p>منظومة رقمية سهلة الاستخدام للجميع وبدون تعقيد، بتخلي سجل طبي كامل بين إيديك في أي وقت ولأي حالة.</p></div>
-</div>
-  <!-- Services Section -->
- <section id="services" class="section">
+<!-- Services Section -->
+<section id="services" class="section">
   <div class="container">
     <div class="text-center reveal">
       <span class="badge" style="margin-bottom:24px"><i class="fas fa-microchip"></i>&nbsp; خدماتنا الرقمية</span>
@@ -783,321 +790,364 @@
         </ul>
       </div>
     </div>
-  </div>
-</section>
-      </div>
-      <div class="video-section-wrapper reveal" style="margin-top: 60px;">
-        <style>
-          .video-section-wrapper {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-          }
-          .video-container {
-            position: relative;
-            width: 100%;
-            padding-bottom: 56.25%; /* أبعاد الشاشة العريضة 16:9 */
-            height: 0;
-            background: #1a1535;
-            border-radius: 16px;
-            border: 1px solid rgba(107, 92, 231, 0.25);
-            box-shadow: 0 10px 30px rgba(107, 92, 231, 0.15);
-            overflow: hidden;
-            transition: border-color 0.3s, box-shadow 0.3s;
-          }
-          .video-container:hover {
-            border-color: var(--green);
-            box-shadow: 0 15px 35px rgba(126, 217, 87, 0.2);
-          }
-          .video-container video {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            object-fit: cover;
-          }
-          .video-title {
-            font-family: var(--font-main);
-            font-size: 20px;
-            font-weight: 700;
-            color: var(--white);
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-          }
-        </style>
-        
-        <h3 class="video-title"><i class="fas fa-play-circle" style="color: var(--green);"></i> دليل مرئي: عن كير تكنولوجي</h3>
-        
-        <div class="video-container">
-          <video controls playsinline webkit-playsinline poster="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1470&auto=format&fit=crop" preload="metadata">
-            <source src="https://h.top4top.io/m_3853joacy0.mp4" type="video/mp4">
-            عذراً، متصفحك لا يدعم تشغيل الفيديو.
-          </video>
-        </div>
-      </div>
-      <div style="text-align:center;margin-top:48px" class="reveal">
+
+    <!-- Video Section -->
+    <div class="video-section-wrapper reveal" style="margin-top: 60px;">
+      <style>
+        .video-section-wrapper {
+          text-align: center;
+          max-width: 800px;
+          margin: 0 auto;
+        }
+        .video-container {
+          position: relative;
+          width: 100%;
+          padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+          height: 0;
+          background: var(--bg2);
+          border-radius: 16px;
+          border: 1px solid var(--border);
+          box-shadow: 0 10px 30px rgba(107, 92, 231, 0.15);
+          overflow: hidden;
+          transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        .video-container:hover {
+          border-color: var(--green);
+          box-shadow: 0 15px 35px rgba(126, 217, 87, 0.2);
+        }
+        .video-container video {
+          position: absolute;
+          top: 0; left: 0; width: 100%; height: 100%;
+          object-fit: cover;
+        }
+        .video-title {
+          font-family: var(--font-main);
+          font-size: 20px;
+          font-weight: 700;
+          color: var(--white);
+          margin-bottom: 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 10px;
+        }
+      </style>
+      
+      <h3 class="video-title"><i class="fas fa-play-circle" style="color: var(--green);"></i> دليل مرئي: عن كير تكنولوجي</h3>
+      
+      <div class="video-container">
+        <video controls playsinline webkit-playsinline poster="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1470&auto=format&fit=crop" preload="metadata">
+          <source src="https://h.top4top.io/m_3853joacy0.mp4" type="video/mp4">
+          عذراً، متصفحك لا يدعم تشغيل الفيديو.
+        </video>
       </div>
     </div>
-    <div class="product-showcase-section reveal" style="margin-top: 60px; text-align: center; position: relative; z-index: 999;">
-        <style>
-          .product-showcase-section h3 {
-            font-family: var(--font-main);
-            font-size: 22px;
-            font-weight: 700;
-            color: var(--white);
-            margin-bottom: 20px;
-          }
-          .product-interactive-card {
-            background: var(--bg2);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 30px;
-            max-width: 500px;
-            margin: 0 auto;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-            position: relative;
-          }
-          .product-interactive-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--green);
-            box-shadow: 0 15px 35px rgba(126, 217, 87, 0.25);
-          }
-          .product-interactive-card img {
-            width: 100%;
-            max-width: 280px;
-            height: auto;
-            border-radius: 12px;
-            margin-bottom: 15px;
-            transition: transform 0.3s ease;
-          }
-          .product-interactive-card:hover img {
-            transform: scale(1.03);
-          }
-          .product-badge {
-            display: inline-block;
-            background: rgba(126, 217, 87, 0.15);
-            color: var(--green);
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 13px;
-            font-weight: bold;
-            margin-bottom: 10px;
-          }
-          .product-btn {
-            background: linear-gradient(90deg, var(--green), var(--teal));
-            color: var(--bg);
-            border: none;
-            font-family: var(--font-main);
-            font-weight: 800;
-            font-size: 15px;
-            padding: 12px 30px;
-            border-radius: 25px;
-            margin-top: 15px;
-            cursor: pointer;
-            transition: transform 0.2s;
-          }
-          .product-btn:hover {
-            transform: scale(1.05);
-          }
+  </div>
 
-          /* تصميم المودال الحصري الفائق الحماية والظهور */
-          .unique-care-overlay {
-            display: none !important; /* نتحكم بالـ flex برمجياً */
-            position: fixed !important;
-            top: 0 !important; 
-            left: 0 !important; 
-            width: 100% !important; 
-            height: 100% !important;
-            background: rgba(10, 8, 25, 0.95) !important;
-            z-index: 10000000 !important; /* أعلى من أي نافذة أو عنصر آخر بالموقع */
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            backdrop-filter: blur(10px) !important;
-            -webkit-backdrop-filter: blur(10px) !important;
-          }
-          .unique-care-box {
-            background: #1a1535 !important;
-            border: 2px solid rgba(107, 92, 231, 0.3) !important;
-            width: 100%;
-            max-width: 580px;
-            border-radius: 16px;
-            padding: 30px;
-            position: relative;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.6);
-            direction: rtl;
-            max-height: 90vh;
-            overflow-y: auto;
-          }
-          .unique-close-btn {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            font-size: 32px;
-            color: #c8c4e0;
-            cursor: pointer;
-            transition: color 0.2s;
-            line-height: 1;
-            font-weight: bold;
-          }
-          .unique-close-btn:hover { color: #7ed957; }
-          
-          .modal-title-custom {
-            font-family: var(--font-main);
-            font-size: 20px;
-            font-weight: 800;
-            color: #ffffff;
-            margin-bottom: 20px;
-            border-bottom: 1px solid rgba(107, 92, 231, 0.25);
-            padding-bottom: 12px;
-            text-align: right;
-          }
-          .modal-note-box-custom {
-            background: rgba(107, 92, 231, 0.1);
-            border-right: 4px solid #6b5ce7;
-            padding: 15px;
-            border-radius: 6px;
-            margin-bottom: 20px;
-            font-size: 13px;
-            color: #c8c4e0;
-            line-height: 1.6;
-            text-align: right;
-          }
-          .form-group-custom {
-            margin-bottom: 16px;
-            text-align: right;
-          }
-          .form-group-custom label {
-            display: block;
-            font-size: 14px;
-            color: #c8c4e0;
-            margin-bottom: 6px;
-            font-family: var(--font-main);
-          }
-          .form-control-custom {
-            width: 100%;
-            padding: 12px;
-            background: #1e1a3d;
-            border: 1px solid rgba(107, 92, 231, 0.25);
-            border-radius: 8px;
-            color: #ffffff;
-            font-family: var(--font-body);
-            font-size: 14.5px;
-            outline: none;
-            text-align: right;
-          }
-          .form-control-custom:focus { border-color: #7ed957; }
-          
-          .btn-submit-custom {
-            width: 100%;
-            padding: 14px;
-            background: #7ed957;
-            color: #12102a;
-            font-family: var(--font-main);
-            font-weight: 700;
-            font-size: 16px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background 0.2s;
-          }
-          .btn-submit-custom:hover { background: #6ec44d; }
-          
-          .success-alert-custom {
-            display: none;
-            background: rgba(126, 217, 87, 0.15);
-            border: 1px solid #7ed957;
-            color: #7ed957;
-            padding: 15px;
-            border-radius: 8px;
-            text-align: center;
-            font-weight: bold;
-            margin-top: 15px;
-            font-family: var(--font-body);
-          }
-        </style>
+  <!-- Product Showcase Section -->
+  <div class="product-showcase-section reveal" style="margin-top: 60px; text-align: center; position: relative; z-index: 999;">
+    <style>
+      .product-showcase-section h3 {
+        font-family: var(--font-main);
+        font-size: 22px;
+        font-weight: 700;
+        color: var(--white);
+        margin-bottom: 20px;
+      }
+      .product-interactive-card {
+        background: var(--bg2);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 30px;
+        max-width: 500px;
+        margin: 0 auto;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        position: relative;
+      }
+      .product-interactive-card:hover {
+        transform: translateY(-5px);
+        border-color: var(--green);
+        box-shadow: 0 15px 35px rgba(126, 217, 87, 0.25);
+      }
+      .product-interactive-card img {
+        width: 100%;
+        max-width: 280px;
+        height: auto;
+        border-radius: 12px;
+        margin-bottom: 15px;
+        transition: transform 0.3s ease;
+      }
+      .product-interactive-card:hover img {
+        transform: scale(1.03);
+      }
+      .product-badge {
+        display: inline-block;
+        background: rgba(126, 217, 87, 0.15);
+        color: var(--green);
+        padding: 5px 12px;
+        border-radius: 20px;
+        font-size: 13px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+      .product-btn {
+        background: linear-gradient(90deg, var(--green), var(--teal));
+        color: var(--bg);
+        border: none;
+        font-family: var(--font-main);
+        font-weight: 800;
+        font-size: 15px;
+        padding: 12px 30px;
+        border-radius: 25px;
+        margin-top: 15px;
+        cursor: pointer;
+        transition: transform 0.2s;
+      }
+      .product-btn:hover {
+        transform: scale(1.05);
+      }
 
-<h3><i class="fas fa-cubes" style="color: var(--green);"></i> هويتك الطبية الذكية</h3>
+      /* تصميم المودال الحصري */
+      .unique-care-overlay {
+        display: none !important;
+        position: fixed !important;
+        top: 0 !important; 
+        left: 0 !important; 
+        width: 100% !important; 
+        height: 100% !important;
+        background: rgba(10, 8, 25, 0.95) !important;
+        z-index: 10000000 !important;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        backdrop-filter: blur(10px) !important;
+        -webkit-backdrop-filter: blur(10px) !important;
+      }
+      .unique-care-box {
+        background: var(--bg2) !important;
+        border: 2px solid var(--border) !important;
+        width: 100%;
+        max-width: 580px;
+        border-radius: 16px;
+        padding: 30px;
+        position: relative;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+        direction: rtl;
+        max-height: 90vh;
+        overflow-y: auto;
+      }
+      .unique-close-btn {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        font-size: 32px;
+        color: var(--muted);
+        cursor: pointer;
+        transition: color 0.2s;
+        line-height: 1;
+        font-weight: bold;
+      }
+      .unique-close-btn:hover { color: var(--green); }
+      
+      .modal-title-custom {
+        font-family: var(--font-main);
+        font-size: 20px;
+        font-weight: 800;
+        color: var(--white);
+        margin-bottom: 20px;
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 12px;
+        text-align: right;
+      }
+      .modal-note-box-custom {
+        background: rgba(107, 92, 231, 0.1);
+        border-right: 4px solid var(--purple);
+        padding: 15px;
+        border-radius: 6px;
+        margin-bottom: 20px;
+        font-size: 13px;
+        color: var(--muted);
+        line-height: 1.6;
+        text-align: right;
+      }
+      .form-group-custom {
+        margin-bottom: 16px;
+        text-align: right;
+      }
+      .form-group-custom label {
+        display: block;
+        font-size: 14px;
+        color: var(--muted);
+        margin-bottom: 6px;
+        font-family: var(--font-main);
+      }
+      .form-control-custom {
+        width: 100%;
+        padding: 12px;
+        background: var(--bg3);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        color: var(--white);
+        font-family: var(--font-body);
+        font-size: 14.5px;
+        outline: none;
+        text-align: right;
+      }
+      .form-control-custom:focus { border-color: var(--green); }
+      
+      .btn-submit-custom {
+        width: 100%;
+        padding: 14px;
+        background: var(--green);
+        color: var(--bg);
+        font-family: var(--font-main);
+        font-weight: 700;
+        font-size: 16px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+      .btn-submit-custom:hover { background: #6ec44d; }
+      
+      .success-alert-custom {
+        display: none;
+        background: rgba(126, 217, 87, 0.15);
+        border: 1px solid var(--green);
+        color: var(--green);
+        padding: 15px;
+        border-radius: 8px;
+        text-align: center;
+        font-weight: bold;
+        margin-top: 15px;
+        font-family: var(--font-body);
+      }
+    </style>
+  </div>
+</section>
+
+<!-- Script العدادات الذكية للأرقام والنسب المئوية -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const counters = document.querySelectorAll('.counter');
+    const speed = 200; // سرعة الحركة
+
+    const startCounter = (counter) => {
+      const target = +counter.getAttribute('data-target');
+      const suffix = counter.getAttribute('data-suffix') || '';
+      const decimals = counter.getAttribute('data-decimals') ? +counter.getAttribute('data-decimals') : 0;
+      let count = 0;
+      const inc = target / speed;
+
+      const updateCount = () => {
+        count += inc;
+        if (count < target) {
+          counter.innerText = count.toFixed(decimals) + suffix;
+          setTimeout(updateCount, 15);
+        } else {
+          counter.innerText = target.toFixed(decimals) + suffix;
+        }
+      };
+      updateCount();
+    };
+
+    const observerOptions = {
+      threshold: 0.5
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          startCounter(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    counters.forEach(counter => observer.observe(counter));
+  });
+</script>
+
+<h3><i class="fas fa-cubes" style="color: var(--green, #7ed957);"></i> هويتك الطبية الذكية</h3>
         
 <div class="product-interactive-card" id="uniqueProductCard">
   <span class="product-badge">الإصدار الأحدث: Life Tag X200</span>
   
   <!-- صورة المنتج الرئيسية -->
-  <img id="mainProductImg" src="https://i.postimg.cc/9XY9s0LB/Blue-White-Bold-Simple-Travel-Agency-Logo.png" alt="Life Tag X200 Smart Bracelet" style="transition: opacity 0.3s ease;" />
+  <img id="mainProductImg" src="https://i.postimg.cc/9XY9s0LB/Blue-White-Bold-Simple-Travel-Agency-Logo.png" alt="Life Tag X200 Smart Bracelet" style="transition: opacity 0.3s ease; max-width: 100%; height: auto;" />
   
   <!-- خيارات الألوان (Color Swatches) -->
-  <div class="color-options-wrapper" style="display: flex; justify-content: center; align-items: center; gap: 12px; margin: 12px 0;">
-    <span style="font-size: 13px; color: var(--light);">اختر اللون:</span>
+  <div class="color-options-wrapper" style="display: flex; justify-content: center; align-items: center; gap: 12px; margin: 16px 0;">
+    <span style="font-size: 13.5px; color: var(--light, #e2e8f0); font-weight: 600;">اختر اللون:</span>
     
     <!-- الأزرق (محدد افتراضياً) -->
-    <span class="color-swatch active" data-color="أزرق" data-img="https://i.postimg.cc/J07QjrMZ/a69f364e-757e-4079-8326-20b5857a601d8.png" style="background-color: #007bff; width: 22px; height: 22px; border-radius: 50%; cursor: pointer; border: 2px solid #ffffff; box-shadow: 0 0 0 2px #007bff; transition: transform 0.2s ease, box-shadow 0.2s ease;" title="أزرق"></span>
+    <span class="color-swatch active" data-color="أزرق" data-img="https://i.postimg.cc/J07QjrMZ/a69f364e-757e-4079-8326-20b5857a601d8.png" style="background-color: #007bff; width: 24px; height: 24px; border-radius: 50%; cursor: pointer; border: 2px solid #ffffff; box-shadow: 0 0 0 2px #007bff; transition: all 0.2s ease;" title="أزرق"></span>
     
     <!-- الأسود -->
-    <span class="color-swatch" data-color="أسود" data-img="https://i.postimg.cc/L8g3t0KX/a69f364e-757e-4079-8326-20b5857a601d9.png" style="background-color: #212529; width: 22px; height: 22px; border-radius: 50%; cursor: pointer; border: 2px solid transparent; transition: transform 0.2s ease, box-shadow 0.2s ease;" title="أسود"></span>
+    <span class="color-swatch" data-color="أسود" data-img="https://i.postimg.cc/L8g3t0KX/a69f364e-757e-4079-8326-20b5857a601d9.png" style="background-color: #212529; width: 24px; height: 24px; border-radius: 50%; cursor: pointer; border: 2px solid transparent; transition: all 0.2s ease;" title="أسود"></span>
     
     <!-- الذهبي / الأخضر -->
-    <span class="color-swatch" data-color="ذهبي" data-img="https://i.postimg.cc/DZnQKvWJ/a69f364e-757e-4079-8326-20b5857a601d7.png" style="background-color: #47fa11; width: 22px; height: 22px; border-radius: 50%; cursor: pointer; border: 2px solid transparent; transition: transform 0.2s ease, box-shadow 0.2s ease;" title="ذهبي"></span>
+    <span class="color-swatch" data-color="ذهبي" data-img="https://i.postimg.cc/DZnQKvWJ/a69f364e-757e-4079-8326-20b5857a601d7.png" style="background-color: #7ed957; width: 24px; height: 24px; border-radius: 50%; cursor: pointer; border: 2px solid transparent; transition: all 0.2s ease;" title="ذهبي"></span>
   </div>
 
-  <h4 style="font-family: var(--font-main); font-size: 18px; color: var(--white); margin-bottom: 8px;">إسورة كير الذكية (Life Tag X200)</h4>
-  <p style="font-size: 13.5px; color: var(--light);">انقر فوق صورة الإسورة لطلبها فوراً وتأمين ملفك الطبي الرقمي في ثوانٍ معدودة.</p>
+  <h4 style="font-family: var(--font-main); font-size: 19px; color: var(--white, #ffffff); margin-bottom: 8px; font-weight: 700;">إسورة كير الذكية (Life Tag X200)</h4>
+  <p style="font-size: 14px; color: var(--light, #e2e8f0); line-height: 1.6;">انقر فوق صورة الإسورة لطلبها فوراً وتأمين ملفك الطبي الرقمي في ثوانٍ معدودة.</p>
   <button class="product-btn" id="uniqueProductBtn" type="button"><i class="fas fa-shopping-cart"></i> اطلب الآن</button>
 </div>
 
 <div class="unique-care-overlay" id="uniqueCareModal">
   <div class="unique-care-box">
     <span class="unique-close-btn" id="uniqueCloseBtn">&times;</span>
-    <div class="modal-title-custom"> حجز إسورة Life Tag X200 الذكية</div>
+    <div class="modal-title-custom"><i class="fas fa-id-card" style="color: var(--green, #7ed957);"></i> حجز إسورة Life Tag X200 الذكية</div>
     
     <div class="modal-note-box-custom">
       <strong>ملاحظة هامة جداً للعملاء:</strong><br>
-      طريقة التوصيل: يتم شحن المنتج وإرساله مباشرةً إلى عنوانك كأي أوردر عادي بدون الحاجة لاستلامه من أي منشأة طبية.<br><br>
-      السعر: سعر الأسورة 1000 جنيه مصري (السعر غير شامل مصاريف الشحن).<br><br>
-      التفعيل: بعد استلام الأسورة، يمكنك تفعيل حسابك وتوثيق بياناتك بسهولة عبر التطبيق وفقاً لشروط استخدام خدمات منظومة كير لتكنولوجيا الرعاية الرقمية.
+      • <strong>طريقة التوصيل:</strong> يتم شحن المنتج وإرساله مباشرةً إلى عنوانك كأي أوردر عادي بدون الحاجة لاستلامه من أي منشأة طبية.<br>
+      • <strong>السعر:</strong> سعر الأسورة 1000 جنيه مصري (السعر غير شامل مصاريف الشحن).<br>
+      • <strong>التفعيل:</strong> بعد استلام الأسورة، يمكنك تفعيل حسابك وتوثيق بياناتك بسهولة عبر التطبيق وفقاً لشروط استخدام خدمات منظومة كير لتكنولوجيا الرعاية الرقمية.
     </div>
 
     <form id="uniqueOrderForm" action="https://formspree.io/f/xbdndarb" method="POST">
-      <!-- حقل خفي لتمرير اللون المختار إلى Formspree -->
       <input type="hidden" name="اللون المختار" id="selectedColorInput" value="أزرق">
 
       <div class="form-group-custom">
-        <label for="uniqueName">الاسم بالكامل</label>
+        <label for="uniqueName">الاسم بالكامل *</label>
         <input type="text" name="الاسم بالكامل" id="uniqueName" class="form-control-custom" placeholder="اكتب الاسم ثلاثياً" required />
       </div>
       
       <div class="form-group-custom">
-        <label for="uniqueNationalID">الرقم القومي</label>
+        <label for="uniqueNationalID">الرقم القومي *</label>
         <input type="text" name="الرقم القومي" id="uniqueNationalID" class="form-control-custom" placeholder="اكتب الرقم القومي (14 رقم)" pattern="[0-9]{14}" maxlength="14" title="يرجى إدخال رقم قومي صحيح مكون من 14 رقم" required />
       </div>
 
       <div class="form-group-custom">
-        <label for="uniqueMobile">رقم الموبايل</label>
+        <label for="uniqueMobile">رقم الموبايل *</label>
         <input type="tel" name="رقم الهاتف" id="uniqueMobile" class="form-control-custom" placeholder="مثال: 010XXXXXXXX" required />
       </div>
 
       <div class="form-group-custom">
-        <label for="uniqueEmail">البريد الإلكتروني</label>
-        <input type="email" name="البريد الإلكتروني" id="uniqueEmail" class="form-control-custom" placeholder="caretechnologie.info@gamil.com" required />
+        <label for="uniqueEmail">البريد الإلكتروني *</label>
+        <input type="email" name="البريد الإلكتروني" id="uniqueEmail" class="form-control-custom" placeholder="caretechnologie.info@gmail.com" required />
       </div>
 
       <div class="form-group-custom">
-        <label for="uniqueGov">المحافظة والمركز التابع له</label>
+        <label for="uniqueGov">المحافظة والمركز التابع له *</label>
         <input type="text" name="المحافظة والمركز" id="uniqueGov" class="form-control-custom" placeholder="مثال: الفيوم - مركز ابشواي" required />
       </div>
 
       <div class="form-group-custom">
-        <label for="uniqueAddress">العنوان التفصيلي</label>
+        <label for="uniqueAddress">العنوان التفصيلي *</label>
         <input type="text" name="العنوان بالتفصيل" id="uniqueAddress" class="form-control-custom" placeholder="اسم الشارع - بجانب معالم مميزة" required />
       </div>
 
-      <button type="submit" class="btn-submit-custom">إرسال</button>
+      <button type="submit" class="btn-submit-custom"><i class="fas fa-paper-plane"></i> إرسال الطلب</button>
     </form>
 
     <div class="success-alert-custom" id="uniqueSuccessAlert">
-      <i class="fas fa-check-circle"></i> تم إرسال طلب حجز إسورتك بنجاح! سيقوم فريق كير بالتواصل معك عند شحن المنتج للتفعيل والاستلام.
+      <i class="fas fa-check-circle" style="font-size: 24px; margin-bottom: 8px;"></i><br>
+      تم إرسال طلب حجز إسورتك بنجاح! سيقوم فريق كير بالتواصل معك عند شحن المنتج للتفعيل والاستلام.
     </div>
   </div>
 </div>
@@ -1117,7 +1167,6 @@
 
       if (!card || !modal) return;
 
-      // معالجة تغيير صورة المنتج وتحديث اللون المختار
       swatches.forEach(swatch => {
         swatch.addEventListener('click', function(e) {
           e.stopPropagation();
@@ -1150,7 +1199,6 @@
         });
       });
 
-      // دالة الفتح الآمنة
       function forceOpenModal(e) {
         if (e) {
           e.preventDefault();
@@ -1160,7 +1208,6 @@
         document.body.style.setProperty('overflow', 'hidden', 'important');
       }
 
-      // دالة الإغلاق الآمنة
       function forceCloseModal(e) {
         if (e) {
           e.preventDefault();
@@ -1170,7 +1217,6 @@
         document.body.style.removeProperty('overflow');
       }
 
-      // ربط الأحداث
       card.onclick = forceOpenModal;
       if (btn) btn.onclick = forceOpenModal;
       if (closeBtn) closeBtn.onclick = forceCloseModal;
@@ -1181,10 +1227,8 @@
         }
       };
 
-      // معالجة وإرسال النموذج بشكل آمن
       if (form) {
         form.onsubmit = function(event) {
-          // السماح للـ HTML validation بالعمل أولاً قبل الـ Fetch
           if (!form.checkValidity()) {
             return; 
           }
@@ -1196,14 +1240,12 @@
           const formData = new FormData(form);
 
           submitBtn.disabled = true;
-          submitBtn.textContent = 'جاري إرسال الطلب...';
+          submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> جاري إرسال الطلب...';
 
           fetch(form.action, {
             method: 'POST',
             body: formData,
-            headers: {
-              'Accept': 'application/json'
-            }
+            headers: { 'Accept': 'application/json' }
           }).then(response => {
             if (response.ok) {
               form.style.setProperty('display', 'none', 'important');
@@ -1211,12 +1253,12 @@
             } else {
               alert('حدث خطأ أثناء إرسال طلبك، يرجى إعادة المحاولة.');
               submitBtn.disabled = false;
-              submitBtn.textContent = 'إرسال';
+              submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> إرسال الطلب';
             }
           }).catch(error => {
             alert('تأكد من اتصالك بالإنترنت ثم حاول مرة أخرى.');
             submitBtn.disabled = false;
-            submitBtn.textContent = 'إرسال';
+            submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> إرسال الطلب';
           });
         };
       }
@@ -1230,220 +1272,221 @@
   })();
 </script>
 
-    </section>
+</section>
 
- <section id="how" class="section" style="background:var(--bg2)">
-    <div class="blob-container"><div class="blob" style="width:400px;height:400px;bottom:-100px;right:-100px;background:var(--purple);"></div></div>
-    <div class="container">
-      <div class="text-center reveal">
-        <span class="badge" style="margin-bottom:24px"><i class="fas fa-route"></i>&nbsp; كيف يعمل النظام</span>
-        <h2 class="section-title">9 خطوات فقط <span class="text-green">للرعاية الكاملة داخل المنظومة</span></h2>
-        <p class="section-sub">سواء كنت مريضاً يبحث عن رعاية موثوقة،أو حتى منشأة طبية تسعى لتطوير نظامها الإلكتروني والاعتماد على بيئة سحابية موحدة.. 'كير' صُمم ليقدم لك تجربة بسيطة ومثالية لدعم القطاع الطبي.</p>
-      </div>
-      <style>
+<section id="how" class="section" style="background:var(--bg2, #1e1a3d)">
+  <div class="blob-container"><div class="blob" style="width:400px;height:400px;bottom:-100px;right:-100px;background:var(--purple, #6b5ce7); opacity:0.15;"></div></div>
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="badge" style="margin-bottom:24px"><i class="fas fa-route"></i>&nbsp; كيف يعمل النظام</span>
+      <h2 class="section-title">9 خطوات فقط <span class="text-green">للرعاية الكاملة داخل المنظومة</span></h2>
+      <p class="section-sub">سواء كنت مريضاً يبحث عن رعاية موثوقة، أو حتى منشأة طبية تسعى لتطوير نظامها الإلكتروني والاعتماد على بيئة سحابية موحدة.. 'كير' صُمم ليقدم لك تجربة بسيطة ومثالية لدعم القطاع الطبي.</p>
+    </div>
+    
+    <style>
+      .how-tabs {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        gap: 8px !important;
+        margin: 0 auto 40px auto !important;
+        padding: 6px !important;
+        background: rgba(107, 92, 231, 0.12) !important;
+        border-radius: 30px !important;
+        border: 1px solid rgba(107, 92, 231, 0.3) !important;
+        max-width: 600px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }
+      
+      .how-tabs .tab-btn {
+        flex: 1 !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 8px !important;
+        padding: 12px 10px !important;
+        font-size: 15.5px !important;
+        font-weight: 700 !important;
+        font-family: var(--font-main) !important;
+        border-radius: 25px !important;
+        border: none !important;
+        background: transparent !important;
+        color: var(--light, #e2e8f0) !important;
+        cursor: pointer !important;
+        transition: all 0.3s ease !important;
+        white-space: nowrap !important;
+        text-align: center !important;
+      }
+
+      .how-tabs .tab-btn i {
+        font-size: 16px !important;
+        transition: transform 0.3s ease !important;
+      }
+
+      .how-tabs .tab-btn.active {
+        background: var(--green, #7ed957) !important;
+        color: var(--bg, #12102a) !important;
+        box-shadow: 0 4px 15px rgba(126, 217, 87, 0.35) !important;
+      }
+
+      .how-tabs .tab-btn.active i {
+        transform: scale(1.1) rotate(-5deg) !important;
+      }
+
+      @media (max-width: 480px) {
         .how-tabs {
-          display: flex !important;
-          justify-content: space-between !important;
-          align-items: center !important;
-          gap: 8px !important;
-          margin: 0 auto 40px auto !important;
-          padding: 6px !important;
-          background: rgba(107, 92, 231, 0.08) !important;
-          border-radius: 30px !important;
-          border: 1px solid rgba(107, 92, 231, 0.2) !important;
-          max-width: 600px !important;
-          width: 100% !important;
-          box-sizing: border-box !important;
+          gap: 4px !important;
+          padding: 4px !important;
+          margin-bottom: 30px !important;
         }
-        
         .how-tabs .tab-btn {
-          flex: 1 !important; /* توزيع الأزرار بالتساوي تماماً */
-          display: inline-flex !important;
-          align-items: center !important;
-          justify-content: center !important;
-          gap: 8px !important;
-          padding: 12px 10px !important;
-          font-size: 15.5px !important;
-          font-weight: 700 !important;
-          font-family: var(--font-main) !important;
-          border-radius: 25px !important;
-          border: none !important;
-          background: transparent !important;
-          color: var(--light) !important;
-          cursor: pointer !important;
-          transition: all 0.3s ease !important;
-          white-space: nowrap !important; /* منع نزول النص لسطر جديد */
-          text-align: center !important;
+          padding: 10px 4px !important;
+          font-size: 13px !important;
+          gap: 4px !important;
+          border-radius: 20px !important;
         }
-
         .how-tabs .tab-btn i {
-          font-size: 16px !important;
-          transition: transform 0.3s ease !important;
+          font-size: 13px !important;
         }
+      }
+    </style>
 
-        /* تنسيق الزر النشط */
-        .how-tabs .tab-btn.active {
-          background: var(--green) !important;
-          color: var(--bg) !important;
-          box-shadow: 0 4px 15px rgba(126, 217, 87, 0.3) !important;
-        }
+    <div class="how-tabs">
+      <button class="tab-btn active" onclick="switchTab('patient', this)"><i class="fas fa-user"></i>للمريض</button>
+      <button class="tab-btn" onclick="switchTab('facility', this)"><i class="fas fa-hospital"></i>للمنشأة</button>
+    </div>
 
-        .how-tabs .tab-btn.active i {
-          transform: scale(1.1) rotate(-5deg) !important;
-        }
-
-        /* متجاوب مع الموبايل والشاشات الصغيرة جداً */
-        @media (max-width: 480px) {
-          .how-tabs {
-            gap: 4px !important;
-            padding: 4px !important;
-            margin-bottom: 30px !important;
-          }
-          .how-tabs .tab-btn {
-            padding: 10px 4px !important;
-            font-size: 12.5px !important; /* تصغير مرن للخط ليناسب شاشات الموبايل الصغير */
-            gap: 4px !important;
-            border-radius: 20px !important;
-          }
-          .how-tabs .tab-btn i {
-            font-size: 13px !important;
-          }
-        }
-      </style>
-      <div class="how-tabs">
-        <button class="tab-btn active" onclick="switchTab('patient', this)"><i class="fas fa-user"></i>للمريض</button>
-        <button class="tab-btn" onclick="switchTab('facility', this)"><i class="fas fa-hospital"></i>للمنشأة</button>
-      </div>
-      <div class="tab-content active" id="patient">
-       <!-- قائمة خطوات المرضى والأفراد -->
-        <div class="steps-list">
-          <div class="step-item reveal">
-            <div class="step-num">1</div>
-            <div class="step-body">
-              <h4>تحميل تطبيق CARE</h4>
-              <p>اضغط على الرابط التالي لتحميل التطبيق مباشرة <a href="https://apkpure.com/p/cte.care2" target="_blank" style="color: var(--green); text-decoration: underline;">https://apkpure.com/p/cte.care2</a> أو قم بتنزيله من أسفل الموقع.</p>
-            </div>
-          </div>
-
-          <div class="step-item reveal reveal-delay-1">
-            <div class="step-num">2</div>
-            <div class="step-body">
-              <h4>إنشاء وتفعيل الحساب الرقمي</h4>
-              <p>قم بإنشاء حسابك وتأكيده عبر كود التحقق لتفعيل ملفك الطبي الموحد والآمن على المنصة.</p>
-            </div>
-          </div>
-
-          <div class="step-item reveal reveal-delay-2">
-            <div class="step-num">3</div>
-            <div class="step-body">
-              <h4>رفع وتخزين البيانات الطبية</h4>
-              <p>سجل بياناتك الصحية (الفصيلة، الأمراض المزمنة، الأدوية، وحالات الطوارئ) لتشفيرها وحفظها سحابياً بأعلى معايير الأمان.</p>
-            </div>
-          </div>
-
-          <div class="step-item reveal">
-            <div class="step-num">4</div>
-            <div class="step-body">
-              <h4>ربط إسورة Life Tag X200</h4>
-              <p>قم باقتناء وربط إسورتك الذكية بالحساب لتمكين القراءة اللاتلامسية (NFC) والوصول الفوري لبياناتك وقت الطوارئ.</p>
-            </div>
-          </div>
-
-          <div class="step-item reveal reveal-delay-1">
-            <div class="step-num">5</div>
-            <div class="step-body">
-              <h4>الوصول الفوري في أي منشأة</h4>
-              <p>استمتع برعاية صحية أسرع وأكثر أماناً عند زيارة أي مستشفى أو مركز طبي في شبكة كير بمجرد مسح الإسورة.</p>
-            </div>
+    <!-- قائمة خطوات المرضى والأفراد -->
+    <div class="tab-content active" id="patient">
+      <div class="steps-list">
+        <div class="step-item reveal">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <h4>تحميل تطبيق CARE</h4>
+            <p>اضغط على الرابط التالي لتحميل التطبيق مباشرة <a href="https://apkpure.com/p/cte.care2" target="_blank" style="color: var(--green, #7ed957); text-decoration: underline; font-weight: 600;">https://apkpure.com/p/cte.care2</a> أو قم بتنزيله من أسفل الموقع.</p>
           </div>
         </div>
-      </div>
 
-      <!-- قائمة خطوات المنشآت الطبية -->
-      <div class="tab-content" id="facility">
-        <div class="steps-list">
-          <div class="step-item reveal">
-            <div class="step-num" style="background:var(--green); color:#000; width:50px; height:50px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; flex-shrink:0;">1</div>
-            <div class="step-body">
-              <h4>تقديم طلب الاعتماد والربط</h4>
-              <p>سجل بيانات منشأتك الطبية (المستشفى، العيادة، أو المركز) وارفاق الترخيص والبيانات الأساسية لمراجعتها وتفعيل حساب المؤسسة.</p>
-            </div>
+        <div class="step-item reveal reveal-delay-1">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <h4>إنشاء وتفعيل الحساب الرقمي</h4>
+            <p>قم بإنشاء حسابك وتأكيده عبر كود التحقق لتفعيل ملفك الطبي الموحد والآمن على المنصة.</p>
           </div>
+        </div>
 
-          <div class="step-item reveal reveal-delay-1">
-            <div class="step-num" style="background:var(--green); color:#000; width:50px; height:50px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; flex-shrink:0;">2</div>
-            <div class="step-body">
-              <h4>التكامل مع النظام السحابي الذكي</h4>
-              <p>ربط منشأتك بنظام كير السحابي للوصول اللاتلامسي الفوري لملفات المرضى في أقل من 0.5 ثانية بدون تعاملات ورقية.</p>
-            </div>
+        <div class="step-item reveal reveal-delay-2">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <h4>رفع وتخزين البيانات الطبية</h4>
+            <p>سجل بياناتك الصحية (الفصيلة، الأمراض المزمنة، الأدوية، وحالات الطوارئ) لتشفيرها وحفظها سحابياً بأعلى معايير الأمان.</p>
           </div>
+        </div>
 
-          <div class="step-item reveal reveal-delay-1">
-            <div class="step-num" style="background:var(--green); color:#000; width:50px; height:50px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; flex-shrink:0;">3</div>
-            <div class="step-body">
-              <h4>تجهيز أجهزة القراءة اللاتلامسية (NFC)</h4>
-              <p>تفعيل أجهزة المسح وقارئ الإسورة الذكية للطواقم الطبية وأقسام الطوارئ لضمان التعرف الدقيق والمباشر على المريض.</p>
-            </div>
+        <div class="step-item reveal">
+          <div class="step-num">4</div>
+          <div class="step-body">
+            <h4>ربط إسورة Life Tag X200</h4>
+            <p>قم باقتناء وربط إسورتك الذكية بالحساب لتمكين القراءة اللاتلامسية (NFC) والوصول الفوري لبياناتك وقت الطوارئ.</p>
           </div>
+        </div>
 
-          <div class="step-item reveal reveal-delay-1">
-            <div class="step-num" style="background:var(--green); color:#000; width:50px; height:50px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; flex-shrink:0;">4</div>
-            <div class="step-body">
-              <h4>إدارة وتحديث السجلات لحظياً</h4>
-              <p>بدء استقبال المرضى وتحديث تاريخهم الطبي وتدوين الملاحظات البرمجية بأعلى مستويات الحماية والتشفير السيبراني.</p>
-            </div>
+        <div class="step-item reveal reveal-delay-1">
+          <div class="step-num">5</div>
+          <div class="step-body">
+            <h4>الوصول الفوري في أي منشأة</h4>
+            <p>استمتع برعاية صحية أسرع وأكثر أماناً عند زيارة أي مستشفى أو مركز طبي في شبكة كير بمجرد مسح الإسورة.</p>
           </div>
         </div>
       </div>
     </div>
-  </section> 
 
-  <!-- Numbers Section -->
-  <section id="numbers" class="section-sm">
-    <div class="container">
-      <div class="numbers-grid"> 
-        <div class="number-item reveal"><span class="num-val">150+</span><span class="num-lbl">شخص شارك في البحث الميداني</span><span class="num-sub">بمعرفة فريق CARE-CTE في مصر</span></div>
-        <div class="number-item reveal reveal-delay-1"><span class="num-val">87%</span><span class="num-lbl">من المرضى يريدون كير</span><span class="num-sub">أبدوا رغبة ونية استخدام حقيقية</span></div>
-        <div class="number-item reveal reveal-delay-3"><span class="num-val">100%</span><span class="num-lbl">سرعة الاستجابة الفورية</span><span class="num-sub">أعلى معدل سرعة وأمان في مصر</span></div>
-        <div class="number-item reveal reveal-delay-4"><span class="num-val">5M</span><span class="num-lbl">هدف تأمين بيانات 5 مليون روح مصرية</span><span class="num-sub">كـ هدف أساسي للمنظومة</span></div>
+    <!-- قائمة خطوات المنشآت الطبية -->
+    <div class="tab-content" id="facility">
+      <div class="steps-list">
+        <div class="step-item reveal">
+          <div class="step-num" style="background:var(--green, #7ed957); color:#12102a; width:45px; height:45px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; flex-shrink:0;">1</div>
+          <div class="step-body">
+            <h4>تقديم طلب الاعتماد والربط</h4>
+            <p>سجل بيانات منشأتك الطبية (المستشفى، العيادة، أو المركز) وإرفاق الترخيص والبيانات الأساسية لمراجعتها وتفعيل حساب المؤسسة.</p>
+          </div>
+        </div>
+
+        <div class="step-item reveal reveal-delay-1">
+          <div class="step-num" style="background:var(--green, #7ed957); color:#12102a; width:45px; height:45px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; flex-shrink:0;">2</div>
+          <div class="step-body">
+            <h4>التكامل مع النظام السحابي الذكي</h4>
+            <p>ربط منشأتك بنظام كير السحابي للوصول اللاتلامسي الفوري لملفات المرضى في أقل من 0.5 ثانية بدون تعاملات ورقية.</p>
+          </div>
+        </div>
+
+        <div class="step-item reveal reveal-delay-1">
+          <div class="step-num" style="background:var(--green, #7ed957); color:#12102a; width:45px; height:45px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; flex-shrink:0;">3</div>
+          <div class="step-body">
+            <h4>تجهيز أجهزة القراءة اللاتلامسية (NFC)</h4>
+            <p>تفعيل أجهزة المسح وقارئ الإسورة الذكية للطواقم الطبية وأقسام الطوارئ لضمان التعرف الدقيق والمباشر على المريض.</p>
+          </div>
+        </div>
+
+        <div class="step-item reveal reveal-delay-1">
+          <div class="step-num" style="background:var(--green, #7ed957); color:#12102a; width:45px; height:45px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; flex-shrink:0;">4</div>
+          <div class="step-body">
+            <h4>إدارة وتحديث السجلات لحظياً</h4>
+            <p>بدء استقبال المرضى وتحديث تاريخهم الطبي وتدوين الملاحظات البرمجية بأعلى مستويات الحماية والتشفير السيبراني.</p>
+          </div>
+        </div>
       </div>
     </div>
-  </section>
+  </div>
+</section> 
 
-  <!-- Testimonials -->
-  <section id="testimonials" class="section">
-    <div class="blob-container"><div class="blob" style="width:400px;height:400px;top:-100px;left:-100px;background:var(--teal);opacity:0.07;"></div></div>
-    <div class="container">
-      <div class="text-center reveal">
-        <span class="badge" style="margin-bottom:24px"><i class="fas fa-comments"></i>&nbsp; ماذا قالوا</span>
-        <h2 class="section-title">صوت <span class="text-green">المجتمع</span></h2>
-        <p class="section-sub">أراء حقيقية من المرضى والتمريض في مصر خلال فترات بحث وتطوير المنظومة</p>
+<!-- Numbers Section -->
+<section id="numbers" class="section-sm">
+  <div class="container">
+    <div class="numbers-grid"> 
+      <div class="number-item reveal"><span class="num-val">150+</span><span class="num-lbl">شخص شارك في البحث الميداني</span><span class="num-sub">بمعرفة فريق CARE-CTE في مصر</span></div>
+      <div class="number-item reveal reveal-delay-1"><span class="num-val">87%</span><span class="num-lbl">من المرضى يريدون كير</span><span class="num-sub">أبدوا رغبة ونية استخدام حقيقية</span></div>
+      <div class="number-item reveal reveal-delay-3"><span class="num-val">100%</span><span class="num-lbl">سرعة الاستجابة الفورية</span><span class="num-sub">أعلى معدل سرعة وأمان في مصر</span></div>
+      <div class="number-item reveal reveal-delay-4"><span class="num-val">5M</span><span class="num-lbl">هدف تأمين بيانات 5 مليون روح مصرية</span><span class="num-sub">كـ هدف أساسي للمنظومة</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section id="testimonials" class="section">
+  <div class="blob-container"><div class="blob" style="width:400px;height:400px;top:-100px;left:-100px;background:var(--teal, #00cec9);opacity:0.07;"></div></div>
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="badge" style="margin-bottom:24px"><i class="fas fa-comments"></i>&nbsp; ماذا قالوا</span>
+      <h2 class="section-title">صوت <span class="text-green">المجتمع</span></h2>
+      <p class="section-sub">أراء حقيقية من المرضى والتمريض في مصر خلال فترات بحث وتطوير المنظومة</p>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card reveal">
+        <span class="quote-mark">"</span>
+        <div class="testi-stars">★★★★★</div>
+        <p>لو كان تطبيق كير موجوداً من قبل لوفّر علينا ساعات من القلق والبحث عن تمريض موثوق ومعتمد لتنظيم أدوية ومحاليل والدتي المريضة، وساعدتنا إسورة لايف تاج الذكية وفرت علينا جمع الأوراق في كل زيارة طبية. الآن والدتي لديها رفيق ذكي للوصول الفوري لجميع بياناتها الطبية دون البحث عن أي أوراق.</p>
+        <div class="testi-author"><div class="testi-avatar">م.أ</div><div><div class="testi-name">محمد أحمد</div><div class="testi-role">ابن مريضة · القاهرة</div></div></div>
       </div>
-      <div class="testi-grid">
-        <div class="testi-card reveal">
-          <span class="quote-mark">"</span>
-          <div class="testi-stars">★★★★★</div>
-          <p>لو كان تطبيق كير موجوداً من قبل لوفّر علينا ساعات من القلق والبحث عن تمريض موثوق ومعتمد لتنظيم أدوية ومحاليل والدتي المريضة وساعدتنا اسورة لايف تاج الذكية وفرت علينا جمع الاوراق في كل زياره طبية الان والدتي لديها رفيق ذكي للوصول الفوري لجميع بياناتها الطبية دون البحث عن اي اوراق .</p>
-          <div class="testi-author"><div class="testi-avatar">م.أ</div><div><div class="testi-name">محمد أحمد</div><div class="testi-role">ابن مريضة · القاهرة</div></div></div>
-        </div>
-        <div class="testi-card reveal reveal-delay-1">
-          <span class="quote-mark">"</span>
-          <div class="testi-stars">★★★★★</div>
-          <p>المكافأة الترحيبية ونظام الأسعار الثابتة في تطبيق كير يعطينا طمأنينة كاملة كمستهلكين، ويبعدنا تماماً عن استغلال وتفاوت الأسعار العشوائي وفر شراء ادوية بقيمة 3000 جنية لدعم المرضى الغير قادرين وتسهيل رحلة علاج العديد من المرضى شكراً كير.</p>
-          <div class="testi-author"><div class="testi-avatar">ن.س</div><div><div class="testi-name">نهى سامي</div><div class="testi-role">أم مصطفي . الجيزة</div></div></div>
-        </div>
+      <div class="testi-card reveal reveal-delay-1">
+        <span class="quote-mark">"</span>
+        <div class="testi-stars">★★★★★</div>
+        <p>المكافأة الترحيبية ونظام الأسعار الثابتة في تطبيق كير يعطينا طمأنينة كاملة كمستهلكين، ويبعدنا تماماً عن استغلال وتفاوت الأسعار العشوائي. ووفر شراء أدوية بقيمة 3000 جنيه لدعم المرضى غير القادرين وتسهيل رحلة علاج العديد من المرضى، شكراً كير.</p>
+        <div class="testi-author"><div class="testi-avatar">ن.س</div><div><div class="testi-name">نهى سامي</div><div class="testi-role">أم مصطفى · الجيزة</div></div></div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
- <!-- Support & Technical Issues Section -->
+<!-- Support & Technical Issues Section -->
 <section id="join" class="section">
   <div class="container">
     <div class="join-grid">
       
       <!-- الجانب التوضيحي للدعم الفني -->
       <div class="join-info reveal">
-        <span class="badge" style="background:rgba(126,217,87,0.1);border-color:rgba(126,217,87,0.2);color:var(--green);margin-bottom:24px;">
+        <span class="badge" style="background:rgba(126,217,87,0.1);border-color:rgba(126,217,87,0.2);color:var(--green, #7ed957);margin-bottom:24px;">
           <i class="fas fa-headset"></i>&nbsp; الدعم الفني والصيانة
         </span>
         <h2 class="section-title">مركز البلاغات الرقمية<br /><span class="text-green">استجابة تقنية على مدار الساعة</span></h2>
@@ -1467,7 +1510,7 @@
 
       <!-- 1. نموذج الإبلاغ عن مشكلة/عطل تقني للأفراد -->
       <div class="join-form reveal reveal-delay-2">
-        <h3 class="form-title"><i class="fas fa-bug" style="color:var(--green);"></i> الإبلاغ عن مشكلة تقنية (للعملاء)</h3>
+        <h3 class="form-title"><i class="fas fa-bug" style="color:var(--green, #7ed957);"></i> الإبلاغ عن مشكلة تقنية (للعملاء)</h3>
         <p class="form-sub">هل واجهت مشكلة أثناء تصفح تطبيق كير أو قراءة إسورة Life Tag X200؟ أرسل التفاصيل وسيقوم الفريق التقني بمعالجتها فوراً.</p>
         
         <form id="techSupportForm" action="https://formspree.io/f/xqejdwbj" method="POST" onsubmit="handleFormSubmit(event, 'techSupportForm', 'techSupportSuccess')">
@@ -1518,7 +1561,7 @@
             <textarea name="issue_details" rows="3" class="form-control-custom" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.2); color: #fff; padding: 10px;" placeholder="اشرح ما حدث معك وما أسباب المشكلة..." required></textarea>
           </div>
           
-          <button type="submit" class="form-submit" id="techSupportSubmit"><i class="fas fa-paper-plane"></i>إرسال</button>
+          <button type="submit" class="form-submit" id="techSupportSubmit"><i class="fas fa-paper-plane"></i> إرسال البلاغ</button>
         </form>
 
         <div class="form-success" id="techSupportSuccess">
@@ -1530,7 +1573,7 @@
 
       <!-- 2. نموذج الدعم الفني المخصص للمنشآت الطبية -->
       <div id="clinicFormSection" class="join-form reveal reveal-delay-2" style="margin-top: 40px; width: 100%;">
-        <h3 class="form-title"><i class="fas fa-hospital-alt" style="color:var(--green);"></i> الدعم الفني للمنشآت والجهات الطبية</h3>
+        <h3 class="form-title"><i class="fas fa-hospital-alt" style="color:var(--green, #7ed957);"></i> الدعم الفني للمنشآت والجهات الطبية</h3>
         <p class="form-sub">خصصنا هذا النموذج للمستشفيات والعيادات والمراكز الطبية للإبلاغ عن أي أعطال برمجية في الربط الشبكي أو أجهزة القراءة.</p>
         
         <form id="clinicTechForm" action="https://formspree.io/f/xqejdwbj" method="POST" onsubmit="handleFormSubmit(event, 'clinicTechForm', 'clinicTechSuccess')">
@@ -1576,7 +1619,7 @@
             <textarea name="clinic_issue_details" rows="3" class="form-control-custom" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.2); color: #fff; padding: 10px;" placeholder="اكتب تفاصيل العطل لسرعة توجه مهندسي الدعم الفني..." required></textarea>
           </div>
 
-          <button type="submit" class="form-submit" id="clinicTechSubmit"><i class="fas fa-wrench"></i>إرسال</button>
+          <button type="submit" class="form-submit" id="clinicTechSubmit"><i class="fas fa-wrench"></i> إرسال طلب الصيانة</button>
         </form>
 
         <div class="form-success" id="clinicTechSuccess">
@@ -1589,76 +1632,115 @@
     </div>
   </div>
 </section>
-  <!-- Contact Section -->
-  <section id="contact" class="section">
-    <div class="container">
-      <div class="contact-grid">
-        <div class="contact-info reveal">
-          <span class="badge" style="margin-bottom:24px"><i class="fas fa-envelope"></i>&nbsp; تواصل معنا</span>
-          <h2 class="section-title">نحن هنا <span class="text-green">لمساعدتك</span></h2>
-          <p>يسعدنا في CARE استقبال كافة الاستفسارات، مقترحات الشراكة الطبية، وطلبات الدعم الفني على مدار الساعة.</p>
-          <div class="contact-cards">
-            <div class="contact-card"><div class="c-icon"><i class="fas fa-envelope"></i></div><div><h4>رقم الطوارئ والدعم الفني لمنتجاتنا</h4><p>01124280827</p></div></div>
-            <div class="contact-card"><div class="c-icon"><i class="fas fa-envelope-open"></i></div><div><h4>بريد الإدارة والمعلومات</h4><p>caretechnologie.info@gmail.com</p></div></div>
+
+<!-- Contact Section -->
+<section id="contact" class="section">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <span class="badge" style="margin-bottom:24px"><i class="fas fa-envelope"></i>&nbsp; تواصل معنا</span>
+        <h2 class="section-title">نحن هنا <span class="text-green">لمساعدتك</span></h2>
+        <p>يسعدنا في CARE استقبال كافة الاستفسارات، مقترحات الشراكة الطبية، وطلبات الدعم الفني على مدار الساعة.</p>
+        <div class="contact-cards">
+          <!-- قسم الدعم الفني -->
+          <div class="contact-card">
+            <div class="c-icon"><i class="fas fa-headset"></i></div>
+            <div>
+              <h4>رقم الدعم الفني</h4>
+              <p>01124280827</p>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <div class="c-icon"><i class="fas fa-envelope"></i></div>
+            <div>
+              <h4>البريد الإلكتروني للدعم الفني</h4>
+              <p>info@care-cte.me</p>
+            </div>
+          </div>
+
+          <!-- قسم الشكاوى والمتابعة الإدارية -->
+          <div class="contact-card">
+            <div class="c-icon"><i class="fas fa-phone-alt"></i></div>
+            <div>
+              <h4>رقم التواصل للشكاوى</h4>
+              <p>01002325215</p>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <div class="c-icon"><i class="fas fa-paper-plane"></i></div>
+            <div>
+              <h4>بريد الشكاوى والمتابعة</h4>
+              <p>mohamed.hassan@care-cte.me</p>
+            </div>
           </div>
         </div>
-      
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <div class="logo"><img src="https://i.postimg.cc/gJmm7th0/Black-and-White-Simple-Modern-Minimalist-Letter-G-Logo-(1).png" alt="كير لتكنولوجيا الرعاية الرقمية style="height:44px;width:auto;"></div>
-          <p>CARE-CTE أول منصة تعمل كوسيط موثوق لتخزين بيانات المرضى بتغطية كاملة في مصر</p>
-        </div>
-        <div class="footer-col">
-          <h4>روابط سريعة</h4>
-          <ul>
-            <li><a href="#hero">الرئيسية</a></li>
-            <li><a href="#about">من نحن</a></li>
-            <li><a href="#services">خدماتنا</a></li>
-            <li><a href="https://apkpure.com/p/cte.care2">حمل تطبيق CARE-CTE</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>قانوني</h4>
-          <ul>
-            <li><a href="">سياسة الخصوصية</a></li>
-            <li><a href="">الشروط والأحكام</a></li>
-            <li><a href="">حقوق المستخدم داخل التطبيق</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>© 2026 كير CARE — جميع الحقوق محفوظة لشركة CARE-CTE</p>
-        <p>رقم لتسجيل الضريبي<span class="made">767644794</span>نشاط قانوني</p>
       </div>
     </div>
-  </footer>
+  </div>
+</section>
+      
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo"><img src="https://i.postimg.cc/VkqLhqMw/70732-(1).png" alt="كير لتكنولوجيا الرعاية الرقمية" style="height:44px;width:auto;"></div>
+        <p>CARE-CTE أول منصة تعمل كوسيط موثوق لتخزين بيانات المرضى بتغطية كاملة في مصر</p>
+      </div>
+      <div class="footer-col">
+        <h4>روابط سريعة</h4>
+        <ul>
+          <li><a href="#hero">الرئيسية</a></li>
+          <li><a href="#about">من نحن</a></li>
+          <li><a href="#services">خدماتنا</a></li>
+          <li><a href="https://apkpure.com/p/cte.care2" target="_blank">حمل تطبيق CARE-CTE</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>قانوني</h4>
+        <ul>
+          <li><a href="#" onclick="openCareModal('carePrivacyModal'); return false;">سياسة الخصوصية</a></li>
+          <li><a href="#" onclick="openCareModal('careTermsModal'); return false;">الشروط والأحكام</a></li>
+          <li><a href="#" onclick="openCareModal('careTermsModal'); return false;">حقوق المستخدم داخل التطبيق</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 كير CARE — جميع الحقوق محفوظة لشركة CARE-CTE</p>
+      <p>رقم التسجيل الضريبي <span class="made">767644794</span> نشاط قانوني</p>
+    </div>
+  </div>
+</footer>
 
-  <!-- WhatsApp Float Button -->
-  <a href="https://wa.me/201124280827" class="whatsapp-float" target="_blank" rel="noopener" title="تواصل عبر واتساب كير"><i class="fab fa-whatsapp"></i></a>
+<!-- WhatsApp Float Button -->
+<a href="https://wa.me/201124280827" class="whatsapp-float" target="_blank" rel="noopener" title="تواصل عبر واتساب كير"><i class="fab fa-whatsapp"></i></a>
 
-  <!-- Scripts -->
-  <script src="assets/js/main.js"></script>
-  <script>
-    // ─── Loader ───────────────────────────────────────────────
-    window.addEventListener('load', function () {
-      setTimeout(function () {
-        document.getElementById('loader').classList.add('hidden');
-      }, 1400);
-    });
+<!-- Scripts -->
+<script src="assets/js/main.js"></script>
+<script>
+  // ─── Loader ───────────────────────────────────────────────
+  window.addEventListener('load', function () {
+    setTimeout(function () {
+      const loader = document.getElementById('loader');
+      if(loader) loader.classList.add('hidden');
+    }, 1400);
+  });
 
-    // ─── Navbar scroll effect ─────────────────────────────────
-    window.addEventListener('scroll', function () {
-      const navbar = document.getElementById('navbar');
+  // ─── Navbar scroll effect ─────────────────────────────────
+  window.addEventListener('scroll', function () {
+    const navbar = document.getElementById('navbar');
+    if (navbar) {
       if (window.scrollY > 50) { navbar.classList.add('scrolled'); }
       else { navbar.classList.remove('scrolled'); }
-    });
+    }
+  });
 
-    // ─── Hamburger menu ───────────────────────────────────────
-    const hamburgerBtn = document.getElementById('hamburgerBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
+  // ─── Hamburger menu ───────────────────────────────────────
+  const hamburgerBtn = document.getElementById('hamburgerBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  if (hamburgerBtn && mobileMenu) {
     hamburgerBtn.addEventListener('click', function () {
       const isOpen = mobileMenu.classList.toggle('active');
       hamburgerBtn.classList.toggle('active', isOpen);
@@ -1672,85 +1754,80 @@
         hamburgerBtn.setAttribute('aria-expanded', false);
       });
     });
+  }
 
-    // ─── Scroll reveal ────────────────────────────────────────
-    const revealElements = document.querySelectorAll('.reveal');
-    const revealObserver = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) { entry.target.classList.add('visible'); }
-      });
-    }, { threshold: 0.1 });
-    revealElements.forEach(function (el) { revealObserver.observe(el); });
+  // ─── Scroll reveal ────────────────────────────────────────
+  const revealElements = document.querySelectorAll('.reveal');
+  const revealObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) { entry.target.classList.add('visible'); }
+    });
+  }, { threshold: 0.1 });
+  revealElements.forEach(function (el) { revealObserver.observe(el); });
 
-    // ─── Tab switcher ─────────────────────────────────────────
-    function switchTab(tabId, btn) {
-      document.querySelectorAll('.tab-content').forEach(function (tab) { tab.classList.remove('active'); });
-      document.querySelectorAll('.tab-btn').forEach(function (b) { b.classList.remove('active'); });
-      document.getElementById(tabId).classList.add('active');
-      btn.classList.add('active');
-    }
+  // ─── Tab switcher ─────────────────────────────────────────
+  function switchTab(tabId, btn) {
+    document.querySelectorAll('.tab-content').forEach(function (tab) { tab.classList.remove('active'); });
+    document.querySelectorAll('.tab-btn').forEach(function (b) { b.classList.remove('active'); });
+    const targetTab = document.getElementById(tabId);
+    if(targetTab) targetTab.classList.add('active');
+    if(btn) btn.classList.add('active');
+  }
 
-    // ─── Form submission & CARE Welcome Bonus Logic ────────────
-    function handleFormSubmit(event, formId, successId) {
-      event.preventDefault();
-      const form = document.getElementById(formId);
-      const submitBtn = form.querySelector('button[type="submit"]');
-      submitBtn.disabled = true;
-      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> جاري الإرسال...';
+  // ─── Form submission & CARE Welcome Bonus Logic ────────────
+  function handleFormSubmit(event, formId, successId) {
+    event.preventDefault();
+    const form = document.getElementById(formId);
+    const submitBtn = form.querySelector('button[type="submit"]');
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> جاري الإرسال...';
 
-      const formData = new FormData(form);
+    const formData = new FormData(form);
 
-      fetch(form.action, {
-        method: 'POST',
-        body: formData,
-        headers: { 'Accept': 'application/json' }
-      }).then(function (response) {
-        if (response.ok) {
-          form.style.display = 'none';
-          document.getElementById(successId).style.display = 'block';
-          
-          // حقن منطق مكافأة ترحيب عملاء كير الجدد وربطها ديناميكياً بكود العميل المعدل
-          initCareWelcomeReward();
-        } else {
-          submitBtn.disabled = false;
-          submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> أعد المحاولة';
-          alert('حدث خطأ. يرجى المحاولة مرة أخرى.');
-        }
-      }).catch(function(error) {
-          submitBtn.disabled = false;
-          submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> أعد المحاولة';
-          console.error('Error:', error);
-      });
-    }
+    fetch(form.action, {
+      method: 'POST',
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    }).then(function (response) {
+      if (response.ok) {
+        form.style.display = 'none';
+        document.getElementById(successId).style.display = 'block';
+        initCareWelcomeReward();
+      } else {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> أعد المحاولة';
+        alert('حدث خطأ. يرجى المحاولة مرة أخرى.');
+      }
+    }).catch(function(error) {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> أعد المحاولة';
+        console.error('Error:', error);
+    });
+  }
 
-    // دالة احتساب وتفعيل المكافأة الترحيبية (3000ج كاش باك حقيقي) وربطها بالـ Modified User Code
-    function initCareWelcomeReward() {
-      console.log("CARE Welcome Bonus system triggered.");
-      const baseReward = 3000; 
-      
-      // جلب كود المستخدم الحالي أو توليد كود معدل ديناميكي فريد وغير استاتيكي لحساب الكاش باك
-      let userCode = localStorage.getItem('care_user_modified_code') || 'CARE-' + Math.floor(Math.random() * 900000 + 100000);
-      localStorage.setItem('care_user_modified_code', userCode);
-      
-      // ربط وتخزين قيمة البونص الفعلي في جلسة العميل بناءً على الكود المعدل لضمان الأمان والتحقق
-      let activeRewardSession = {
-        code: userCode,
-        amount: baseReward,
-        status: 'verified_cashback',
-        timestamp: new Date().getTime()
-      };
-      
-      localStorage.setItem('care_active_bonus_session', JSON.stringify(activeRewardSession));
-      console.log(`Successfully verified dynamic reward for code ${userCode}: ${baseReward} EGP Cashback initialized.`);
-    }
-  </script>
-  <!-- ================================================================= -->
+  function initCareWelcomeReward() {
+    console.log("CARE Welcome Bonus system triggered.");
+    const baseReward = 3000; 
+    let userCode = localStorage.getItem('care_user_modified_code') || 'CARE-' + Math.floor(Math.random() * 900000 + 100000);
+    localStorage.setItem('care_user_modified_code', userCode);
+    
+    let activeRewardSession = {
+      code: userCode,
+      amount: baseReward,
+      status: 'verified_cashback',
+      timestamp: new Date().getTime()
+    };
+    
+    localStorage.setItem('care_active_bonus_session', JSON.stringify(activeRewardSession));
+    console.log(`Successfully verified dynamic reward for code ${userCode}: ${baseReward} EGP Cashback initialized.`);
+  }
+</script>
+
+<!-- ================================================================= -->
 <!--   حقن الشغل المطور: المقالات الذكية، البحث، وعرض المقال التفصيلي   -->
-<!--                      تصميم ذكي منفصل تماماً                        -->
 <!-- ================================================================= -->
 
 <style>
-  /* استايل النوافذ المنبثقة الذكية الفاخرة */
   .care-modal-overlay {
     position: fixed;
     inset: 0;
@@ -1777,7 +1854,7 @@
     max-width: 1000px;
     max-height: 85vh;
     overflow-y: auto;
-    box-shadow: 0 25px 80px rgba(0,0,0,0.6), var(--glow-p);
+    box-shadow: 0 25px 80px rgba(0,0,0,0.6), 0 0 20px rgba(107, 92, 231, 0.2);
     position: relative;
     transform: translateY(40px);
     transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -1791,7 +1868,7 @@
     top: 24px;
     left: 24px;
     background: rgba(255, 107, 107, 0.15);
-    color: var(--accent, #ff6b6b);
+    color: #ff6b6b;
     border: none;
     width: 40px;
     height: 40px;
@@ -1805,7 +1882,7 @@
     z-index: 10;
   }
   .care-modal-close:hover {
-    background: var(--accent, #ff6b6b);
+    background: #ff6b6b;
     color: #fff;
     transform: rotate(90deg);
   }
@@ -1825,7 +1902,6 @@
     margin-bottom: 15px;
   }
 
-  /* 🔍 استايل شريط البحث الاحترافي - مطابق لـ edited-image.png */
   .care-search-container {
     width: 100%;
     max-width: 600px;
@@ -1858,7 +1934,6 @@
     pointer-events: none;
   }
 
-  /* استايل شبكة المقالات */
   .care-blog-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -1867,7 +1942,7 @@
   }
   .care-blog-card {
     background: var(--card, #1e1a3d);
-    border: 1px solid var(--border);
+    border: 1px solid var(--border, rgba(107, 92, 231, 0.2));
     border-radius: 18px;
     overflow: hidden;
     transition: all 0.3s;
@@ -1875,13 +1950,13 @@
   }
   .care-blog-card:hover {
     transform: translateY(-6px);
-    border-color: var(--green);
-    box-shadow: var(--glow-g);
+    border-color: var(--green, #7ed957);
+    box-shadow: 0 10px 25px rgba(126, 217, 87, 0.15);
   }
   .care-blog-img-box {
     width: 100%;
     height: 180px;
-    background: var(--bg);
+    background: var(--bg, #12102a);
     overflow: hidden;
     position: relative;
   }
@@ -1894,8 +1969,8 @@
     position: absolute;
     top: 12px;
     right: 12px;
-    background: rgba(18, 16, 42, 0.8);
-    color: var(--green);
+    background: rgba(18, 16, 42, 0.85);
+    color: var(--green, #7ed957);
     padding: 4px 10px;
     border-radius: 6px;
     font-size: 11px;
@@ -1908,14 +1983,14 @@
   }
   .care-blog-body h4 {
     font-family: var(--font-main);
-    color: var(--white);
+    color: var(--white, #ffffff);
     font-size: 16px;
     margin-bottom: 10px;
     font-weight: 700;
   }
   .care-blog-body p {
     font-size: 13px;
-    color: var(--light);
+    color: var(--light, #e2e8f0);
     line-height: 1.6;
   }
 
@@ -2003,7 +2078,7 @@
     object-fit: cover;
     border-radius: 18px;
     margin-bottom: 25px;
-    border: 1px solid var(--border);
+    border: 1px solid var(--border, rgba(107, 92, 231, 0.3));
   }
   .care-single-content {
     color: var(--light, #e2e8f0);
@@ -2013,7 +2088,7 @@
   }
 
   .care-policy-text {
-    color: var(--light);
+    color: var(--light, #e2e8f0);
     font-size: 14.5px;
     line-height: 1.9;
     margin-top: 24px;
@@ -2026,15 +2101,13 @@
   <div class="care-modal-wrapper">
     <button class="care-modal-close" onclick="closeCareModal('careBlogModal')"><i class="fas fa-times"></i></button>
     
-    <!-- الواجهة الرئيسية للمقالات -->
     <div id="careBlogMainView">
       <div class="care-modal-logo-header">
-        <img src="https://i.postimg.cc/gJmm7th0/Black-and-White-Simple-Modern-Minimalist-Letter-G-Logo-(1).png" alt="شعار كير">
+        <img src="https://i.postimg.cc/VkqLhqMw/70732-(1).png" alt="شعار كير">
         <span class="badge"><i class="fas fa-user-md"></i>&nbsp; جريدة المنظومة صوت المجتمع</span>
         <h2 class="section-title" style="margin-top:12px; text-align: center;">موسوعة كير الثقافية للرد على <span class="text-green">المشكلات الصحية الطارئة</span></h2>
       </div>
 
-      <!-- 🔍 شريط البحث  -->
       <div class="care-search-container">
         <i class="fas fa-search care-search-icon"></i>
         <input type="text" id="careSearchInput" class="care-search-input" placeholder="ابحث عن مقال طبي معين... (مثال: إغماء، حروق، جلطة)">
@@ -2048,13 +2121,10 @@
           </div>
           <div class="care-blog-body">
             <h4>تمريض منزلي في القاهرة — دليلك الشامل لأفضل خدمة في 2025</h4>
-            <p>هل تبحث عن تمريض منزلي في القاهرةبأسعار واضحة وممرض معتمد يصلك في وقت قياسي؟ سواء كنت تحتاج إلى تركيب محلول وريدي، قياس السكر والضغط، أو رعاية متخصصة لأحد كبار السن في الأسرة، فإن الحصول على تمريض منزلي موثوق بات أسهل من أي وقت مضى مع منصة كير CARE.
-
-في هذا الدليل الشامل، ستتعرف على كل ما تحتاج معرفته عن خدمة التمريض المنزلي في محافظة القاهرة: الخدمات المتاحة، الأسعار، كيفية الاختيار الصحيح، وكيف تحصل على الخدمة في أقل من 15 دقيقة.</p>
+            <p>هل تبحث عن تمريض منزلي في القاهرة بأسعار واضحة وممرض معتمد يصلك في وقت قياسي؟ سواء كنت تحتاج إلى تركيب محلول وريدي، قياس السكر والضغط، أو رعاية متخصصة لأحد كبار السن في الأسرة، فإن الحصول على تمريض منزلي موثوق بات أسهل من أي وقت مضى مع منصة كير CARE.</p>
           </div>
         </div>
 
-        <!-- كارت 2 -->
         <div class="care-blog-card" onclick="openFullArticle(2)">
           <div class="care-blog-img-box">
             <span class="care-blog-badge">إرشادات أطباء</span>
@@ -2066,7 +2136,6 @@
           </div>
         </div>
 
-        <!-- كارت 3 -->
         <div class="care-blog-card" onclick="openFullArticle(3)">
           <div class="care-blog-img-box">
             <span class="care-blog-badge">حروق وإصابات</span>
@@ -2074,7 +2143,7 @@
           </div>
           <div class="care-blog-body">
             <h4>الخطوات الصحيحة لإسعاف الحروق</h4>
-            <p>ضع الجزء المصاب تحت ماء جاري فاتر لمدة لا تقل عن 10 إلى 15 دقيقة تجنب وضع أي معجون تماماً...</p>
+            <p>ضع الجزء المصاب تحت ماء جاري فاتر لمدة لا تقل عن 10 إلى 15 دقيقة، تجنب وضع أي معجون تماماً...</p>
           </div>
         </div>
       </div>
@@ -2108,7 +2177,7 @@
   <div class="care-modal-wrapper">
     <button class="care-modal-close" onclick="closeCareModal('carePrivacyModal')"><i class="fas fa-times"></i></button>
     <div class="care-modal-logo-header">
-      <img src="https://i.postimg.cc/gJmm7th0/Black-and-White-Simple-Modern-Minimalist-Letter-G-Logo-(1).png" alt="شعار كير">
+      <img src="https://i.postimg.cc/VkqLhqMw/70732-(1).png" alt="شعار كير">
       <span class="badge"><i class="fas fa-shield-alt"></i>&nbsp; وثيقة قانونية</span>
       <h2 class="section-title" style="margin-top:12px;">سياسة الخصوصية <span class="text-green">لمنظومة CARE-CTE</span></h2>
     </div>
@@ -2126,7 +2195,7 @@
   <div class="care-modal-wrapper">
     <button class="care-modal-close" onclick="closeCareModal('careTermsModal')"><i class="fas fa-times"></i></button>
     <div class="care-modal-logo-header">
-      <img src="https://i.postimg.cc/gJmm7th0/Black-and-White-Simple-Modern-Minimalist-Letter-G-Logo-(1).png" alt="شعار كير">
+      <img src="https://i.postimg.cc/VkqLhqMw/70732-(1).png" alt="شعار كير">
       <span class="badge"><i class="fas fa-file-contract"></i>&nbsp; اتفاقية الاستخدام</span>
       <h2 class="section-title" style="margin-top:12px;">الشروط والأحكام <span class="text-green">وحقوق مستخدم كير</span></h2>
     </div>
@@ -2135,8 +2204,7 @@
       <h3>1. طبيعة الخدمة والمنصة</h3>
       <p>تصنف "كير" باعتبارها <strong>وسيطاً رقمياً موثوقاً وآمناً</strong> يربط بين المرضى، والمنشآت الطبية، ومقدمي خدمات التمريض المنزلي المعتمدين لضمان الجودة الفائقة دون تدخل ورقي تقليدي.</p>
       <h3>2. الرفيق الطبي</h3>
-      <p>رغبةً من منصة كير (CARE) في ضمان أعلى معايير الأمان والسلامة، لا يتم قبول أو تفعيل أي طلب أو استمارة إلكترونية إلا بعد مراجعة واعتماد رسمي من المنشأة الطبية الشريكة أو الطبيب المعالج المشرف على الحالة؛ وذلك لضمان تسليم المنتجات الطبية والرقمية لمستحقيها عبر مسارات موثوقة ومحددة.
-كما يرجى العلم أنه في حال فقدان، تلف، أو حدوث أي عطل فني في الأسورة الذكية الخاصة بالفحص الطبي، لا يحق للمستخدم محاولة تعديل أو إجراء عمليات برمجية أو تقديم طلبات عشوائية عبر المنصة. وفي هذه الحالة، يتم التوجه مباشرة إلى أقرب منشأة طبية معتمدة تابعة للمنظومة، لطلب استبدال المنتج وتوثيق وتحديث البيانات الطبية السحابية بدقة متناهية لضمان استمرارية الرعاية</p>
+      <p>رغبةً من منصة كير (CARE) في ضمان أعلى معايير الأمان والسلامة، لا يتم قبول أو تفعيل أي طلب أو استمارة إلكترونية إلا بعد مراجعة واعتماد رسمي من المنشأة الطبية الشريكة أو الطبيب المعالج المشرف على الحالة؛ وذلك لضمان تسليم المنتجات الطبية والرقمية لمستحقيها عبر مسارات موثوقة ومحددة. كما يرجى العلم أنه في حال فقدان، تلف، أو حدوث أي عطل فني في الأسورة الذكية الخاصة بالفحص الطبي، لا يحق للمستخدم محاولة تعديل أو إجراء عمليات برمجية أو تقديم طلبات عشوائية عبر المنصة. وفي هذه الحالة، يتم التوجه مباشرة إلى أقرب منشأة طبية معتمدة تابعة للمنظومة، لطلب استبدال المنتج وتوثيق وتحديث البيانات الطبية السحابية بدقة متناهية لضمان استمرارية الرعاية.</p>
       <h3>3. مسؤولية الحساب</h3>
       <p>المستخدم مسؤول مسؤولية كاملة عن دقة البيانات الطبية المرفوعة على المنصة السحابية، وعن الحفاظ على كود التحقق السري الخاص به.</p>
     </div>
@@ -2227,26 +2295,14 @@
         });
       });
     }
-    const allLinks = document.querySelectorAll("a, button");
-    allLinks.forEach(link => {
-      const text = link.textContent.trim();
-      if(text === "سياسة الخصوصية") {
-        link.removeAttribute("href");
-        link.setAttribute("onclick", "openCareModal('carePrivacyModal'); return false;");
-      }
-      if(text === "الشروط والأحكام" || text === "شروط الاستخدام" || text === "حقوق المستخدم داخل التطبيق") {
-        link.removeAttribute("href");
-        link.setAttribute("onclick", "openCareModal('careTermsModal'); return false;");
-      }
-    });
   });
 </script>
+
 <div id="careersModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; z-index:999999; background:rgba(0,0,0,0.95); backdrop-filter:blur(10px);">
-    
-    <button onclick="document.getElementById('careersModal').style.display='none'" 
-            style="position:absolute; top:20px; right:30px; background:none; border:none; color:white; font-size:40px; cursor:pointer;">&times;</button>
-    
-    <iframe src="careers.html" style="width:100%; height:100%; border:none;"></iframe>
+  <button onclick="document.getElementById('careersModal').style.display='none'" 
+          style="position:absolute; top:20px; right:30px; background:none; border:none; color:white; font-size:40px; cursor:pointer;">&times;</button>
+  <iframe src="careers.html" style="width:100%; height:100%; border:none;"></iframe>
 </div>
+
 </body>
-</html
+</html>

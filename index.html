@@ -2090,11 +2090,14 @@
   }
 </style>
 
-<!-- [1] نافذة المقالات العامة المشتركة -->
+<!-- ══════════════════════════════════════════════════════
+     [1] نافذة المقالات العامة المشتركة
+══════════════════════════════════════════════════════ -->
 <div class="care-modal-overlay" id="careBlogModal">
   <div class="care-modal-wrapper">
     <button class="care-modal-close" onclick="closeCareModal('careBlogModal')"><i class="fas fa-times"></i></button>
     
+    <!-- عرض قائمة المقالات -->
     <div id="careBlogMainView">
       <div class="care-modal-logo-header">
         <img src="https://i.postimg.cc/VkqLhqMw/70732-(1).png" alt="شعار كير">
@@ -2104,58 +2107,40 @@
 
       <div class="care-search-container">
         <i class="fas fa-search care-search-icon"></i>
-        <input type="text" id="careSearchInput" class="care-search-input" placeholder="ابحث عن مقال طبي معين... (مثال: إغماء، حروق، جلطة)">
+        <input type="text" id="careSearchInput" class="care-search-input" placeholder="ابحث عن مقال طبي معين... (مثال: منتج ، خدمة، دعم فني)">
       </div>
 
       <div class="care-blog-grid" id="careBlogGrid">
-        <div class="care-blog-card" onclick="openFullArticle(1)">
+        <!-- مقال 1 -->
+        <div class="care-blog-card" onclick="openFullArticle(1)" style="cursor: pointer;">
           <div class="care-blog-img-box">
-            <span class="care-blog-badge">إسعافات بالقاهرة</span>
-            <img src="https://i.postimg.cc/8ccfrztY/article1.jpg" alt="الإنعاش">
+            <span class="care-blog-badge">منتجات كير تكنولوجي</span>
+            <img src="https://i.postimg.cc/L8g3t0KX/a69f364e-757e-4079-8326-20b5857a601d9.png" alt="منتج كير">
           </div>
           <div class="care-blog-body">
-            <h4>تمريض منزلي في القاهرة — دليلك الشامل لأفضل خدمة في 2025</h4>
-            <p>هل تبحث عن تمريض منزلي في القاهرة بأسعار واضحة وممرض معتمد يصلك في وقت قياسي؟ سواء كنت تحتاج إلى تركيب محلول وريدي، قياس السكر والضغط، أو رعاية متخصصة لأحد كبار السن في الأسرة، فإن الحصول على تمريض منزلي موثوق بات أسهل من أي وقت مضى مع منصة كير CARE.</p>
-          </div>
-        </div>
-
-        <div class="care-blog-card" onclick="openFullArticle(2)">
-          <div class="care-blog-img-box">
-            <span class="care-blog-badge">إرشادات أطباء</span>
-            <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=500&q=80" alt="الجلطات">
-          </div>
-          <div class="care-blog-body">
-            <h4>التعرف على علامات الجلطة المفاجئة</h4>
-            <p>تذكر دائماً اختبار (FAST): ارتخاء جانبي للوجه، ضعف في الذراع، وصعوبة النطق عند ظهور هذه العلامات...</p>
-          </div>
-        </div>
-
-        <div class="care-blog-card" onclick="openFullArticle(3)">
-          <div class="care-blog-img-box">
-            <span class="care-blog-badge">حروق وإصابات</span>
-            <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=500&q=80" alt="الحروق">
-          </div>
-          <div class="care-blog-body">
-            <h4>الخطوات الصحيحة لإسعاف الحروق</h4>
-            <p>ضع الجزء المصاب تحت ماء جاري فاتر لمدة لا تقل عن 10 إلى 15 دقيقة، تجنب وضع أي معجون تماماً...</p>
+            <h4>أسورة Lief Tag X200</h4>
+            <p>Lief Tag X200 هي أسورة ذكية تعمل على تخزين بيانات المرضى لتسهيل عملية الوصول الفوري لبيانات المرضى في لحظات ذهبية عند الطوارئ أو زيارة الطبيب</p>
           </div>
         </div>
       </div>
     </div>
 
-    <div id="careSingleArticleView" class="care-single-article-view">
-      <button class="care-btn-explore" style="margin-bottom: 20px; padding: 6px 16px; font-size: 13px;" onclick="backToBlogList()"><i class="fas fa-arrow-right"></i> العودة للمقالات</button>
+    <!-- عرض المقال التفصيلي الفردي -->
+    <div id="careSingleArticleView" class="care-single-article-view" style="display: none;">
+      <button class="care-btn-explore" style="margin-bottom: 20px; padding: 8px 18px; font-size: 13px; cursor: pointer;" onclick="backToBlogList()">
+        <i class="fas fa-arrow-right"></i> العودة للمقالات
+      </button>
       
-      <h2 class="care-single-title" id="articleFullTitle">اسم المقال يظهر هنا</h2>
-      <img src="" alt="" class="care-single-img" id="articleFullImg">
-      <div class="care-single-content" id="articleFullContent">محتوى المقال التفصيلي...</div>
+      <h2 class="care-single-title" id="articleFullTitle" style="margin-bottom: 15px;">اسم المقال يظهر هنا</h2>
+      <img src="" alt="" class="care-single-img" id="articleFullImg" style="width: 100%; max-height: 350px; object-fit: cover; border-radius: 12px; margin-bottom: 20px;">
+      <div class="care-single-content" id="articleFullContent" style="line-height: 1.8; font-size: 15px; margin-bottom: 25px;">محتوى المقال التفصيلي...</div>
 
       <div class="care-cta-banner">
-        <h3>هل تحتاج إلى رعاية طبية في المنزل؟</h3>
-        <p>فريق كير متاح على مدار 24 ساعة في مصر لتلبية جميع احتياجاتك الطبية والتمريضية بأسعار ثابتة.</p>
+        <h3>هل تحتاج إلى نظام واضح وشفاف لتخزين بياناتك الطبية؟</h3>
+        <p>فريق كير متاح على مدار 24 ساعة في مصر لتلبية جميع احتياجاتك لتخزين بياناتك الطبية لتسهيل إمكانيات الوصول عبر منتجات ذكية بأسعار ثابتة.</p>
         <div class="care-cta-buttons">
           <a href="https://wa.me/201124280827" target="_blank" class="care-btn-whatsapp">
-            <i class="fab fa-whatsapp"></i> احجز الآن عبر واتساب
+            <i class="fab fa-whatsapp"></i>أضغط هنا للإستعلام \ الدعم الفني
           </a>
           <button class="care-btn-explore" onclick="navigateToServices()">
             استكشف خدماتنا
@@ -2167,6 +2152,9 @@
   </div>
 </div>
 
+<!-- ══════════════════════════════════════════════════════
+     [2] نافذة سياسة الخصوصية
+══════════════════════════════════════════════════════ -->
 <div class="care-modal-overlay" id="carePrivacyModal">
   <div class="care-modal-wrapper">
     <button class="care-modal-close" onclick="closeCareModal('carePrivacyModal')"><i class="fas fa-times"></i></button>
@@ -2185,6 +2173,9 @@
   </div>
 </div>
 
+<!-- ══════════════════════════════════════════════════════
+     [3] نافذة الشروط والأحكام
+══════════════════════════════════════════════════════ -->
 <div class="care-modal-overlay" id="careTermsModal">
   <div class="care-modal-wrapper">
     <button class="care-modal-close" onclick="closeCareModal('careTermsModal')"><i class="fas fa-times"></i></button>
@@ -2198,32 +2189,25 @@
       <h3>1. طبيعة الخدمة والمنصة</h3>
       <p>تصنف "كير" باعتبارها <strong>وسيطاً رقمياً موثوقاً وآمناً</strong> يربط بين المرضى، والمنشآت الطبية، ومقدمي خدمات التمريض المنزلي المعتمدين لضمان الجودة الفائقة دون تدخل ورقي تقليدي.</p>
       <h3>2. الرفيق الطبي</h3>
-      <p>رغبةً من منصة كير (CARE) في ضمان أعلى معايير الأمان والسلامة، لا يتم قبول أو تفعيل أي طلب أو استمارة إلكترونية إلا بعد مراجعة واعتماد رسمي من المنشأة الطبية الشريكة أو الطبيب المعالج المشرف على الحالة؛ وذلك لضمان تسليم المنتجات الطبية والرقمية لمستحقيها عبر مسارات موثوقة ومحددة. كما يرجى العلم أنه في حال فقدان، تلف، أو حدوث أي عطل فني في الأسورة الذكية الخاصة بالفحص الطبي، لا يحق للمستخدم محاولة تعديل أو إجراء عمليات برمجية أو تقديم طلبات عشوائية عبر المنصة. وفي هذه الحالة، يتم التوجه مباشرة إلى أقرب منشأة طبية معتمدة تابعة للمنظومة، لطلب استبدال المنتج وتوثيق وتحديث البيانات الطبية السحابية بدقة متناهية لضمان استمرارية الرعاية.</p>
+      <p>رغبةً من منصة كير (CARE) في ضمان أعلى معايير الأمان والسلامة، لا يتم قبول أو تفعيل أي طلب أو استمارة إلكترونية إلا بعد مراجعة واعتماد رسمي من المنشأة الطبية الشريكة أو الطبيب المعالج المشرف على الحالة؛ وذلك لضمان تسليم المنتجات الطبية والرقمية لمستحقيها عبر مسارات موثوقة ومحددة.</p>
       <h3>3. مسؤولية الحساب</h3>
       <p>المستخدم مسؤول مسؤولية كاملة عن دقة البيانات الطبية المرفوعة على المنصة السحابية، وعن الحفاظ على كود التحقق السري الخاص به.</p>
     </div>
   </div>
 </div>
 
+<!-- ══════════════════════════════════════════════════════
+     SCRIPTS LOGIC FOR BLOG & MODALS
+══════════════════════════════════════════════════════ -->
 <script>
   const careArticlesDatabase = {
     1: {
-      title: "التعامل الفوري والأسس الطبية الصحيحة مع حالات الإغماء المفاجئ",
-      img: "https://i.postimg.cc/8ccfrztY/article1.jpg",
-      content: "<p>عند تعرض شخص ما للإغماء أو فقدان الوعي المؤقت، يجب التصرف بهدوء وسرعة. أولاً: تأكد من تنفس المريض ومجرى الهواء. ثانياً: ارفع قدمي الشخص المصاب بحوالي 30 سم عن مستوى الأرض، حيث يساعد ذلك في استعادة تدفق الدم والأكسجين بكفاءة إلى الدماغ. ثالثاً: قم بفك أي ملابس ضيقة حول الرقبة أو الخصر.</p><p><strong>تحذير طبي حاسم:</strong> لا تحاول إعطاء الشخص فاقد الوعي أي سوائل أو مأكولات عن طريق الفم نهائياً لمنع حدوث الاختناق، وإذا استمر الإغماء لأكثر من دقيقة، يجب طلب الرعاية الطبية الفورية.</p>"
+      title: "أسورة Lief Tag X200 والوصول الفوري للبيانات",
+      img: "https://i.postimg.cc/L8g3t0KX/a69f364e-757e-4079-8326-20b5857a601d9.png",
+      content: "<p>تعلن شركة CARE Technology Egypt عن إطلاق أسورة CARE الذكية إصدار موديل Life Tag X200؛ النظام الطبي الذكي المعتمد على تقنية NFC للوصول الفوري للسجل المرضي وتحديد هوية المريض خلال لحظات الطوارئ لتجنب الأخطاء الطبية.</p><p><strong>أبرز المواصفات:</strong></p><ul><li>ربط رقمي مباشر وآمن مع تطبيق الهواتف الذكية.</li><li>قراءة فورية للبيانات بدون الحاجة لبطارية أو شحن.</li><li>حل رقمي متكامل لأصحاب الأمراض المزمنة، كبار السن، والأطفال.</li></ul><p>كير.. ديما ـــ جنبك.</p>"
     },
-    2: {
-      title: "كيفية التعرف السريع على علامات وأعراض الجلطة المفاجئة وإنقاذ المريض",
-      img: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=500&q=80",
-      content: "<p>تعتبر الجلطات والسكتات الدماغية من الحالات الطبية الطارئة التي تتطلب تدخلاً في غضون دقائق. للتعرف عليها، نعتمد المقياس العالمي الفوري (FAST):</p><ul><li><strong>F - الوجه (Face):</strong> اطلب من الشخص الابتسام، وابحث عن أي ارتخاء أو هبوط في أحد جانبي الوجه.</li><li><strong>A - الذراعين (Arms):</strong> اطلب منه رفع كلتا ذراعيه، ولاحظ ما إذا كانت إحداهما تسقط لأسفل.</li><li><strong>S - الكلام (Speech):</strong> اطلب منه تكرار جملة بسيطة، ودقق في وجود أي ثقل أو عدم وضوح في الحروف.</li><li><strong>T - الوقت (Time):</strong> عند ملاحظة أي من هذه العلامات، توجه فوراً إلى أقرب مستشفى مجهز؛ لأن عامل الوقت ينقذ خلايا الدماغ من التلف المستديم.</li></ul>"
-    },
-    3: {
-      title: "الخطوات العلمية والطبية الصحيحة لإسعاف الحروق المنزلية بمختلف درجاتها",
-      img: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=500&q=80",
-      content: "<p>تنقسم الحروق لدرجات، ولكن في الإسعاف الأولي الفوري للحروق الحرارية البسيطة والمتوسطة، يجب اتباع الآتي: ضع المنطقة المصابة تحت ماء جاري معتدل البرودة (فاتر) لمدة تتراوح بين 10 إلى 15 دقيقة لتخفيف الحرارة المتغلغلة في الأنسجة.</p><p><strong>الأخطاء الشائعة والخطيرة:</strong> يمنع تماماً وضع قطع الثلج المباشرة على الحرق لأنها تسبب صدمة حرارية وتدمير إضافي للخلايا، كما يحظر كلياً استخدام معجون الأسنان أو المواد الدسمة كـ الزبدة؛ لأنها تحبس الحرارة وتسبب التهابات بكتيرية حادة للأنسجة المصابة.</p>"
-    }
   };
-
+  
   function openCareModal(modalId) {
     const modal = document.getElementById(modalId);
     if(modal) {

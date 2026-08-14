@@ -2521,5 +2521,122 @@
   <iframe src="careers.html" style="width:100%; height:100%; border:none;"></iframe>
 </div>
 
-</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
+
+<div id="sound-welcome-overlay" style="
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(254, 254, 254, 0.514);
+  backdrop-filter: blur(8px);
+  z-index: 999999;
+  display: none; 
+  opacity: 0;  
+  transition: opacity 0.5s ease;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-family: sans-serif;
+  text-align: center;
+  padding: 20px;
+">
+  <div style="background: #011b71c2; padding: 30px; border-radius: 20px; border: 1px solid #333; max-width: 400px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+    <div style="margin-bottom: 15px;">
+      <img src="https://i.postimg.cc/gJmm7th0/Black-and-White-Simple-Modern-Minimalist-Letter-G-Logo-(1).png" alt="Logo" style="max-width: 120px; height: auto; display: block; margin: 0 auto;" />
+    </div>
+
+    <h2 style="margin-bottom: 10px; font-size: 22px;">مرحباً بك في كير تكنولوجي!</h2>
+    <p style="color: #ccc; font-size: 14px; margin-bottom: 25px;">موقعنا يطلب قبول شروط الارتباط</p>
+    <button id="start-btn" style="
+      background: #00ff1e;
+      color: #000000;
+      border: none;
+      padding: 12px 30px;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: transform 0.2s, background 0.2s;
+      box-shadow: 0 4px 15px rgb(0, 17, 255);
+    ">تصفح</button>
+  </div>
+</div>
+
+<script>
+  const bgSound = new Howl({
+    src: ['https://assets.mixkit.co/active_storage/sfx/2869/2869-preview.mp3'],
+    volume: 0.5,
+    html5: true
+  });
+
+  const bgMusic = new Howl({
+    src: ['https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3'],
+    volume: 0.04,
+    loop: true, 
+    html5: true
+  });
+
+  let isUserInteracted = false;
+
+  window.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+      const overlay = document.getElementById('sound-welcome-overlay');
+      overlay.style.display = 'flex';
+      setTimeout(() => {
+        overlay.style.opacity = '1';
+      }, 50);
+    }, 3000); 
+
+    setupVideoAudioControl();
+  });
+
+  function enableSiteSound() {
+    isUserInteracted = true;
+    bgSound.play();
+    setTimeout(() => {
+      if (!isAnyVideoPlaying()) {
+        bgMusic.play();
+      }
+    }, 300);
+
+    const overlay = document.getElementById('sound-welcome-overlay');
+    overlay.style.opacity = '0';
+    setTimeout(() => {
+      overlay.style.display = 'none';
+    }, 500);
+  }
+  function setupVideoAudioControl() {
+    document.querySelectorAll('video').forEach(video => {
+      video.addEventListener('play', () => {
+        if (bgMusic.playing()) {
+          bgMusic.pause();
+        }
+      });
+      video.addEventListener('pause', () => {
+        if (isUserInteracted && !isAnyVideoPlaying()) {
+          bgMusic.play();
+        }
+      });
+      video.addEventListener('ended', () => {
+        if (isUserInteracted && !isAnyVideoPlaying()) {
+          bgMusic.play();
+        }
+      });
+    });
+  }
+  function isAnyVideoPlaying() {
+    const videos = document.querySelectorAll('video');
+    for (let video of videos) {
+      if (!video.paused && !video.ended) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  document.getElementById('sound-welcome-overlay').addEventListener('click', enableSiteSound);
+</script>
 </html>

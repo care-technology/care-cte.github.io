@@ -1038,8 +1038,9 @@
           padding-bottom: 56.25%; 
           height: 0;
           background: var(--bg2);
-          border-radius: 16px;
+          border-radius: 16px 16px 0 0;
           border: 1px solid var(--border);
+          border-bottom: none;
           box-shadow: 0 10px 30px rgba(107, 92, 231, 0.15);
           overflow: hidden;
           transition: border-color 0.3s, box-shadow 0.3s;
@@ -1064,18 +1065,155 @@
           justify-content: center;
           gap: 10px;
         }
+        /* ─── الشريط الكلاسيكي المكتسب للتفاعل والمشاهدات ─── */
+        .video-interactive-bar {
+          background: rgba(15, 23, 42, 0.05);
+          border: 1px solid var(--border);
+          border-top: 1px solid rgba(0, 210, 255, 0.15);
+          border-radius: 0 0 16px 16px;
+          padding: 12px 24px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          font-family: var(--font-main);
+          font-size: 14px;
+          color: var(--light);
+          direction: rtl;
+        }
+        .video-stats-item {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          font-weight: 600;
+        }
+        .video-stats-item i {
+          color: var(--purple);
+          font-size: 16px;
+        }
+        .like-btn-classic {
+          background: rgba(0, 210, 255, 0.1);
+          border: 1px solid var(--border);
+          color: var(--white);
+          padding: 6px 16px;
+          border-radius: 20px;
+          cursor: pointer;
+          font-family: var(--font-main);
+          font-weight: 700;
+          font-size: 13px;
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          transition: all 0.25s ease;
+        }
+        .like-btn-classic:hover {
+          background: var(--purple);
+          color: #0f172a;
+          border-color: var(--purple);
+          transform: translateY(-2px);
+        }
+        .like-btn-classic.liked {
+          background: var(--accent);
+          color: #ffffff;
+          border-color: var(--accent);
+        }
+        .like-btn-classic.liked i {
+          color: #ffffff;
+        }
       </style>
       
       <h3 class="video-title"><i class="fas fa-play-circle" style="color: var(--green);"></i> دليل مرئي: عن كير تكنولوجي</h3>
       
       <div class="video-container">
-        <video controls playsinline webkit-playsinline poster="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1470&auto=format&fit=crop" preload="metadata">
-          <source src="https://h.top4top.io/m_3853joacy0.mp4" type="video/mp4">
-          عذراً، متصفحك لا يدعم تشغيل الفيديو.
+        <video id="careMainVideo" controls playsinline webkit-playsinline poster="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1470&auto=format&fit=crop" preload="metadata">
+        <source src="Carevideo.mp4" type="video/mp4">   
+       عذراً، متصفحك لا يدعم تشغيل الفيديو.
         </video>
       </div>
+
+      <!-- الشريط التفاعلي الكلاسيكي أسفل الفيديو -->
+      <div class="video-interactive-bar">
+        <div class="video-stats-item">
+          <i class="fas fa-eye"></i>
+          <span>المشاهدات: <strong id="videoViewsCount" style="color: var(--purple);">1,248</strong></span>
+        </div>
+        
+        <button class="like-btn-classic" id="videoLikeBtn" onclick="toggleVideoLike()">
+          <i class="fas fa-thumbs-up" id="likeIcon"></i>
+          <span id="likeBtnText">إعجاب</span>
+          (<strong id="videoLikesCount">342</strong>)
+        </button>
+      </div>
     </div>
-  </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        const video = document.getElementById("careMainVideo");
+        const viewsCountEl = document.getElementById("videoViewsCount");
+        const likesCountEl = document.getElementById("videoLikesCount");
+        const likeBtn = document.getElementById("videoLikeBtn");
+        const likeIcon = document.getElementById("likeIcon");
+
+        // القيم الأساسية الافتراضية
+        let defaultViews = 1248;
+        let defaultLikes = 342;
+
+        // استدعاء القيم من التخزين المحلي
+        let storedViews = parseInt(localStorage.getItem("care_video_views")) || defaultViews;
+        let storedLikes = parseInt(localStorage.getItem("care_video_likes")) || defaultLikes;
+        let isLiked = localStorage.getItem("care_video_user_liked") === "true";
+
+        // عرض الأرقام الحالية
+        viewsCountEl.innerText = storedViews.toLocaleString("ar-EG");
+        likesCountEl.innerText = storedLikes.toLocaleString("ar-EG");
+
+        if (isLiked) {
+          likeBtn.classList.add("liked");
+          likeIcon.className = "fas fa-heart";
+          document.getElementById("likeBtnText").innerText = "تم الإعجاب";
+        }
+
+        // إحصاء المشاهدة عند بدء التشغيل
+        let hasCountedView = false;
+        if (video) {
+          video.addEventListener("play", function() {
+            if (!hasCountedView) {
+              storedViews += 1;
+              localStorage.setItem("care_video_views", storedViews);
+              viewsCountEl.innerText = storedViews.toLocaleString("ar-EG");
+              hasCountedView = true;
+            }
+          });
+        }
+      });
+
+      function toggleVideoLike() {
+        const likesCountEl = document.getElementById("videoLikesCount");
+        const likeBtn = document.getElementById("videoLikeBtn");
+        const likeIcon = document.getElementById("likeIcon");
+        const likeText = document.getElementById("likeBtnText");
+
+        let storedLikes = parseInt(localStorage.getItem("care_video_likes")) || 342;
+        let isLiked = localStorage.getItem("care_video_user_liked") === "true";
+
+        if (!isLiked) {
+          storedLikes += 1;
+          localStorage.setItem("care_video_likes", storedLikes);
+          localStorage.setItem("care_video_user_liked", "true");
+          likeBtn.classList.add("liked");
+          likeIcon.className = "fas fa-heart";
+          likeText.innerText = "تم الإعجاب";
+        } else {
+          storedLikes -= 1;
+          localStorage.setItem("care_video_likes", storedLikes);
+          localStorage.setItem("care_video_user_liked", "false");
+          likeBtn.classList.remove("liked");
+          likeIcon.className = "fas fa-thumbs-up";
+          likeText.innerText = "إعجاب";
+        }
+
+        likesCountEl.innerText = storedLikes.toLocaleString("ar-EG");
+      }
+    </script>
 
   <div class="product-showcase-section reveal" style="margin-top: 60px; text-align: center; position: relative; z-index: 999;">
     <style>

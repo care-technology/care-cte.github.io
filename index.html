@@ -92,12 +92,10 @@
     a { text-decoration: none; color: inherit; }
     img { max-width: 100%; }
 
-    /* ─── Scrollbar ──────────────────────────────────────────── */
     ::-webkit-scrollbar { width: 6px; }
     ::-webkit-scrollbar-track { background: var(--bg); }
     ::-webkit-scrollbar-thumb { background: var(--purple); border-radius: 3px; }
 
-    /* ─── Utility ────────────────────────────────────────────── */
     .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
     .section { padding: 100px 0; }
     .section-sm { padding: 60px 0; }
@@ -149,7 +147,6 @@
     .blob-container { position: absolute; inset: 0; overflow: hidden; z-index: 0; pointer-events: none; }
     .blob { position: absolute; border-radius: 50%; filter: blur(90px); opacity: 0.12; }
 
-    /* ─── NAV ────────────────────────────────────────────────── */
     #navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 0; transition: all 0.4s ease; }
     #navbar.scrolled {
       background: rgba(248, 250, 252, 0.95);
@@ -182,7 +179,6 @@
     .mobile-menu a { font-family: var(--font-main); font-size: 20px; font-weight: 700; color: var(--light); text-decoration: none; padding-bottom: 12px; border-bottom: 1px solid var(--border); transition: color 0.2s; }
     .mobile-menu a:hover { color: var(--purple); }
 
-    /* ─── HERO ───────────────────────────────────────────────── */
     #hero { position: relative; min-height: 100vh; display: flex; align-items: center; justify-content: center; overflow: hidden; padding-top: 80px; }
     .hero-grid {
       position: absolute; inset: 0; z-index: 0;
@@ -222,14 +218,12 @@
     .stat-num { font-family: var(--font-main); font-size: 42px; font-weight: 900; color: var(--purple); line-height: 1; display: block; }
     .stat-lbl { font-size: 13px; color: var(--muted); display: block; margin-top: 6px; }
 
-    /* ─── SCROLL INDICATOR ───────────────────────────────────── */
     .scroll-ind {
       position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%);
       display: flex; flex-direction: column; align-items: center; gap: 6px; color: var(--muted); font-size: 11px; animation: bounce 2s infinite;
     }
     @keyframes bounce { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(8px); } }
 
-    /* ─── ABOUT ──────────────────────────────────────────────── */
     #about { position: relative; overflow: hidden; }
     .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
     .about-text .badge { margin-bottom: 24px; }
@@ -287,7 +281,6 @@
     .drama-quote span { color: var(--accent); font-style: normal; }
     .drama-quote cite { display: block; margin-top: 12px; font-size: 13px; color: var(--muted); }
 
-    /* ─── SOLUTION ───────────────────────────────────────────── */
     #solution { position: relative; overflow: hidden; }
     .solution-top { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-bottom: 64px; }
     .solution-side { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 36px; transition: all 0.3s; }
@@ -317,14 +310,12 @@
     .pillar.p3 h3 { color: var(--gold); }
     .pillar p { font-size: 14px; color: var(--light); line-height: 1.75; }
 
-    /* ─── SERVICES ───────────────────────────────────────────── */
     .services-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; }
     .service-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 32px; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); position: relative; overflow: hidden; text-align: right; }
     .service-card:hover { transform: translateY(-8px); border-color: var(--purple); box-shadow: 0 20px 50px rgba(0, 210, 255, 0.15); }
     .service-card::after { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: linear-gradient(90deg, var(--purple), transparent); opacity: 0; transition: opacity 0.3s; }
     .service-card:hover::after { opacity: 1; }
 
-    /* ─── HOW IT WORKS ───────────────────────────────────────── */
     #how { position: relative; overflow: hidden; }
     .how-tabs { display: flex; justify-content: center; gap: 0; margin-bottom: 56px; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 6px; width: fit-content; margin-left: auto; margin-right: auto; }
     .tab-btn { padding: 12px 36px; border-radius: 8px; font-family: var(--font-main); font-size: 15px; font-weight: 700; color: var(--muted); background: transparent; border: none; cursor: pointer; transition: all 0.3s; display: flex; align-items: center; gap: 8px; }
@@ -344,7 +335,6 @@
     .step-body h4 { font-family: var(--font-main); font-size: 18px; font-weight: 800; color: var(--white); margin-bottom: 8px; }
     .step-body p { font-size: 14px; color: var(--light); line-height: 1.75; }
 
-    /* ─── WHY CARE ───────────────────────────────────────────── */
     #why { background: var(--bg2); }
     .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
     .why-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 36px 28px; transition: all 0.35s; position: relative; overflow: hidden; }
@@ -355,7 +345,6 @@
     .why-card h3 { font-family: var(--font-main); font-size: 17px; font-weight: 800; margin-bottom: 12px; color: var(--white); }
     .why-card p { font-size: 14px; color: var(--light); line-height: 1.8; }
 
-    /* ─── NUMBERS ────────────────────────────────────────────── */
     #numbers { position: relative; overflow: hidden; background: linear-gradient(135deg, rgba(0, 210, 255, 0.1) 0%, var(--bg) 60%); }
     #numbers::before { content: ""; position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2300D2FF' fill-opacity='0.06'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
     .numbers-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; background: var(--border); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; position: relative; z-index: 1; }
@@ -365,7 +354,6 @@
     .num-lbl { font-size: 15px; color: var(--light); display: block; margin-bottom: 6px; font-weight: 600; }
     .num-sub { font-size: 12px; color: var(--muted); }
 
-    /* ─── TESTIMONIALS ───────────────────────────────────────── */
     #testimonials { position: relative; overflow: hidden; }
     .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
     .testi-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 32px; position: relative; transition: all 0.3s; }
@@ -378,7 +366,6 @@
     .testi-role { font-size: 12px; color: var(--muted); }
     .testi-stars { color: var(--gold); font-size: 12px; margin-bottom: 2px; }
 
-    /* ─── JOIN ───────────────────────────────────────────────── */
     #join { background: var(--bg2); position: relative; overflow: hidden; }
     .join-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
     .join-info .section-title { text-align: right; }
@@ -414,7 +401,6 @@
     .form-success h3 { font-family: var(--font-main); font-size: 22px; font-weight: 800; color: var(--purple); margin-bottom: 10px; }
     .form-success p { font-size: 14px; color: var(--light); }
 
-    /* ─── CONTACT ────────────────────────────────────────────── */
     #contact { position: relative; overflow: hidden; }
     .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
     .contact-info .section-title { text-align: right; }
@@ -431,14 +417,12 @@
     .social-btn:hover { background: var(--purple); border-color: var(--purple); color: #0f172a; transform: translateY(-4px); }
     .contact-form { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 40px; }
 
-    /* ─── CTA BANNER ─────────────────────────────────────────── */
     #cta { background: linear-gradient(135deg, rgba(0, 210, 255, 0.15), var(--bg)); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); position: relative; overflow: hidden; }
     .cta-inner { text-align: center; position: relative; z-index: 1; padding: 80px 24px; }
     .cta-inner h2 { font-family: var(--font-main); font-size: clamp(28px, 4vw, 48px); font-weight: 900; margin-bottom: 16px; }
     .cta-inner p { font-size: 18px; color: var(--light); margin-bottom: 40px; }
     .cta-btns { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
 
-    /* ─── FOOTER ─────────────────────────────────────────────── */
     footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 60px 0 32px; }
     .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
     .footer-brand .logo { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
@@ -453,11 +437,9 @@
     .footer-bottom p { font-size: 13px; color: var(--muted); }
     .footer-bottom .made { color: var(--purple); }
 
-    /* ─── WHATSAPP FLOAT ─────────────────────────────────────── */
     .whatsapp-float { position: fixed; bottom: 30px; left: 30px; z-index: 999; width: 60px; height: 60px; background: #25d366; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; color: white; box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4); transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
     .whatsapp-float:hover { transform: scale(1.1) rotate(10deg); color: white; }
 
-    /* ─── SCROLL ANIMATIONS ──────────────────────────────────── */
     .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
     .reveal-delay-1 { transition-delay: 0.1s; }
@@ -465,7 +447,6 @@
     .reveal-delay-3 { transition-delay: 0.3s; }
     .reveal-delay-4 { transition-delay: 0.4s; }
 
-    /* ─── LOADING SCREEN ─────────────────────────────────────── */
     #loader { position: fixed; inset: 0; z-index: 9999; background: var(--bg); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; transition: opacity 0.5s, visibility 0.5s; }
     #loader.hidden { opacity: 0; visibility: hidden; }
     .loader-logo { font-family: var(--font-main); font-size: 36px; font-weight: 900; color: var(--white); }
@@ -474,17 +455,14 @@
     .loader-bar-fill { height: 100%; background: linear-gradient(90deg, var(--purple), var(--green)); border-radius: 2px; animation: load 1.2s ease forwards; }
     @keyframes load { from { width: 0; } to { width: 100%; } }
 
-    /* ─── LANG TOGGLE ────────────────────────────────────────── */
     .lang-toggle-btn { background: rgba(0, 0, 0, 0.05); border: 1px solid var(--border); color: var(--light); padding: 5px 10px; border-radius: 6px; font-weight: 700; cursor: pointer; transition: all 0.3s; font-family: var(--font-main); font-size: 14px; }
     .lang-toggle-btn:hover { background: rgba(0, 210, 255, 0.15); border-color: var(--purple); color: var(--white); }
     .mobile-only { display: none; }
 
-    /* ─── HIDE GOOGLE TRANSLATE ELEMENTS ────────────────────── */
     .goog-te-banner-frame.skiptranslate, .goog-te-gadget-icon, #goog-gt-tt, .goog-tooltip, .goog-te-balloon-frame, #goog-gt- { display: none !important; }
     .goog-tooltip:hover { display: none !important; }
     .goog-text-highlight { background-color: transparent !important; border: none !important; box-shadow: none !important; }
 
-    /* ─── RESPONSIVE ─────────────────────────────────────────── */
     @media (max-width: 991px) {
       .nav-links { display: none; }
       .hamburger { display: flex; }
@@ -511,10 +489,7 @@
 </head>
 <body>
 
- <!-- ══════════════════════════════════════════════════════
-     FINAL PERFECT PRELOADER - CARE TECHNOLOGY EGYPT
-══════════════════════════════════════════════════════ -->
-<style>
+ <style>
   #loader {
     position: fixed;
     top: 0;
@@ -823,7 +798,7 @@
         
         <p>كير هي منصة متطورة تابعة لـ <strong>CARE Technology Egypt (CARE-CTE)</strong>، تهدف إلى توفير نظام رقمي ذكي لتخزين وإدارة الملفات الطبية وتسهيل وصول المنشآت والفرق الطبية للبيانات الحرجة فوراً وقت الطوارئ، بالاعتماد على أحدث حلول التشفير والتقنيات اللاتلامسية (NFC).</p>
         
-        <p>تأسست الشركة سنة <strong>2024 بتاريخ 1/11/2024</strong> كعلامة تجارية مسجلة لأنشطة البرمجة الحاسوبية وحلول الرعاية الرقمية برقم إشهار 6201 ورقم تسجيل ضريبي 767644794، بقيادة مؤسسها الباحث محمد حسن بمحافظة الفيوم.</p>
+        <p>تأسست الشركة سنة <strong>2024 بتاريخ 1/11/2024</strong> كعلامة تجارية مسجلة لأنشطة البرمجة الحاسوبية وحلول الرعاية الرقمية برقم إشهار 6201 ورقم تسجيل ضريبي 783079052، بقيادة مؤسسها الباحث محمد حسن بمحافظة الفيوم.</p>
         
         <p>نؤمن أن كل فرد هو بطل قصته الصحية، ولذلك صممنا منظومة كير لتمنحك السيطرة الكاملة على ملفك الطبي وتوفر للجهات الطبية البيانات المنقذة للحياة في ثوانٍ معدودة.</p>
 
@@ -847,7 +822,7 @@
           <div class="highlight-item">
             <div class="icon">🏷️</div>
             <div>
-              <h4>ربط ذكي (Life Tag)</h4>
+              <h4>ربط ذكي (Life Tag X200)</h4>
               <p>تكامل مباشر مع أساور الهوية الطبية لسهولة التعرف على المريض</p>
             </div>
           </div>
@@ -957,7 +932,6 @@
     </div>
 
     <div class="solution-top">
-      <!-- الجانب الأول: مميزات الملف الطبي الرقمي والتطبيق -->
       <div class="solution-side reveal">
         <h3><i class="fas fa-mobile-alt" style="color:var(--purple)"></i>تطبيق كير الرقمي <span class="tag">التطبيق</span></h3>
         <div class="feature-item"><div class="check"><i class="fas fa-check"></i></div><p><strong>سجل طبي متكامل في جيبك</strong> — كل روشتاتك، تحاليلك، وأشعتك المتجمعة في مكان واحد ومنسق بشكل ذكي.</p></div>
@@ -967,7 +941,6 @@
         <div class="feature-item"><div class="check"><i class="fas fa-check"></i></div><p><strong>نظام تنبيهات الطوارئ</strong> — حفظ بيانات الأمراض المزمنة والحساسية الدوائية لتقديمها أول ما تحتاجها من غير لغبطة.</p></div>
       </div>
 
-      <!-- الجانب الثاني: مميزات الأسورة الذكية Life Tag -->
       <div class="solution-side reveal reveal-delay-2">
         <h3><i class="fas fa-id-card-alt" style="color:var(--green)"></i>الأسورة الذكية (Life Tag) <span class="tag" style="background:rgba(126,217,87,0.1);border-color:rgba(126,217,87,0.2);color:var(--green);">المنتج الذكي</span></h3>
         <div class="feature-item"><div class="check" style="background:rgba(126,217,87,0.1)"><i class="fas fa-check" style="color:var(--green)"></i></div><p><strong>وصول بلمسة واحدة (NFC)</strong> — مجرد ملامسة الأسورة لأي موبايل ذكي، بيتعرض الملف الطبي الفوري في ثوانٍ.</p></div>
@@ -1065,7 +1038,7 @@
           justify-content: center;
           gap: 10px;
         }
-        /* ─── الشريط الكلاسيكي المكتسب للتفاعل والمشاهدات ─── */
+
         .video-interactive-bar {
           background: rgba(15, 23, 42, 0.05);
           border: 1px solid var(--border);
@@ -1129,18 +1102,16 @@
        عذراً، متصفحك لا يدعم تشغيل الفيديو.
         </video>
       </div>
-
-      <!-- الشريط التفاعلي الكلاسيكي أسفل الفيديو -->
       <div class="video-interactive-bar">
         <div class="video-stats-item">
           <i class="fas fa-eye"></i>
-          <span>المشاهدات: <strong id="videoViewsCount" style="color: var(--purple);">1,248</strong></span>
+          <span>المشاهدات: <strong id="videoViewsCount" style="color: var(--purple);">6,248</strong></span>
         </div>
         
         <button class="like-btn-classic" id="videoLikeBtn" onclick="toggleVideoLike()">
           <i class="fas fa-thumbs-up" id="likeIcon"></i>
           <span id="likeBtnText">إعجاب</span>
-          (<strong id="videoLikesCount">342</strong>)
+          (<strong id="videoLikesCount">742</strong>)
         </button>
       </div>
     </div>
@@ -1153,16 +1124,13 @@
         const likeBtn = document.getElementById("videoLikeBtn");
         const likeIcon = document.getElementById("likeIcon");
 
-        // القيم الأساسية الافتراضية
         let defaultViews = 1248;
         let defaultLikes = 342;
 
-        // استدعاء القيم من التخزين المحلي
         let storedViews = parseInt(localStorage.getItem("care_video_views")) || defaultViews;
         let storedLikes = parseInt(localStorage.getItem("care_video_likes")) || defaultLikes;
         let isLiked = localStorage.getItem("care_video_user_liked") === "true";
 
-        // عرض الأرقام الحالية
         viewsCountEl.innerText = storedViews.toLocaleString("ar-EG");
         likesCountEl.innerText = storedLikes.toLocaleString("ar-EG");
 
@@ -1172,7 +1140,6 @@
           document.getElementById("likeBtnText").innerText = "تم الإعجاب";
         }
 
-        // إحصاء المشاهدة عند بدء التشغيل
         let hasCountedView = false;
         if (video) {
           video.addEventListener("play", function() {
@@ -2063,7 +2030,7 @@
     </div>
     <div class="footer-bottom">
       <p>© 2026 كير CARE — جميع الحقوق محفوظة لشركة CARE-CTE</p>
-      <p>رقم التسجيل الضريبي <span class="made">767644794</span> نشاط قانوني</p>
+      <p>رقم التسجيل الضريبي <span class="made">783079052</span> نشاط قانوني</p>
     </div>
   </div>
 </footer>

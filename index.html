@@ -2425,7 +2425,7 @@
         <input type="text" id="careSearchInput" class="care-search-input" placeholder="ابحث عن مقال طبي معين... (مثال: منتج ، خدمة، دعم فني)">
       </div>
 
-      <div class="care-blog-grid" id="careBlogGrid">
+<div class="care-blog-grid" id="careBlogGrid">
         <div class="care-blog-card" onclick="openFullArticle(1)" style="cursor: pointer;">
           <div class="care-blog-img-box">
             <span class="care-blog-badge">منتجات كير تكنولوجي</span>
@@ -2439,7 +2439,7 @@
         <div class="care-blog-card" onclick="openFullArticle(2)" style="cursor: pointer;">
           <div class="care-blog-img-box">
             <span class="care-blog-badge">تعاون بحثي</span>
-            <img src="https://i.postimg.cc/5yG8wVtC/5d5cx2.jpg" alt="...">
+            <img src="https://i.postimg.cc/5yG8wVtC/5d5cx2.jpg" alt="الباحث العلمي مروان كمال - كير تكنولوجي">
           </div>
           <div class="care-blog-body">
             <h4>الباحث مروان كمال</h4>
@@ -2520,11 +2520,44 @@
       img: "https://i.postimg.cc/GpF4jwxP/unnamed.webp",
       content: "<p>تعلن شركة CARE Technology Egypt عن إطلاق أسورة CARE الذكية إصدار موديل Life Tag X200؛ النظام الطبي الذكي المعتمد على تقنية NFC للوصول الفوري للسجل المرضي وتحديد هوية المريض خلال لحظات الطوارئ لتجنب الأخطاء الطبية.</p><p><strong>أبرز المواصفات:</strong></p><ul><li>ربط رقمي مباشر وآمن مع تطبيق الهواتف الذكية.</li><li>قراءة فورية للبيانات بدون الحاجة لبطارية أو شحن.</li><li>حل رقمي متكامل لأصحاب الأمراض المزمنة، كبار السن، والأطفال.</li></ul><p>كير.. ديما ـــ جنبك.</p>"
     },
-     2: {
-      title: "",
+    2: {
+      title: "الباحث مروان كمال - بروتوكول تعاون بحثي مع كير تكنولوجي",
       img: "https://i.postimg.cc/5yG8wVtC/5d5cx2.jpg",
-      content: "<p><strong>كير تكنولوجي توقع بروتوكول تعاون بحثي لتعزيز الابتكار وتطوير الكوادر الشبابية بالفيوم</strong></p><p>ضمن جهودها المستمرة لتوسيع نطاق شراكاتها العلمية والمجتمعية، وقّعت شركة CARE Technology Egypt بروتوكول تعاون ومذكرة تفاهم بحثية مع الباحث العلمي مروان كمال، وذلك بهدف تعزيز التعاون في مجالات التطوير العلمي وتبادل الخبرات التكنولوجية.</p><p>ويهدف هذا البروتوكول إلى دعم خطط الشركة لتطوير بيئة العمل واعتماد أحدث الممارسات البحثية، إلى جانب الاستفادة من طاقات الشباب المبدعين بمحافظة الفيوم. وتأتي هذه الخطوة لتؤكد التزام \"كير تكنولوجي\" المستمر بدعم الابتكار والارتقاء بالإحصائيات والنتائج التشغيلية للشركة، بما يحقق التوسع المستهدف في السوق.</p><p>كير.. دايماً ـــ جنبك.</p>"    },
+      content: "<p><strong>كير تكنولوجي توقع بروتوكول تعاون بحثي لتعزيز الابتكار وتطوير الكوادر الشبابية بالفيوم</strong></p><p>ضمن جهودها المستمرة لتوسيع نطاق شراكاتها العلمية والمجتمعية، وقّعت شركة CARE Technology Egypt بروتوكول تعاون ومذكرة تفاهم بحثية مع الباحث العلمي مروان كمال، وذلك بهدف تعزيز التعاون في مجالات التطوير العلمي وتبادل الخبرات التكنولوجية.</p><p>ويهدف هذا البروتوكول إلى دعم خطط الشركة لتطوير بيئة العمل واعتماد أحدث الممارسات البحثية، إلى جانب الاستفادة من طاقات الشباب المبدعين بمحافظة الفيوم. وتأتي هذه الخطوة لتؤكد التزام \"كير تكنولوجي\" المستمر بدعم الابتكار والارتقاء بالإحصائيات والنتائج التشغيلية للشركة، بما يحقق التوسع المستهدف في السوق.</p><p>كير.. دايماً ـــ جنبك.</p>"
+    },
   };
+
+  // SEO Schema Injection for Google Indexing
+  (function injectMarwanSchema() {
+    const schemaData = {
+      "@context": "https://schema.org",
+      "@type": "NewsArticle",
+      "headline": "كير تكنولوجي توقع بروتوكول تعاون بحثي لتعزيز الابتكار وتطوير الكوادر الشبابية بالفيوم",
+      "image": ["https://i.postimg.cc/5yG8wVtC/5d5cx2.jpg"],
+      "publisher": {
+        "@type": "Organization",
+        "name": "CARE Technology Egypt",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://i.postimg.cc/VkqLhqMw/70732-(1).png"
+        }
+      },
+      "about": {
+        "@type": "Person",
+        "name": "مروان كمال",
+        "jobTitle": "باحث علمي",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "الفيوم",
+          "addressCountry": "مصر"
+        }
+      }
+    };
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify(schemaData);
+    document.head.appendChild(script);
+  })();
   
   function openCareModal(modalId) {
     const modal = document.getElementById(modalId);

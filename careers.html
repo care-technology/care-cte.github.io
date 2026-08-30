@@ -18,9 +18,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
   <style>
-/* ══════════════════════════════════════════════════════
-   TOKENS (LIGHT CLEAN THEME - CYAN / ELECTRIC BLUE)
-══════════════════════════════════════════════════════ */
 :root {
   --bg: #FFFFFF;
   --bg2: #F8FAFC;
@@ -30,16 +27,16 @@
   --border: rgba(6, 182, 212, 0.25);
   --border2: rgba(226, 232, 240, 0.8);
 
-  --purple: #06B6D4;      /* استبدال البنفسجي بالأزرق الفسفوري/التراكواز */
-  --purple2: #0891B2;     /* درجات الأزرق الفسفوري الداكن للخطوط والنصوص */
+  --purple: #06B6D4;    
+  --purple2: #0891B2;   
   --green: #10B981;
   --green2: #059669;
   --gold: #D97706;
   --teal: #0D9488;
   --coral: #EF4444;
-  --white: #0F172A;       /* النص الرئيسي أصبح داكن ليناسب الخلفية البيضاء */
+  --white: #0F172A;       
   --off: #1E293B;
-  --light: #475569;       /* النصوص الفرعية مريحة للعين */
+  --light: #475569;      
   --muted: #64748B;
 
   --r: 20px;
@@ -51,10 +48,6 @@
   --font-ar: 'Cairo', sans-serif;
   --font-body: 'Tajawal', sans-serif;
 }
-
-/* ══════════════════════════════════════════════════════
-   RESET & BASE
-══════════════════════════════════════════════════════ */
 *,
 *::before,
 *::after {
@@ -99,10 +92,6 @@ button {
   cursor: pointer;
   font-family: var(--font-ar);
 }
-
-/* ══════════════════════════════════════════════════════
-   ANIMATED BG MESH
-══════════════════════════════════════════════════════ */
 .mesh {
   position: fixed;
   inset: 0;
@@ -158,8 +147,6 @@ button {
     transform: translate(-20px, 20px) scale(0.95);
   }
 }
-
-/* Dot grid */
 body::after {
   content: '';
   position: fixed;
@@ -171,10 +158,6 @@ body::after {
   mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 100%);
   -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 100%);
 }
-
-/* ══════════════════════════════════════════════════════
-   NAV
-══════════════════════════════════════════════════════ */
 #navbar {
   position: fixed;
   top: 0;
@@ -255,8 +238,6 @@ body::after {
   background: var(--purple2) !important;
   transform: translateY(-2px);
 }
-
-/* Hamburger */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -288,8 +269,6 @@ body::after {
 .hamburger.active span:nth-child(3) {
   transform: translateY(-8px) rotate(-45deg);
 }
-
-/* Mobile menu */
 .mobile-nav {
   position: fixed;
   top: 0;
@@ -324,7 +303,6 @@ body::after {
   color: var(--purple);
 }
 
-/* Lang Toggle */
 .lang-btn {
   background: var(--glass2);
   border: 1px solid var(--border);
@@ -343,9 +321,6 @@ body::after {
   color: var(--purple2);
 }
 
-/* ══════════════════════════════════════════════════════
-   HERO
-══════════════════════════════════════════════════════ */
 #hero {
   position: relative;
   z-index: 1;
@@ -467,8 +442,6 @@ body::after {
   border-color: var(--purple);
   transform: translateY(-3px);
 }
-
-/* Hero stats strip */
 .hero-stats {
   display: flex;
   gap: 0;
@@ -512,7 +485,6 @@ body::after {
   display: block;
 }
 
-/* Scroll line */
 .scroll-line {
   position: absolute;
   bottom: 40px;
@@ -543,10 +515,6 @@ body::after {
     height: 50px;
   }
 }
-
-/* ══════════════════════════════════════════════════════
-   CULTURE STRIP
-══════════════════════════════════════════════════════ */
 .culture-strip {
   position: relative;
   z-index: 1;
@@ -624,9 +592,6 @@ body::after {
   line-height: 1.75;
 }
 
-/* ══════════════════════════════════════════════════════
-   POSITIONS SECTION
-══════════════════════════════════════════════════════ */
 #positions {
   position: relative;
   z-index: 1;
@@ -663,7 +628,6 @@ body::after {
   margin-bottom: 56px;
 }
 
-/* Filter bar */
 .filter-bar {
   display: flex;
   align-items: center;
@@ -695,7 +659,6 @@ body::after {
   color: #fff;
 }
 
-/* Department groups */
 .dept-group {
   margin-bottom: 48px;
 }
@@ -883,9 +846,6 @@ body::after {
   transform: translateX(-4px);
 }
 
-/* ══════════════════════════════════════════════════════
-   WHY JOIN
-══════════════════════════════════════════════════════ */
 #why {
   position: relative;
   z-index: 1;
@@ -969,9 +929,6 @@ body::after {
   z-index: 1;
 }
 
-/* ══════════════════════════════════════════════════════
-   APPLICATION MODAL
-══════════════════════════════════════════════════════ */
 .overlay {
   position: fixed;
   inset: 0;
@@ -1011,7 +968,6 @@ body::after {
   transform: translateY(0) scale(1);
 }
 
-/* Modal header */
 .modal-header {
   padding: 32px 40px 0;
   display: flex;
@@ -1041,7 +997,6 @@ body::after {
   color: var(--coral);
 }
 
-/* Progress */
 .progress-wrap {
   padding: 24px 40px 0;
 }
@@ -1150,7 +1105,6 @@ body::after {
   margin-bottom: 28px;
 }
 
-/* Fields */
 .field {
   margin-bottom: 20px;
 }
@@ -1233,7 +1187,6 @@ body::after {
   color: var(--white);
 }
 
-/* Radio / Check cards */
 .radio-cards,
 .check-cards {
   display: flex;
@@ -1294,7 +1247,6 @@ body::after {
   color: var(--muted);
 }
 
-/* Dept picker */
 .dept-picker {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -1343,7 +1295,6 @@ body::after {
   color: var(--white);
 }
 
-/* Step nav */
 .step-nav {
   display: flex;
   align-items: center;
@@ -1394,9 +1345,6 @@ body::after {
   box-shadow: 0 8px 30px rgba(6, 182, 212, .4);
 }
 
-/* ══════════════════════════════════════════════════════
-   APPLICATION MODAL 2 (FOR INDIVIDUAL POSITIONS)
-══════════════════════════════════════════════════════ */
 #careJobSectionModal {
   position: fixed;
   inset: 0;
@@ -1501,9 +1449,6 @@ body::after {
   background: linear-gradient(135deg, var(--purple2), var(--purple));
 }
 
-/* ══════════════════════════════════════════════════════
-   FAQ SECTION
-══════════════════════════════════════════════════════ */
 #faq {
   position: relative;
   z-index: 1;
@@ -1591,9 +1536,6 @@ body::after {
   line-height: 1.8;
 }
 
-/* ══════════════════════════════════════════════════════
-   CTA SECTION
-══════════════════════════════════════════════════════ */
 #cta {
   position: relative;
   z-index: 1;
@@ -1649,9 +1591,6 @@ body::after {
   z-index: 1;
 }
 
-/* ══════════════════════════════════════════════════════
-   FOOTER
-══════════════════════════════════════════════════════ */
 footer {
   position: relative;
   z-index: 1;
@@ -1738,9 +1677,6 @@ footer {
   color: var(--light);
 }
 
-/* ══════════════════════════════════════════════════════
-   ANIMATIONS
-══════════════════════════════════════════════════════ */
 @keyframes fadeUp {
   from {
     opacity: 0;
@@ -1763,9 +1699,6 @@ footer {
   }
 }
 
-/* ══════════════════════════════════════════════════════
-   RESPONSIVE MEDIA QUERIES
-══════════════════════════════════════════════════════ */
 @media (max-width: 1024px) {
   .culture-inner {
     grid-template-columns: repeat(2, 1fr);
@@ -2280,9 +2213,6 @@ footer {
             </div>
           </div>
 
-          <!-- ══════════════════════════════════════════════════════
-               STEP 3: CONTRACT PREFERENCES & CONFIRMATION
-          ══════════════════════════════════════════════════════ -->
           <div class="step-panel" data-step="3">
             <h4 class="step-title">خيارات ونوع التعاقد المفضل</h4>
             <p class="step-sub">اختر طبيعة العمل المناسبة لجدولك الحالي لضمان أفضل توافق وسرعة إنتاج.</p>
@@ -2337,9 +2267,6 @@ footer {
     </div>
   </div>
 
-  <!-- ══════════════════════════════════════════════════════
-       APPLICATION MODAL 2 (FOR INDIVIDUAL POSITIONS)
-  ══════════════════════════════════════════════════════ -->
   <div id="careJobSectionModal">
     <div class="modal-container">
       <div class="care-modal-header">
@@ -2378,16 +2305,7 @@ footer {
       </form>
     </div>
   </div>
-
-  <!-- ══════════════════════════════════════════════════════
-       CORE LOGIC SCRIPTS & INTEGRATION
-  ══════════════════════════════════════════════════════ -->
   <script>
-    /* ══════════════════════════════════════════════════════
-       GLOBAL CORE STATE & UI LOGIC
-    ══════════════════════════════════════════════════════ */
-    
-    // Navbar Scroll Tracking
     window.addEventListener('scroll', function () {
       var nav = document.getElementById('navbar');
       if (nav) {
@@ -2399,7 +2317,6 @@ footer {
       }
     });
 
-    // Mobile Menu Toggle
     var hamburgerBtn = document.getElementById('hamburgerBtn');
     var mobileNav = document.getElementById('mobileNav');
 
@@ -2418,8 +2335,6 @@ footer {
         document.body.style.overflow = '';
       });
     });
-
-    // Positions Category Filter
     document.querySelectorAll('.filter-btn').forEach(function (btn) {
       btn.addEventListener('click', function () {
         document.querySelectorAll('.filter-btn').forEach(function (b) { b.classList.remove('active'); });
@@ -2436,7 +2351,6 @@ footer {
       });
     });
 
-    // FAQ Accordion Toggle
     function toggleFaq(btn) {
       var item = btn.parentElement;
       var wasOpen = item.classList.contains('open');
@@ -2444,7 +2358,6 @@ footer {
       if (!wasOpen) item.classList.add('open');
     }
 
-    // Smooth Scrolling
     document.querySelectorAll('a[href^="#"]').forEach(function (a) {
       a.addEventListener('click', function (e) {
         var id = a.getAttribute('href');
@@ -2459,10 +2372,6 @@ footer {
         }
       });
     });
-
-    /* ══════════════════════════════════════════════════════
-       SINGLE JOB POSITION MODAL LOGIC
-    ══════════════════════════════════════════════════════ */
     function triggerCareApplyModal(jobName) {
       const modal = document.getElementById('careJobSectionModal');
       document.getElementById('careHiddenJobInput').value = jobName;
@@ -2488,8 +2397,6 @@ footer {
         document.body.style.overflow = '';
       }
     }
-
-    // Direct Form Submission Handler for Individual Positions
     const embForm = document.getElementById('care_emb_form');
     if (embForm) {
       embForm.addEventListener('submit', function(e) {
@@ -2538,10 +2445,6 @@ footer {
         });
       });
     }
-
-    /* ══════════════════════════════════════════════════════
-       GENERAL WIZARD APPLICATION MODAL (3-STEP FORM)
-    ══════════════════════════════════════════════════════ */
     var currentStep = 1;
     var totalSteps = 3;
     var appOverlay = document.getElementById('appOverlay');
@@ -2549,9 +2452,8 @@ footer {
     var wizardNextBtn = document.getElementById('wizardNextBtn');
     var wizardBackBtn = document.getElementById('wizardBackBtn');
 
-    // Trigger Wizard via Navigation CTA or "انضم إلينا" Buttons
     document.querySelectorAll('.nav-cta, .btn-primary').forEach(function (trigger) {
-      if (trigger.getAttribute('href') === '#positions') return; // Exclude direct section links
+      if (trigger.getAttribute('href') === '#positions') return;
       trigger.addEventListener('click', function (e) {
         e.preventDefault();
         openGeneralWizard();
@@ -2641,7 +2543,6 @@ footer {
       });
     }
 
-    // UI Interactive Selection Helpers
     function selectDeptPill(pill) {
       pill.classList.toggle('selected');
       var chk = pill.querySelector('input[type="checkbox"]');
@@ -2664,7 +2565,6 @@ footer {
       if (chk) chk.checked = card.classList.contains('selected');
     }
 
-    // Step Validation Logic
     function validateStep(step) {
       var valid = true;
       if (step === 1) {
@@ -2727,7 +2627,6 @@ footer {
       return valid;
     }
 
-    // Submit Wizard Form to Formspree
     function submitWizardForm() {
       if (wizardNextBtn) {
         wizardNextBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> جاري الإرسال...';
@@ -2780,9 +2679,6 @@ footer {
       });
     }
 
-    /* ══════════════════════════════════════════════════════
-       GLOBAL TOAST NOTIFICATION SYSTEM
-    ══════════════════════════════════════════════════════ */
     var toastTimer;
     function showToast(msg) {
       var t = document.getElementById('careToast');

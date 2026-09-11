@@ -1687,6 +1687,8 @@
       <button class="tab-btn active" onclick="switchTab('patient', this)"><i class="fas fa-user"></i>للمريض</button>
       <button class="tab-btn" onclick="switchTab('facility', this)"><i class="fas fa-hospital"></i>للمنشأة</button>
     </div>
+
+    <!-- قائمة خطوات المرضى والأفراد -->
     <div class="tab-content active" id="patient">
       <div class="steps-list">
         <div class="step-item reveal">
@@ -1893,6 +1895,8 @@
           <p>شكراً لتواصلك معنا. قام نظام كير بتسجيل البلاغ وسيعمل الفريق التقني لـ CARE-CTE على مراجعته وحل المشكلة في أقرب وقت.</p>
         </div>
       </div>
+
+      <!-- 2. نموذج الدعم الفني المخصص للمنشآت الطبية -->
       <div id="clinicFormSection" class="join-form reveal reveal-delay-2" style="margin-top: 40px; width: 100%;">
         <h3 class="form-title"><i class="fas fa-hospital-alt" style="color:var(--green, #7ed957);"></i> الدعم الفني للمنشآت والجهات الطبية</h3>
         <p class="form-sub">خصصنا هذا النموذج للمستشفيات والعيادات والمراكز الطبية للإبلاغ عن أي أعطال برمجية في الربط الشبكي أو أجهزة القراءة.</p>
@@ -1962,6 +1966,7 @@
         <h2 class="section-title">نحن هنا <span class="text-green">لمساعدتك</span></h2>
         <p>يسعدنا في CARE استقبال كافة الاستفسارات، مقترحات الشراكة الطبية، وطلبات الدعم الفني على مدار الساعة.</p>
         <div class="contact-cards">
+          <!-- قسم الدعم الفني -->
           <div class="contact-card">
             <div class="c-icon"><i class="fas fa-headset"></i></div>
             <div>
@@ -2421,28 +2426,39 @@
       </div>
 
 <div class="care-blog-grid" id="careBlogGrid">
-        <div class="care-blog-card" onclick="openFullArticle(1)" style="cursor: pointer;">
-          <div class="care-blog-img-box">
-            <span class="care-blog-badge">منتجات كير تكنولوجي</span>
-            <img src="https://i.postimg.cc/L8g3t0KX/a69f364e-757e-4079-8326-20b5857a601d9.png" alt="منتج كير">
-          </div>
-          <div class="care-blog-body">
-            <h4>أسورة Lief Tag X200</h4>
-            <p>Lief Tag X200 هي أسورة ذكية تعمل على تخزين بيانات المرضى لتسهيل عملية الوصول الفوري لبيانات المرضى في لحظات ذهبية عند الطوارئ أو زيارة الطبيب</p>
-          </div>
-        </div>
-        <div class="care-blog-card" onclick="openFullArticle(2)" style="cursor: pointer;">
-          <div class="care-blog-img-box">
-            <span class="care-blog-badge">تعاون بحثي</span>
-            <img src="https://i.postimg.cc/5yG8wVtC/5d5cx2.jpg" alt="الباحث العلمي مروان كمال - كير تكنولوجي">
-          </div>
-          <div class="care-blog-body">
-            <h4>الباحث مروان كمال</h4>
-            <p>كير تكنولوجي توقع بروتوكول تعاون بحثي لتعزيز الابتكار وتطوير الكوادر الشبابية بالفيوم</p>
-          </div>
-        </div>
-      </div>
+  <div class="care-blog-card" onclick="openFullArticle(1)" style="cursor: pointer;">
+    <div class="care-blog-img-box">
+      <span class="care-blog-badge">منتجات كير تكنولوجي</span>
+      <img src="https://i.postimg.cc/L8g3t0KX/a69f364e-757e-4079-8326-20b5857a601d9.png" alt="منتج كير">
     </div>
+    <div class="care-blog-body">
+      <h4>أسورة Lief Tag X200</h4>
+      <p>Lief Tag X200 هي أسورة ذكية تعمل على تخزين بيانات المرضى لتسهيل عملية الوصول الفوري لبيانات المرضى في لحظات ذهبية عند الطوارئ أو زيارة الطبيب</p>
+    </div>
+  </div>
+
+  <div class="care-blog-card" onclick="openFullArticle(2)" style="cursor: pointer;">
+    <div class="care-blog-img-box">
+      <span class="care-blog-badge">تعاون بحثي</span>
+      <img src="https://i.postimg.cc/5yG8wVtC/5d5cx2.jpg" alt="الباحث العلمي مروان كمال - كير تكنولوجي">
+    </div>
+    <div class="care-blog-body">
+      <h4>الباحث مروان كمال</h4>
+      <p>كير تكنولوجي توقع بروتوكول تعاون بحثي لتعزيز الابتكار وتطوير الكوادر الشبابية بالفيوم</p>
+    </div>
+  </div>
+
+  <div class="care-blog-card" onclick="openFullArticle(3)" style="cursor: pointer;">
+    <div class="care-blog-img-box">
+      <span class="care-blog-badge">إنجاز عالمي</span>
+      <img src="https://i.postimg.cc/4xcnZpT3/kyr-dmn-afdl-alshrkat-fy-alʿalm.png" alt="كير تكنولوجي إيجيبت تتألق في كندا - iCAN 2026">
+    </div>
+    <div class="care-blog-body">
+      <h4>إنجاز دولي بكندا</h4>
+      <p>كير تكنولوجي إيجيبت تتألق في كندا وتُدرج رسمياً ضمن أفضل شركات العالم | iCAN 2026</p>
+    </div>
+  </div>
+</div>
 
     <div id="careSingleArticleView" class="care-single-article-view" style="display: none;">
       <button class="care-btn-explore" style="margin-bottom: 20px; padding: 8px 18px; font-size: 13px; cursor: pointer;" onclick="backToBlogList()">
@@ -2520,6 +2536,11 @@
       img: "https://i.postimg.cc/5yG8wVtC/5d5cx2.jpg",
       content: "<p><strong>كير تكنولوجي توقع بروتوكول تعاون بحثي لتعزيز الابتكار وتطوير الكوادر الشبابية بالفيوم</strong></p><p>ضمن جهودها المستمرة لتوسيع نطاق شراكاتها العلمية والمجتمعية، وقّعت شركة CARE Technology Egypt بروتوكول تعاون ومذكرة تفاهم بحثية مع الباحث العلمي مروان كمال، وذلك بهدف تعزيز التعاون في مجالات التطوير العلمي وتبادل الخبرات التكنولوجية.</p><p>ويهدف هذا البروتوكول إلى دعم خطط الشركة لتطوير بيئة العمل واعتماد أحدث الممارسات البحثية، إلى جانب الاستفادة من طاقات الشباب المبدعين بمحافظة الفيوم. وتأتي هذه الخطوة لتؤكد التزام \"كير تكنولوجي\" المستمر بدعم الابتكار والارتقاء بالإحصائيات والنتائج التشغيلية للشركة، بما يحقق التوسع المستهدف في السوق.</p><p>كير.. دايماً ـــ جنبك.</p>"
     },
+    3: {
+      title: "كير تكنولوجي إيجيبت تتألق في كندا ضمن أفضل شركات العالم | iCAN 2026",
+      img: "ضع_رابط_صورة_المقال_الخاصة_بمسابقة_كندا_هنا",
+      content: "<p><strong>كير تكنولوجي إيجيبت تتألق في كندا وتُدرج رسمياً ضمن أفضل شركات العالم في الكتالوج الدولي iCAN 2026</strong></p><p>أعلنت شركة <strong>CARE Technology Egypt</strong> عن اعتماد منظومتها الطبية الذكية ومنتجها المبتكر <strong>Life Tag X200</strong> رسمياً ضمن أفضل الشركات والمشاريع التكنولوجية على مستوى العالم، وذلك داخل السجل الدولي الرسمي للابتكارات وقائمة المخترعين المعتمدين الصادرة عن الجمعية الدولية للابتكار والتقنيات الحديثة (TISIAS) بمدينة تورونتو - كندا، خلال الإعلان الرسمي لنتائج المسابقة الدولية الحادية عشرة للابتكار والاختراع (iCAN 2026) بتاريخ 29 أغسطس 2026، بمشاركة المبتكر والباحث <strong>م. محمد حسن</strong> مؤسس ورئيس الشركة.</p><p>ويأتي هذا الاستحقاق الدولي ليرسخ حرص المنظومة على تقديم أعلى معايير التكنولوجيا الطبية في مصر، وتسهيل الوصول للخدمة الصحية بأمان تام خصوصاً في قرى ومحافظات مصر.</p><p><strong>ترتكز منظومة CARE على معالجة أهم تحديين في القطاع الطبي:</strong></p><ul><li><strong>سرعة إنقاذ الحياة في الطوارئ:</strong> بلمسة واحدة عبر شريحة الـ NFC المدمجة في إسورة Life Tag X200 الذكية، يتسنى للفريق الطبي الوصول الفوري للسجل الطبي الحرج وأرقام الاستغاثة وفصيلة الدم في ثوانٍ معدودة.</li><li><strong>أعلى مستويات الأمان والخصوصية:</strong> تطبيق أحدث بروتوكولات التشفير والأمن السيبراني لحماية وتخزين البيانات الرقمية للمرضى والمنشآت الطبية.</li></ul><p>إن وصول كير تكنولوجي إيجيبت لهذه القائمة الدولية في كندا يؤكد أن الابتكار المصري قادر على المنافسة بقوة عالمياً، ويدعم بشكل مباشر توجهات الدولة نحو التحول الرقمي وتطوير جودة الرعاية الصحية.</p><p>كير.. دايماً ـــ جنبك.</p>"
+    }
   };
 
   (function injectMarwanSchema() {
@@ -2552,7 +2573,44 @@
     script.text = JSON.stringify(schemaData);
     document.head.appendChild(script);
   })();
-  
+
+  (function injectIcanSchema() {
+    const schemaData = {
+      "@context": "https://schema.org",
+      "@type": "NewsArticle",
+      "headline": "كير تكنولوجي إيجيبت تتألق في كندا ضمن أفضل شركات العالم | iCAN 2026",
+      "image": ["https://i.postimg.cc/4xcnZpT3/kyr-dmn-afdl-alshrkat-fy-alʿalm.png"],
+      "datePublished": "2026-08-29",
+      "publisher": {
+        "@type": "Organization",
+        "name": "CARE Technology Egypt",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://i.postimg.cc/VkqLhqMw/70732-(1).png"
+        }
+      },
+      "about": [
+        {
+          "@type": "Organization",
+          "name": "CARE Technology Egypt"
+        },
+        {
+          "@type": "Person",
+          "name": "محمد حسن",
+          "jobTitle": "المؤسس والرئيس التنفيذي",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "CARE Technology Egypt"
+          }
+        }
+      ]
+    };
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify(schemaData);
+    document.head.appendChild(script);
+  })();
+
   function openCareModal(modalId) {
     const modal = document.getElementById(modalId);
     if(modal) {
@@ -2583,7 +2641,7 @@
       document.getElementById('articleFullContent').innerHTML = data.content;
       
       document.getElementById('careSingleArticleView').style.display = 'block';
-      document.querySelector('#careBlogModal .care-modal-wrapper').scrollTop = 0;ذ  
+      document.querySelector('#careBlogModal .care-modal-wrapper').scrollTop = 0;
     }
   }
 

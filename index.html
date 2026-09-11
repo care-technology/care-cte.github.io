@@ -2426,6 +2426,17 @@
       </div>
 
 <div class="care-blog-grid" id="careBlogGrid">
+        <div class="care-blog-card" onclick="openFullArticle(3)" style="cursor: pointer;">
+          <div class="care-blog-img-box">
+            <span class="care-blog-badge">إنجاز دولي</span>
+            <img src="assets/logo.png" alt="كير تكنولوجي إيجيبت تتألق في كندا | iCAN 2026">
+          </div>
+          <div class="care-blog-body">
+            <h4>كير تكنولوجي إيجيبت تتألق في كندا | iCAN 2026</h4>
+            <p>إدراج شركة كير تكنولوجي إيجيبت ومنتج Life Tag X200 رسمياً ضمن السجل الدولي للمخترعين المعتمدين بمدينة تورونتو - كندا.</p>
+          </div>
+        </div>
+
         <div class="care-blog-card" onclick="openFullArticle(1)" style="cursor: pointer;">
           <div class="care-blog-img-box">
             <span class="care-blog-badge">منتجات كير تكنولوجي</span>
@@ -2436,6 +2447,7 @@
             <p>Lief Tag X200 هي أسورة ذكية تعمل على تخزين بيانات المرضى لتسهيل عملية الوصول الفوري لبيانات المرضى في لحظات ذهبية عند الطوارئ أو زيارة الطبيب</p>
           </div>
         </div>
+
         <div class="care-blog-card" onclick="openFullArticle(2)" style="cursor: pointer;">
           <div class="care-blog-img-box">
             <span class="care-blog-badge">تعاون بحثي</span>
@@ -2448,6 +2460,32 @@
         </div>
       </div>
     </div>
+
+    <div id="careSingleArticleView" class="care-single-article-view" style="display: none;">
+      <button class="care-btn-explore" style="margin-bottom: 20px; padding: 8px 18px; font-size: 13px; cursor: pointer;" onclick="backToBlogList()">
+        <i class="fas fa-arrow-right"></i> العودة للمقالات
+      </button>
+      
+      <h2 class="care-single-title" id="articleFullTitle" style="margin-bottom: 15px;">اسم المقال يظهر هنا</h2>
+      <img src="" alt="" class="care-single-img" id="articleFullImg" style="width: 100%; max-height: 350px; object-fit: cover; border-radius: 12px; margin-bottom: 20px;">
+      <div class="care-single-content" id="articleFullContent" style="line-height: 1.8; font-size: 15px; margin-bottom: 25px;">محتوى المقال التفصيلي...</div>
+
+      <div class="care-cta-banner">
+        <h3>هل تحتاج إلى نظام واضح وشفاف لتخزين بياناتك الطبية؟</h3>
+        <p>فريق كير متاح على مدار 24 ساعة في مصر لتلبية جميع احتياجاتك لتخزين بياناتك الطبية لتسهيل إمكانيات الوصول عبر منتجات ذكية بأسعار ثابتة.</p>
+        <div class="care-cta-buttons">
+          <a href="https://wa.me/201124280827" target="_blank" class="care-btn-whatsapp">
+            <i class="fab fa-whatsapp"></i>أضغط هنا للإستعلام \ الدعم الفني
+          </a>
+          <button class="care-btn-explore" onclick="navigateToServices()">
+            استكشف خدماتنا
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
 
     <div id="careSingleArticleView" class="care-single-article-view" style="display: none;">
       <button class="care-btn-explore" style="margin-bottom: 20px; padding: 8px 18px; font-size: 13px; cursor: pointer;" onclick="backToBlogList()">
@@ -2525,6 +2563,11 @@
       img: "https://i.postimg.cc/5yG8wVtC/5d5cx2.jpg",
       content: "<p><strong>كير تكنولوجي توقع بروتوكول تعاون بحثي لتعزيز الابتكار وتطوير الكوادر الشبابية بالفيوم</strong></p><p>ضمن جهودها المستمرة لتوسيع نطاق شراكاتها العلمية والمجتمعية، وقّعت شركة CARE Technology Egypt بروتوكول تعاون ومذكرة تفاهم بحثية مع الباحث العلمي مروان كمال، وذلك بهدف تعزيز التعاون في مجالات التطوير العلمي وتبادل الخبرات التكنولوجية.</p><p>ويهدف هذا البروتوكول إلى دعم خطط الشركة لتطوير بيئة العمل واعتماد أحدث الممارسات البحثية، إلى جانب الاستفادة من طاقات الشباب المبدعين بمحافظة الفيوم. وتأتي هذه الخطوة لتؤكد التزام \"كير تكنولوجي\" المستمر بدعم الابتكار والارتقاء بالإحصائيات والنتائج التشغيلية للشركة، بما يحقق التوسع المستهدف في السوق.</p><p>كير.. دايماً ـــ جنبك.</p>"
     },
+    3: {
+      title: "كير تكنولوجي إيجيبت تتألق في كندا ضمن أفضل شركات العالم | iCAN 2026",
+      img: "https://i.postimg.cc/Kj6n0x2N/kyr-dmn-afdl-alshrkat-fy-alʿalm.png",
+      content: "<p>تُعلن شركة <strong>كير تكنولوجي إيجيبت</strong> عن اعتماد منظومتها الطبية الذكية ومنتجها الابتكاري <strong>Life Tag X200</strong> رسمياً ضمن أفضل الشركات والمشاريع على مستوى العالم، وذلك بتسجيلهما داخل السجل الدولي الرسمي للابتكارات وقائمة المخترعين المعتمدين الصادرة عن الجمعية الدولية للابتكار والتقنيات الحديثة (<strong>TISIAS</strong>) بمدينة تورونتو - كندا، خلال الإعلان الرسمي لنتائج المسابقة الدولية الحادية عشرة للابتكار والاختراع (<strong>iCAN 2026</strong>) بتاريخ 29 أغسطس 2026، بمشاركة الباحث والمهندس <strong>محمد حسن</strong> مؤسس والرئيس التنفيذي للشركة.</p><br><h4>خطوة استراتيجية لتعزيز الرعاية الصحية الرقمية</h4><p>يأتي هذا الاعتماد الدولي في إطار حرص منظومة كير تكنولوجي على تقديم أعلى معايير التكنولوجيا الطبية في مصر، وتأكيداً على كفاءة الحلول الرقمية التي تطورها الشركة. كما تهدف هذه المشاركة إلى تعزيز أطر التعاون الدولي وتبادل الخبرات والمهارات المشتركة مع الجهات العالمية الداعمة للمبتكرين، بما يساهم في إرساء نظام معتمد يطبق أفضل معايير التشفير العالمية تحسيناً لجودة الرعاية الطبية الرقمية، وتسهيلاً للوصول إلى الخدمات الصحية بأمان تام، لا سيما في قرى ومحافظات مصر.</p><br><h4>حلول مبتكرة لتحديات القطاع الطبي</h4><p>وتسعى <strong>كير تكنولوجي إيجيبت</strong> دائماً إلى تقديم أفضل رعاية صحية لحياة الأشخاص الذين لا تحتمل معاناتهم الانتظار؛ حيث نجحت الشركة في تطوير منظومة متكاملة ترتكز على معالجة أهم تحديين يواجهان القطاع الطبي الحديث:</p><ul><li><strong>سرعة إنقاذ الحياة في الطوارئ:</strong> بلمسة واحدة عبر شريحة الـ NFC المدمجة في الإسورة الذكية <strong>Life Tag X200</strong>، يستطيع الفريق الطبي الوصول الفوري إلى التاريخ الطبي الحرج للمريض وأرقام الطوارئ وفصيلة الدم في ثوانٍ معدودة.</li><li><strong>أعلى مستويات الأمان والخصوصية:</strong> إيماناً بأن البيانات الطبية ملكية خاصة للمريض، تطبق المنظومة أحدث بروتوكولات الأمن السيبراني وأعلى معايير التشفير لحماية وتخزين البيانات الرقمية للمرضى والمنشآت الطبية.</li></ul><br><h4>الابتكار المصري ينافس عالمياً</h4><p>إن وصول <strong>كير تكنولوجي إيجيبت</strong> إلى قائمة المخترعين المعتمدين في كندا يُعد شهادة استحقاق تثبت أن الابتكار المصري قادر على المنافسة بقوة على الساحة الدولية، كما يدعم بشكل مباشر توجهات الدولة نحو التحول الرقمي الشامل وتطوير جودة الرعاية الصحية.</p><br><p>مستمرون في تقديم تكنولوجيا أعمق، أسرع، وأكثر أماناً لحماية كل فرد.</p><p><strong>كير.. دايماً جنبك.</strong></p>"
+    }
   };
 
   (function injectMarwanSchema() {
@@ -2538,7 +2581,7 @@
         "name": "CARE Technology Egypt",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://i.postimg.cc/VkqLhqMw/70732-(1).png"
+          "url": "https://i.postimg.cc/Kj6n0x2N/kyr-dmn-afdl-alshrkat-fy-alʿalm.png"
         }
       },
       "about": {
@@ -2550,6 +2593,31 @@
           "addressLocality": "الفيوم",
           "addressCountry": "مصر"
         }
+      }
+    };
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify(schemaData);
+    document.head.appendChild(script);
+  })();
+
+  (function injectICanSchema() {
+    const schemaData = {
+      "@context": "https://schema.org",
+      "@type": "NewsArticle",
+      "headline": "كير تكنولوجي إيجيبت تتألق في كندا ضمن أفضل شركات العالم | iCAN 2026",
+      "image": ["https://i.postimg.cc/Kj6n0x2N/kyr-dmn-afdl-alshrkat-fy-alʿalm.png"],
+      "publisher": {
+        "@type": "Organization",
+        "name": "CARE Technology Egypt",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://i.postimg.cc/Kj6n0x2N/kyr-dmn-afdl-alshrkat-fy-alʿalm.png"
+        }
+      },
+      "author": {
+        "@type": "Person",
+        "name": "محمد حسن مؤسس شركة كير"
       }
     };
     const script = document.createElement('script');
@@ -2588,7 +2656,7 @@
       document.getElementById('articleFullContent').innerHTML = data.content;
       
       document.getElementById('careSingleArticleView').style.display = 'block';
-      document.querySelector('#careBlogModal .care-modal-wrapper').scrollTop = 0;ذ  
+      document.querySelector('#careBlogModal .care-modal-wrapper').scrollTop = 0;  
     }
   }
 

@@ -1895,8 +1895,6 @@
           <p>شكراً لتواصلك معنا. قام نظام كير بتسجيل البلاغ وسيعمل الفريق التقني لـ CARE-CTE على مراجعته وحل المشكلة في أقرب وقت.</p>
         </div>
       </div>
-
-      <!-- 2. نموذج الدعم الفني المخصص للمنشآت الطبية -->
       <div id="clinicFormSection" class="join-form reveal reveal-delay-2" style="margin-top: 40px; width: 100%;">
         <h3 class="form-title"><i class="fas fa-hospital-alt" style="color:var(--green, #7ed957);"></i> الدعم الفني للمنشآت والجهات الطبية</h3>
         <p class="form-sub">خصصنا هذا النموذج للمستشفيات والعيادات والمراكز الطبية للإبلاغ عن أي أعطال برمجية في الربط الشبكي أو أجهزة القراءة.</p>
@@ -2420,12 +2418,23 @@
         <h2 class="section-title" style="margin-top:12px; text-align: center;">موسوعة كير الثقافية للرد على <span class="text-green">المشكلات الصحية الطارئة</span></h2>
       </div>
 
-      <div class="care-search-container">
+<div class="care-search-container">
         <i class="fas fa-search care-search-icon"></i>
         <input type="text" id="careSearchInput" class="care-search-input" placeholder="ابحث عن مقال طبي معين... (مثال: منتج ، خدمة، دعم فني)">
       </div>
 
-<div class="care-blog-grid" id="careBlogGrid">
+      <div class="care-blog-grid" id="careBlogGrid">
+        <div class="care-blog-card" onclick="openFullArticle(4)" style="cursor: pointer;">
+          <div class="care-blog-img-box">
+            <span class="care-blog-badge">شراكة دولية</span>
+            <img src="assets/romania.png" alt="شراكة استراتيجية دولية: رومينيا ومصر - كير تكنولوجي">
+          </div>
+          <div class="care-blog-body">
+            <h4>شراكة دولية: رومينيا ومصر</h4>
+            <p>اعتماد كير تكنولوجي إيجيبت ممثلاً وسفيراً إقليمياً حصرياً لمنصات الابتكار الرومانية والأوروبية بـ MENA.</p>
+          </div>
+        </div>
+
         <div class="care-blog-card" onclick="openFullArticle(3)" style="cursor: pointer;">
           <div class="care-blog-img-box">
             <span class="care-blog-badge">إنجاز دولي</span>
@@ -2541,6 +2550,11 @@
       title: "كير تكنولوجي إيجيبت تتألق في كندا ضمن أفضل شركات العالم | iCAN 2026",
       img: "assets/ican2026.png",
       content: "<p>تُعلن شركة <strong>كير تكنولوجي إيجيبت</strong> عن اعتماد منظومتها الطبية الذكية ومنتجها الابتكاري <strong>Life Tag X200</strong> رسمياً ضمن أفضل الشركات والمشاريع على مستوى العالم، وذلك بتسجيلهما داخل السجل الدولي الرسمي للابتكارات وقائمة المخترعين المعتمدين الصادرة عن الجمعية الدولية للابتكار والتقنيات الحديثة (<strong>TISIAS</strong>) بمدينة تورونتو - كندا، خلال الإعلان الرسمي لنتائج المسابقة الدولية الحادية عشرة للابتكار والاختراع (<strong>iCAN 2026</strong>) بتاريخ 29 أغسطس 2026، بمشاركة الباحث والمهندس <strong>محمد حسن</strong> مؤسس والرئيس التنفيذي للشركة.</p><br><h4>خطوة استراتيجية لتعزيز الرعاية الصحية الرقمية</h4><p>يأتي هذا الاعتماد الدولي في إطار حرص منظومة كير تكنولوجي على تقديم أعلى معايير التكنولوجيا الطبية في مصر، وتأكيداً على كفاءة الحلول الرقمية التي تطورها الشركة. كما تهدف هذه المشاركة إلى تعزيز أطر التعاون الدولي وتبادل الخبرات والمهارات المشتركة مع الجهات العالمية الداعمة للمبتكرين، بما يساهم في إرساء نظام معتمد يطبق أفضل معايير التشفير العالمية تحسيناً لجودة الرعاية الطبية الرقمية، وتسهيلاً للوصول إلى الخدمات الصحية بأمان تام، لا سيما في قرى ومحافظات مصر.</p><br><h4>حلول مبتكرة لتحديات القطاع الطبي</h4><p>وتسعى <strong>كير تكنولوجي إيجيبت</strong> دائماً إلى تقديم أفضل رعاية صحية لحياة الأشخاص الذين لا تحتمل معاناتهم الانتظار؛ حيث نجحت الشركة في تطوير منظومة متكاملة ترتكز على معالجة أهم تحديين يواجهان القطاع الطبي الحديث:</p><ul><li><strong>سرعة إنقاذ الحياة في الطوارئ:</strong> بلمسة واحدة عبر شريحة الـ NFC المدمجة في الإسورة الذكية <strong>Life Tag X200</strong>، يستطيع الفريق الطبي الوصول الفوري إلى التاريخ الطبي الحرج للمريض وأرقام الطوارئ وفصيلة الدم في ثوانٍ معدودة.</li><li><strong>أعلى مستويات الأمان والخصوصية:</strong> إيماناً بأن البيانات الطبية ملكية خاصة للمريض، تطبق المنظومة أحدث بروتوكولات الأمن السيبراني وأعلى معايير التشفير لحماية وتخزين البيانات الرقمية للمرضى والمنشآت الطبية.</li></ul><br><h4>الابتكار المصري ينافس عالمياً</h4><p>إن وصول <strong>كير تكنولوجي إيجيبت</strong> إلى قائمة المخترعين المعتمدين في كندا يُعد شهادة استحقاق تثبت أن الابتكار المصري قادر على المنافسة بقوة على الساحة الدولية، كما يدعم بشكل مباشر توجهات الدولة نحو التحول الرقمي الشامل وتطوير جودة الرعاية الصحية.</p><br><p>مستمرون في تقديم تكنولوجيا أعمق، أسرع، وأكثر أماناً لحماية كل فرد.</p><p><strong>كير.. دايماً جنبك.</strong></p>"
+    },
+    4: {
+      title: "شراكة استراتيجية دولية: رومينيا ومصر | كير تكنولوجي سفير وممثل إقليمي لـ MENA",
+      img: "assets/romania.png",
+      content: "<p><strong>شراكة استراتيجية دولية بين رومينيا ومصر: كير تكنولوجي إيجيبت ممثلاً إقليمياً وسفيراً رسمياً لمنصات الابتكار الأوروبية بالشرق الأوسط وشمال إفريقيا</strong></p><p>في خطوة تاريخية تعزز مكانة التكنولوجيا المصرية على الخريطة الدولية، أعلنت <strong>جمعية CorneliuGroup للبحوث والابتكار</strong> و<strong>أكاديمية INVENTCOR بمدينة ديفا - رومينيا</strong> عن توقيع شراكة استراتيجية رسمية مع شركة <strong>CARE Technology Egypt (CARE-CTE)</strong>، تم بموجبها اعتماد الشركة وتسميتها رسمياً كـ <strong>\"السفير الإقليمي والممثل الحصري\"</strong> للمنصات والمعارض الدولية في مصر وكافة دول منطقة الشرق الأوسط وشمال إفريقيا (MENA).</p><p>وتمثل هذه الشراكة جسراً مستداماً يربط بين بيئة الابتكار الرومانية والأوروبية وبين المجتمعات الأكاديمية والبحثية والشركات الناشئة في المنطقة، تحت قيادة <strong>م. محمد حسن</strong> المؤسس والرئيس التنفيذي لشركة كير تكنولوجي.</p><br><h4>أهداف الشراكة الاستراتيجية الدولية:</h4><ul><li><strong>إدارة وتسهيل المشاركات الدولية:</strong> تنسيق مشاركة المبتكرين والباحثين والشباب المبدعين من منطقة MENA في معارض <em>MOZAIK Innovative Art 2026</em> (ديسمبر 2026) ومعرض <em>INVENTCOR 2027 الدولي</em> (أبريل 2027) بمدينة ديفا الرومانية.</li><li><strong>بوابة عبور إلى أوروبا:</strong> توفير فرص حقيقية للربط مع مراكز نقل التكنولوجيا (CITT)، شبكات البراءات الدولية (OSIM, EPO)، برامج المنح البحثية الأوروبية، والشركاء المؤسسيين.</li><li><strong>امتيازات وتسهيلات إقليمية خاصة:</strong> تقديم شروط مشاركة تفضيلية وحزم دعم مخصصة للوفود والمؤسسات المسجلة عبر شبكة CARE Technology Egypt.</li></ul><p>كير.. دايماً ـــ جنبك.</p><hr style=\"border:0; border-top:1px solid #e0e0e0; margin:20px 0;\"><p><strong>NEW INTERNATIONAL STRATEGIC PARTNERSHIP: ROMANIA – EGYPT</strong></p><p><strong>CorneliuGroup Research-Innovation Association</strong> and <strong>INVENTCOR Academy Deva (Romania)</strong> are pleased to announce the signing of an official strategic partnership with <strong>CARE Technology Egypt (CARE-CTE)</strong>, officially appointing the company as the <strong>Official Regional Ambassador and Exclusive Representative</strong> for international platforms across Egypt and the MENA region.</p><p>Led by Founder & CEO <strong>Mr. Mohamed Hassan</strong>, this partnership serves as a strategic bridge connecting innovators, research entities, and startups in the MENA region with European innovation ecosystems, patent networks (OSIM, EPO), and international technology transfer centers.</p><br><h4>Partnership Highlights & Key Objectives:</h4><ul><li><strong>International Platform Promotion:</strong> Coordinating the participation of regional creators in <em>MOZAIK Innovative Art 2026</em> and <em>INVENTCOR 2027 International Exhibition</em> in Deva, Romania.</li><li><strong>European Gateway:</strong> Direct access to technology transfer centers, European grant networks, and international research partners.</li><li><strong>Exclusive Regional Benefits:</strong> Tailored support packages and preferential participation terms for MENA delegations registering via CARE Technology Egypt.</li></ul><p><em>CARE.. Always by your side.</em></p>"
     }
   };
 
@@ -2593,6 +2607,42 @@
         "@type": "Person",
         "name": "ابن الفيوم ضمن أفضل المبتكرين في العالم"
       }
+    };
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify(schemaData);
+    document.head.appendChild(script);
+  })();
+
+  (function injectRomaniaSchema() {
+    const schemaData = {
+      "@context": "https://schema.org",
+      "@type": "NewsArticle",
+      "headline": "شراكة استراتيجية دولية: كير تكنولوجي سفير وممثل إقليمي حصري لمنصات الابتكار الرومانية في الشرق الأوسط وشمال إفريقيا",
+      "image": ["https://care-cte.me/assets/romania.png"],
+      "publisher": {
+        "@type": "Organization",
+        "name": "CARE Technology Egypt",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://care-cte.me/assets/ican2026.png"
+        }
+      },
+      "about": [
+        {
+          "@type": "Organization",
+          "name": "CARE Technology Egypt"
+        },
+        {
+          "@type": "Person",
+          "name": "محمد حسن",
+          "jobTitle": "المؤسس والرئيس التنفيذي",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "CARE Technology Egypt"
+          }
+        }
+      ]
     };
     const script = document.createElement('script');
     script.type = 'application/ld+json';
